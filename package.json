@@ -1,0 +1,88 @@
+{
+  "name": "@wfcd/profile-parser",
+  "version": "0.0-dev",
+  "description": "Parser for Digital Extreme's profile data",
+  "type": "module",
+  "main": "src/ProfileParser.js",
+  "public": true,
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md",
+    "types"
+  ],
+  "devDependencies": {
+    "@types/chai": "^4.2.16",
+    "@types/node-fetch": "^2.6.1",
+    "@wfcd/eslint-config": "^1.1.6",
+    "chai": "^4.3.4",
+    "chai-json-equal": "^0.0.1",
+    "coveralls": "^3.1.0",
+    "install-peerdeps": "2.0.3",
+    "mocha": "^10.0.0",
+    "node-fetch": "^2.6.1",
+    "nyc": "^15.1.0",
+    "typescript": "^5.0.2"
+  },
+  "scripts": {
+    "test": "nyc mocha",
+    "coverage": "npm test && nyc report --reporter=text-lcov | coveralls",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ test/ --fix",
+    "prepublishOnly": "npm run build:types",
+    "build:docs": "jsdoc -c .github/docs/conf.json -d docs",
+    "build:types": "tsc -p tsconfig.declaration.json",
+    "postinstall": "install-peerdeps @wfcd/eslint-config@^1.1.6 -S"
+  },
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.18.3",
+    "npm": ">=6.14.6"
+  },
+  "eslintConfig": {
+    "extends": "@wfcd",
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "rules": {
+      "valid-jsdoc": [
+        "error",
+        {
+          "requireReturn": false,
+          "requireReturnDescription": false,
+          "preferType": {
+            "String": "string",
+            "Number": "number",
+            "Boolean": "boolean",
+            "Function": "function",
+            "object": "Object",
+            "date": "Date",
+            "error": "Error"
+          },
+          "prefer": {
+            "return": "returns"
+          }
+        }
+      ],
+      "no-underscore-dangle": "off",
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "peerDependencies": true
+        }
+      ]
+    }
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-private-methods"
+    ]
+  },
+  "prettier": "@wfcd/eslint-config/prettier"
+}
