@@ -2,6 +2,7 @@ import Affiliation from './Affiliations';
 import LoadOutInventory from './LoadOutInventory';
 import Mission from './Mission';
 import OperatorLoadOuts from './OperatorLoadOuts';
+import PlayerSkill from './PlayerSkill';
 import parseDate from './utils';
 
 export default class PlayerSummary {
@@ -10,9 +11,7 @@ export default class PlayerSummary {
     this.displayName = summary.DisplayName;
     this.playLevel = summary.PlayerLevel;
     this.loadout = new LoadOutInventory(summary.LoadOutInventory);
-
-    // TODO: translate player skills into human readable names.
-    this.playerSkills = summary.PlayerSkills;
+    this.playerSkills = new PlayerSkill(summary.PlayerSkills);
 
     // TODO: See if the nightwave challenges use the same name in worldstate-data then translate
     this.challengeProgress = summary.ChallengeProgress;
