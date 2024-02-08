@@ -1,10 +1,12 @@
+import { mapColors } from './utils';
+
 export default class ItemConfig {
   constructor(config) {
     this.skins = config.Skins;
-    this.pricol = config.pricol;
-    this.sigcol = config.sigcol;
+    this.primaryColor = mapColors(config.pricol);
+    this.sigilColor = mapColors(config.sigcol);
     this.pvpUpgrades = config.PvpUpgrades;
-    this.attcol = config.attcol;
-    this.syancol = config.syancol;
+    this.attachmentsColor = mapColors(config.attcol);
+    this.syandanaColor = mapColors(config.syancol);
   }
 }

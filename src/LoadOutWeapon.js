@@ -1,6 +1,6 @@
 import ItemConfig from './ItemConfig';
 import Polarity from './Polarity';
-import { parseDate } from './utils';
+import { mapColors, parseDate } from './utils';
 
 export default class LoadOutWeapon {
   constructor(weapon) {
@@ -17,10 +17,10 @@ export default class LoadOutWeapon {
     this.polarity = weapon.Polarity.map((p) => new Polarity(p));
     this.focuseLens = weapon.FocusLens;
     this.customizationSlotPurchases = weapon.CustomizationSlotPurchases;
-    this.primaryColor = weapon.pricol;
-    this.attachmentColor = weapon.attcol;
-    this.syandanaColor = weapon.syancol;
-    this.sigilColor = weapon.sigilColor;
+    this.primaryColor = mapColors(weapon.pricol);
+    this.attachmentColor = mapColors(weapon.attcol);
+    this.syandanaColor = mapColors(weapon.syancol);
+    this.sigilColor = mapColors(weapon.sigilColor);
     if (weapon.InfestationDate) this.infestationDate = parseDate(weapon.InfestationDate);
   }
 }

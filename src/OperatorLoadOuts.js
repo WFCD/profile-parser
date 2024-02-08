@@ -1,13 +1,14 @@
-import { findItem } from './utils';
+import { mapColors } from './utils';
 
 export default class OperatorLoadOuts {
   constructor(loadout) {
-    this.skins = loadout.Skins.map(findItem);
-    this.primaryColor = loadout.pricol;
-    this.eyeColor = loadout.eyecol;
-    this.facial = loadout.facial;
-    this.sigilColor = loadout.sigilColor;
-    this.cloth = loadout.cloth;
+    this.skins = loadout.Skins;
+    this.primaryColor = mapColors(loadout.pricol);
+    this.sigilColor = mapColors(loadout.sigcol);
+    this.eyeColor = mapColors(loadout.eyecol);
+    this.facial = mapColors(loadout.facial);
+    this.sigilColor = mapColors(loadout.sigilColor);
+    this.cloth = mapColors(loadout.cloth);
     this.operatorAmp = loadout.OperatorAmp.$oid;
     this.upgrades = loadout.Upgrades;
     this.abilityOverride = loadout.AbilityOverride;
