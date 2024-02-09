@@ -12,17 +12,17 @@
     "types"
   ],
   "devDependencies": {
-    "@types/chai": "^4.2.16",
-    "@types/node-fetch": "^2.6.1",
-    "@wfcd/eslint-config": "^1.1.6",
-    "chai": "^4.3.4",
+    "@types/chai": "^4.3.11",
+    "@types/node-fetch": "^2.6.11",
+    "@wfcd/eslint-config": "^1.5.0",
+    "chai": "^4.4.1",
     "chai-json-equal": "^0.0.1",
-    "coveralls": "^3.1.0",
-    "install-peerdeps": "2.0.3",
-    "mocha": "^10.0.0",
-    "node-fetch": "^2.6.1",
+    "coveralls": "^3.1.1",
+    "install-peerdeps": "^2.0.3",
+    "mocha": "^10.3.0",
+    "node-fetch": "^2.7.0",
     "nyc": "^15.1.0",
-    "typescript": "^5.0.2"
+    "typescript": "^5.3.3"
   },
   "scripts": {
     "test": "nyc mocha",
@@ -32,7 +32,7 @@
     "prepublishOnly": "npm run build:types",
     "build:docs": "jsdoc -c .github/docs/conf.json -d docs",
     "build:types": "tsc -p tsconfig.declaration.json",
-    "postinstall": "install-peerdeps @wfcd/eslint-config@^1.1.6 -S"
+    "postinstall": "install-peerdeps @wfcd/eslint-config@^1.5.0 -S"
   },
   "author": "",
   "license": "MIT",
@@ -41,38 +41,10 @@
     "npm": ">=6.14.6"
   },
   "eslintConfig": {
-    "extends": "@wfcd",
+    "extends": "@wfcd/eslint-config/esm",
     "parser": "@babel/eslint-parser",
     "parserOptions": {
       "sourceType": "module"
-    },
-    "rules": {
-      "valid-jsdoc": [
-        "error",
-        {
-          "requireReturn": false,
-          "requireReturnDescription": false,
-          "preferType": {
-            "String": "string",
-            "Number": "number",
-            "Boolean": "boolean",
-            "Function": "function",
-            "object": "Object",
-            "date": "Date",
-            "error": "Error"
-          },
-          "prefer": {
-            "return": "returns"
-          }
-        }
-      ],
-      "no-underscore-dangle": "off",
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          "peerDependencies": true
-        }
-      ]
     }
   },
   "babel": {
@@ -84,5 +56,19 @@
       "@babel/plugin-proposal-private-methods"
     ]
   },
-  "prettier": "@wfcd/eslint-config/prettier"
+  "prettier": "@wfcd/eslint-config/prettier",
+  "mocha": {
+    "exit": true,
+    "spec": "test/**/*.spec.js"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "skip-full": true
+  },
+  "peerDependencies": {
+    "warframe-items": "^1.1261.22"
+  }
 }

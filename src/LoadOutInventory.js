@@ -1,6 +1,6 @@
-import LoadOutWeapon from './LoadOutWeapon';
-import WeaponSkin from './WeaponSkin';
-import XpInfo from './XpInfo';
+import LoadOutWeapon from './LoadOutWeapon.js';
+import WeaponSkin from './WeaponSkin.js';
+import XpInfo from './XpInfo.js';
 
 export default class LoadOutInventory {
   constructor(item) {

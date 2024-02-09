@@ -1,9 +1,9 @@
-import Affiliation from './Affiliations';
-import LoadOutInventory from './LoadOutInventory';
-import Mission from './Mission';
-import OperatorLoadOuts from './OperatorLoadOuts';
-import PlayerSkill from './PlayerSkill';
-import parseDate from './utils';
+import Affiliation from './Affiliations.js';
+import LoadOutInventory from './LoadOutInventory.js';
+import Mission from './Mission.js';
+import OperatorLoadOuts from './OperatorLoadOuts.js';
+import PlayerSkill from './PlayerSkill.js';
+import { parseDate } from './utils.js';
 
 export default class PlayerSummary {
   constructor(summary) {

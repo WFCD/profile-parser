@@ -1,4 +1,4 @@
-import { mapColors } from './utils';
+import { mapColors } from './utils.js';
 
 export default class ItemConfig {
   constructor(config) {

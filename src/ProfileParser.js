@@ -1,6 +1,6 @@
-import PlayerSummary from './PlayerSummary';
-import Stats from './Stats';
-import parseDate from './utils';
+import PlayerSummary from './PlayerSummary.js';
+import Stats from './Stats.js';
+import { parseDate } from './utils.js';
 
 export default class ProfileParser {
   constructor(profile) {

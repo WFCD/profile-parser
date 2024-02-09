@@ -1,4 +1,4 @@
-import { translatePolarity } from './utils';
+import { translatePolarity } from './utils.js';
 
 export default class Polarity {
   constructor(polarity) {

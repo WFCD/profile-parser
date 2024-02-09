@@ -1,10 +1,10 @@
-import Ability from './Ability';
-import Enemy from './Enemy';
-import Mission from './Mission';
-import Pvp from './Pvp';
-import Race from './Race';
-import Scan from './Scan';
-import Weapon from './Weapon';
+import Ability from './Ability.js';
+import Enemy from './Enemy.js';
+import Mission from './Mission.js';
+import Pvp from './Pvp.js';
+import Race from './Race.js';
+import Scan from './Scan.js';
+import Weapon from './Weapon.js';
 
 export default class Stats {
   constructor(stats) {

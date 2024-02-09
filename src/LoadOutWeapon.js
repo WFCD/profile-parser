@@ -1,6 +1,6 @@
-import ItemConfig from './ItemConfig';
-import Polarity from './Polarity';
-import { mapColors, parseDate } from './utils';
+import ItemConfig from './ItemConfig.js';
+import Polarity from './Polarity.js';
+import { mapColors, parseDate } from './utils.js';
 
 export default class LoadOutWeapon {
   constructor(weapon) {

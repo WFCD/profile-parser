@@ -1,4 +1,4 @@
-import Pixel from './Pixel';
+import Pixel from './Pixel.js';
 
 const epochZero = { $date: { $numberLong: 0 } };
 
