@@ -2,7 +2,7 @@ name: Release
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   verify:
@@ -43,4 +43,4 @@ jobs:
         with:
           semantic_version: 17
           branches: |
-            ['master']
+            ['main']
