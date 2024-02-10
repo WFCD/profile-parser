@@ -15,18 +15,18 @@
     "@types/chai": "^4.3.11",
     "@types/node-fetch": "^2.6.11",
     "@wfcd/eslint-config": "^1.5.0",
+    "c8": "^9.1.0",
     "chai": "^5.0.3",
     "chai-json-equal": "^0.0.1",
     "coveralls": "^3.1.1",
     "install-peerdeps": "^3.0.3",
     "mocha": "^10.3.0",
     "node-fetch": "^3.3.2",
-    "nyc": "^15.1.0",
     "typescript": "^5.3.3"
   },
   "scripts": {
-    "test": "nyc mocha",
-    "coverage": "npm test && nyc report --reporter=text-lcov | coveralls",
+    "test": "c8 mocha",
+    "coverage": "npm test && c8 report --reporter=text-lcov | coveralls",
     "lint": "eslint src/",
     "lint:fix": "eslint src/ test/ --fix",
     "prepublishOnly": "npm run build:types",
@@ -60,7 +60,7 @@
     "exit": true,
     "spec": "test/**/*.spec.js"
   },
-  "nyc": {
+  "c8": {
     "reporter": [
       "lcov",
       "text"
