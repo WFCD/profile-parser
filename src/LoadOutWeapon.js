@@ -17,10 +17,11 @@ export default class LoadOutWeapon {
     this.polarity = weapon.Polarity.map((p) => new Polarity(p));
     this.focuseLens = weapon.FocusLens;
     this.customizationSlotPurchases = weapon.CustomizationSlotPurchases;
-    this.primaryColor = mapColors(weapon.pricol);
-    this.attachmentColor = mapColors(weapon.attcol);
-    this.syandanaColor = mapColors(weapon.syancol);
-    this.sigilColor = mapColors(weapon.sigilColor);
+
+    if (weapon.pricol) this.primaryColor = mapColors(weapon.pricol.toString(16));
+    if (weapon.sigcol) this.sigilColor = mapColors(weapon.sigcol.toString(16));
+    if (weapon.attcol) this.attachmentsColor = mapColors(weapon.attcol.toString(16));
+    if (weapon.syancol) this.syandanaColor = mapColors(weapon.syancol.toString(16));
     if (weapon.InfestationDate) this.infestationDate = parseDate(weapon.InfestationDate);
   }
 }
