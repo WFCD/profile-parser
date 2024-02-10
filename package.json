@@ -37,7 +37,7 @@
   "author": "",
   "license": "MIT",
   "engines": {
-    "node": ">=12.18.3"
+    "node": ">=18.0.0"
   },
   "eslintConfig": {
     "extends": "@wfcd/eslint-config/esm",
