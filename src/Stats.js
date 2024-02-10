@@ -16,8 +16,8 @@ export default class Stats {
     this.missionsInterrupted = stats.MissionsInterrupted;
     this.missionsDumped = stats.MissionsDumped;
     this.pickupCount = stats.PickupCount;
-    this.weapons = stats.weapons.map((w) => new Weapon(w));
-    this.enemies = stats.enemies.map((e) => new Enemy(e));
+    this.weapons = stats.Weapons.map((w) => new Weapon(w));
+    this.enemies = stats.Enemies.map((e) => new Enemy(e));
     this.excavationEventScoreMax = stats.ExcavationEventScoreMax;
     this.forestEventScoreMax = stats.ForestEventScoreMax;
     this.forestEventScoreSum = stats.ForestEventScoreSum;

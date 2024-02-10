@@ -30,7 +30,7 @@ export default class PlayerSummary {
     this.created = parseDate(summary.Created);
     this.migratedToConsole = summary.MigratedToConsole;
     this.missions = summary.Missions.map((m) => new Mission(m));
-    this.affiliations = summary.map((a) => new Affiliation(a));
+    this.affiliations = summary.Affiliations.map((a) => new Affiliation(a));
     this.dailyAffiliation = summary.DailyAffiliation;
     this.dailyAffiliationPvp = summary.DailyAffiliationPvp;
     this.dailyAffiliationLibrary = summary.DailyAffiliationLibrary;
