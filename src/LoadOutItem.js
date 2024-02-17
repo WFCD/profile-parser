@@ -1,8 +1,10 @@
+import { parseDate } from 'warframe-worldstate-data/utilities';
+
 import ItemConfig from './ItemConfig.js';
 import Polarity from './Polarity.js';
-import { mapColors, parseDate } from './utils.js';
+import { findItem, mapColors } from './utils.js';
 
-export default class LoadOutWeapon {
+export default class LoadOutItem {
   constructor(weapon) {
     /**
      * Item ID
@@ -15,6 +17,8 @@ export default class LoadOutWeapon {
      * @type {String}
      */
     this.uniqueName = weapon.ItemType;
+
+    this.name = findItem(weapon.ItemType);
 
     /**
      * Item name
@@ -30,7 +34,7 @@ export default class LoadOutWeapon {
      * are both Tenet Diplos but the first one comes from a sister of parvo
      * @type {String}
      */
-    this.name = this.ItemName;
+    this.litchName = this.ItemName;
 
     /**
      * Configuration for this weapon. Such as colors and skins applied by the player

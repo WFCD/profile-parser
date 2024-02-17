@@ -18,7 +18,7 @@ export default class ItemConfig {
      * Array of PVP unique name upgrades applied
      * @type {Array<String>}
      */
-    this.pvpUpgrades = config.PvpUpgrades;
+    this.conclaveUpgrades = config.PvpUpgrades;
 
     /**
      * Primary colors applied to item if they exist

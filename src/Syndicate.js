@@ -1,7 +1,7 @@
 /**
  * Represents a player's progress with a Syndicate
  */
-export default class Affiliation {
+export default class Syndicate {
   /**
    * @param {Object} affiliation The syndicate data
    */
@@ -17,7 +17,7 @@ export default class Affiliation {
 
     /**
      * Current standing the player has with the syndicate
-     * @type {String}
+     * @type {number}
      */
     this.standing = affiliation.Standing;
 

@@ -1,4 +1,4 @@
-import LoadOutWeapon from './LoadOutWeapon.js';
+import LoadOutItem from './LoadOutItem.js';
 import WeaponSkin from './WeaponSkin.js';
 import XpInfo from './XpInfo.js';
 
@@ -12,27 +12,27 @@ export default class LoadOutInventory {
 
     /**
      * An array of the player's currently equiped Warframe (or powersuits)
-     * @type {LoadOutWeapon}
+     * @type {LoadOutItem}
      */
-    this.suits = item.Suits.map((s) => new LoadOutWeapon(s));
+    this.suits = item.Suits.map((s) => new LoadOutItem(s));
 
     /**
      * An array of the player's currently equiped secondary weapon
-     * @type {LoadOutWeapon}
+     * @type {LoadOutItem}
      */
-    this.pistols = item.Pistols.map((p) => new LoadOutWeapon(p));
+    this.secondary = item.Pistols.map((p) => new LoadOutItem(p));
 
     /**
      * An array of the player's currently equiped primary weapon
-     * @type {LoadOutWeapon}
+     * @type {LoadOutItem}
      */
-    this.longGuns = item.LongGuns.map((lg) => new LoadOutWeapon(lg));
+    this.primary = item.LongGuns.map((lg) => new LoadOutItem(lg));
 
     /**
      * An array of the player's currently equiped melee weapon
-     * @type {LoadOutWeapon}
+     * @type {LoadOutItem}
      */
-    this.melee = item.Melee.map((m) => new LoadOutWeapon(m));
+    this.melee = item.Melee.map((m) => new LoadOutItem(m));
 
     /**
      * Items that have counted towards the players mastery rank

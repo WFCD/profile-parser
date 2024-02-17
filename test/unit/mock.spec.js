@@ -9,7 +9,7 @@ import example from '../data/exampleData.json' with { type: 'json' };
 describe('Mock ProfileParser', () => {
   describe('#constructor', () => {
     it('should handle real data', () => {
-      assert.isOk(new ProfileParser(example));
+      assert.isOk(new ProfileParser(example, 'en'));
     });
   });
 });

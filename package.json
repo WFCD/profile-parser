@@ -32,7 +32,8 @@
     "prepublishOnly": "npm run build:types",
     "build:docs": "jsdoc -c .github/docs/conf.json -d docs",
     "build:types": "tsc -p tsconfig.declaration.json",
-    "postinstall": "install-peerdeps @wfcd/eslint-config@^1.5.1 -S"
+    "postinstall": "install-peerdeps @wfcd/eslint-config@^1.5.1 -S",
+    "validate": "npm ls"
   },
   "author": "",
   "license": "MIT",
@@ -72,6 +73,12 @@
     "skip-full": true
   },
   "peerDependencies": {
-    "warframe-items": "^1.1261.22"
-  }
+    "warframe-items": "^1.1261.22",
+    "warframe-worldstate-data": "2.1.0"
+  },
+  "pre-commit": [
+    "lint",
+    "validate",
+    "test"
+  ]
 }

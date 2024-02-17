@@ -1,14 +1,15 @@
-import Profile from './PlayerSummary.js';
+import { parseDate } from 'warframe-worldstate-data/utilities';
+
+import Profile from './Profile.js';
 import Stats from './Stats.js';
-import { parseDate } from './utils.js';
 
 export default class ProfileParser {
-  constructor(data) {
+  constructor(data, locale) {
     /**
      * Player's profile
      * @type {Profile}
      */
-    this.profile = new Profile(data.Results[0]);
+    this.profile = new Profile(data.Results[0], locale);
 
     // N/A
     this.techProjects = data.TechProjects;

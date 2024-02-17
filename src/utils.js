@@ -1,17 +1,8 @@
+import Items from 'warframe-items';
+
 import Pixel from './Pixel.js';
 
-const epochZero = { $date: { $numberLong: 0 } };
-
-/**
- * Returns a new Date constructed from a worldState date object
- * @param {Object} d The worldState date object
- * @returns {Date}
- */
-export function parseDate(d) {
-  const safeD = d || epochZero;
-  const dt = safeD.$date || epochZero.$date;
-  return new Date(safeD.$date ? Number(dt.$numberLong) : 1000 * d.sec);
-}
+const items = new Items();
 
 export function translatePolarity(pol = '') {
   if (pol.includes('AP_ATTACK')) {
@@ -77,4 +68,10 @@ export function mapColors(colors = undefined) {
     emissive: [safeColor(colors.m0), safeColor(colors.m1)].filter((c) => c),
     energy: [safeColor(colors.en), safeColor(colors.en1)].filter((c) => c),
   };
+}
+
+export function findItem(uname) {
+  return items
+    .filter((item) => item && typeof item !== 'undefined' && item.uniqueName)
+    .find((i) => i.uniqueName === uname);
 }

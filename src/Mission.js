@@ -1,10 +1,26 @@
+import { node, nodeEnemy, nodeMissionType } from 'warframe-worldstate-data/utilities';
+
 export default class Mission {
-  constructor(mission) {
+  constructor(mission, locale) {
+    const uniqueName = mission.Type || mission.Tag;
+
     /**
-     * Node unique name
+     * Node name
      * @type {String}
      */
-    this.uniqueName = mission.Type || mission.Tag;
+    this.node = node(uniqueName, locale);
+
+    /**
+     * Node mission type
+     * @type {String}
+     */
+    this.misstionType = nodeMissionType(uniqueName, locale);
+
+    /**
+     * Node faction
+     * @type {String}
+     */
+    this.faction = nodeEnemy(uniqueName, locale);
 
     /**
      * Highest score earned in this mission

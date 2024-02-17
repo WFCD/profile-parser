@@ -1,12 +1,14 @@
-import Affiliation from './Affiliations.js';
+import { parseDate } from 'warframe-worldstate-data/utilities';
+
+import ChallengeProgress from './ChallengeProgress.js';
+import Intrinsics from './Intrinsics.js';
 import LoadOutInventory from './LoadOutInventory.js';
 import Mission from './Mission.js';
 import OperatorLoadOuts from './OperatorLoadOuts.js';
-import PlayerSkill from './PlayerSkill.js';
-import { parseDate } from './utils.js';
+import Syndicate from './Syndicate.js';
 
 export default class Profile {
-  constructor(profile) {
+  constructor(profile, locale) {
     /**
      * Player's acount ID
      * @type {Stirng}
@@ -23,7 +25,7 @@ export default class Profile {
      * Mastery rank
      * @type {String}
      */
-    this.playLevel = profile.PlayerLevel;
+    this.masteryRank = profile.PlayerLevel;
 
     /**
      * Current loadout
@@ -33,15 +35,15 @@ export default class Profile {
 
     /**
      * Railjack and drifter Intrinsics
-     * @type {PlayerSkill}
+     * @type {Intrinsics}
      */
-    this.playerSkills = new PlayerSkill(profile.PlayerSkills);
+    this.intrinsics = new Intrinsics(profile.PlayerSkills);
 
     /**
      * Nightwave challenges progress
      * @type {}
      */
-    this.challengeProgress = profile.ChallengeProgress;
+    this.challengeProgress = profile.ChallengeProgress.map((c) => new ChallengeProgress(c));
 
     /**
      * Guild ID
@@ -119,90 +121,35 @@ export default class Profile {
      * List of completed missions and their completions
      * @type {MIssion}
      */
-    this.missions = profile.Missions.map((m) => new Mission(m));
+    this.missions = profile.Missions.map((m) => new Mission(m, locale));
 
     /**
-     * Player standing across all syndicates
-     * @type {Array<Affiliation>}
+     * Player standing and title across all syndicates
+     * @type {Array<Syndicate>}
      */
-    this.affiliations = profile.Affiliations.map((a) => new Affiliation(a));
+    this.syndicates = profile.Affiliations.map((a) => new Syndicate(a));
 
     /**
-     * Daily standing
-     * @type {number}
+     * Daily standing per Syndicate
+     *
+     * Faction syndicates all share daily standing
+     * @type {Map<String,number>}
      */
-    this.dailyAffiliation = profile.DailyAffiliation;
-
-    /**
-     * Daily Conclave standing
-     * @type {number}
-     */
-    this.dailyAffiliationPvp = profile.DailyAffiliationPvp;
-
-    /**
-     * Daily Simaris standing
-     * @type {number}
-     */
-    this.dailyAffiliationLibrary = profile.DailyAffiliationLibrary;
-
-    /**
-     * Daily Ostron standing
-     * @type {number}
-     */
-    this.dailyAffiliationCetus = profile.DailyAffiliationCetus;
-
-    /**
-     * Daily Quill standing
-     * @type {number}
-     */
-    this.dailyAffiliationQuills = profile.DailyAffiliationQuills;
-
-    /**
-     * Daily Solaris standing
-     * @type {number}
-     */
-    this.dailyAffiliationSolaris = profile.DailyAffiliationSolaris;
-
-    /**
-     * Daily Vent kids standing
-     * @type {number}
-     */
-    this.dailyAffiliationVentkids = profile.DailyAffiliationVentkids;
-
-    /**
-     * Daily Vox Solaris standing
-     * @type {number}
-     */
-    this.dailyAffiliationVox = profile.DailyAffiliationVox;
-
-    /**
-     * Daily Entrati standing
-     * @type {number}
-     */
-    this.dailyAffiliationEntrati = profile.DailyAffiliationEntrati;
-    /**
-     * Daily Necraloid standing
-     * @type {number}
-     */
-    this.dailyAffiliationNecraloid = profile.DailyAffiliationNecraloid;
-
-    /**
-     * Daily Holdfast standing
-     * @type {number}
-     */
-    this.dailyAffiliationZariman = profile.DailyAffiliationZariman;
-
-    /**
-     * Daily standing for Kahl's Garrison
-     * @type {number}
-     */
-    this.dailyAffiliationKahl = profile.DailyAffiliationKahl;
-
-    /**
-     * Daily Cavia standing
-     * @type {number}
-     */
-    this.dailyAffiliationCavia = profile.DailyAffiliationCavia;
+    this.dailyStanding = {
+      daily: profile.DailyAffiliation,
+      conclave: profile.DailyAffiliationPvp,
+      simaris: profile.DailyAffiliationLibrary,
+      ostron: profile.DailyAffiliationCetus,
+      quills: profile.DailyAffiliationQuills,
+      solaris: profile.DailyAffiliationSolaris,
+      ventKids: profile.DailyAffiliationVentkids,
+      voxSolaris: profile.DailyAffiliationVox,
+      entrati: profile.DailyAffiliationEntrati,
+      necraloid: profile.DailyAffiliationNecraloid,
+      holdfasts: profile.DailyAffiliationZariman,
+      kahl: profile.DailyAffiliationKahl,
+      cavia: profile.DailyAffiliationCavia,
+    };
 
     /**
      * Daily focus

@@ -25,7 +25,7 @@ export default class Enemy {
     this.headshots = enemy.headshots;
 
     /**
-     * The amount of kills that were executions (mercy kills)
+     * The amount of kills that were finishers
      * @type {number}
      */
     this.executions = enemy.executions;
