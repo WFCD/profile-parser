@@ -14,7 +14,7 @@
   "devDependencies": {
     "@types/chai": "^4.3.11",
     "@types/node-fetch": "^2.6.11",
-    "@wfcd/eslint-config": "^1.5.0",
+    "@wfcd/eslint-config": "^1.5.1",
     "c8": "^9.1.0",
     "chai": "^5.0.3",
     "chai-json-equal": "^0.0.1",
@@ -32,7 +32,7 @@
     "prepublishOnly": "npm run build:types",
     "build:docs": "jsdoc -c .github/docs/conf.json -d docs",
     "build:types": "tsc -p tsconfig.declaration.json",
-    "postinstall": "install-peerdeps @wfcd/eslint-config@^1.5.0 -S"
+    "postinstall": "install-peerdeps @wfcd/eslint-config@^1.5.1 -S"
   },
   "author": "",
   "license": "MIT",
@@ -43,7 +43,11 @@
     "extends": "@wfcd/eslint-config/esm",
     "parser": "@babel/eslint-parser",
     "parserOptions": {
-      "sourceType": "module"
+      "sourceType": "module",
+      "ecmaVersion": 6,
+      "ecmaFeatures": {
+        "modules": true
+      }
     }
   },
   "babel": {
