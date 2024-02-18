@@ -32,7 +32,7 @@
     "prepublishOnly": "npm run build:types",
     "build:docs": "jsdoc -c .github/docs/conf.json -d docs",
     "build:types": "tsc -p tsconfig.declaration.json",
-    "postinstall": "install-peerdeps @wfcd/eslint-config@^1.6.1 -S",
+    "postinstall": "install-peerdeps @wfcd/eslint-config@latest -S",
     "validate": "npm ls"
   },
   "author": "",
