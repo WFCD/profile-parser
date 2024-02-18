@@ -14,7 +14,7 @@
   "devDependencies": {
     "@types/chai": "^4.3.11",
     "@types/node-fetch": "^2.6.11",
-    "@wfcd/eslint-config": "^1.5.1",
+    "@wfcd/eslint-config": "^1.6.1",
     "c8": "^9.1.0",
     "chai": "^5.0.3",
     "chai-json-equal": "^0.0.1",
@@ -32,7 +32,7 @@
     "prepublishOnly": "npm run build:types",
     "build:docs": "jsdoc -c .github/docs/conf.json -d docs",
     "build:types": "tsc -p tsconfig.declaration.json",
-    "postinstall": "install-peerdeps @wfcd/eslint-config@^1.5.1 -S",
+    "postinstall": "install-peerdeps @wfcd/eslint-config@^1.6.1 -S",
     "validate": "npm ls"
   },
   "author": "",
@@ -48,6 +48,12 @@
       "ecmaVersion": 6,
       "ecmaFeatures": {
         "modules": true
+      },
+      "babelOptions": {
+        "plugins": [
+          "@babel/plugin-transform-class-properties",
+          "@babel/plugin-transform-private-methods"
+        ]
       }
     }
   },
@@ -56,8 +62,8 @@
       "@babel/preset-env"
     ],
     "plugins": [
-      "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-proposal-private-methods"
+      "@babel/plugin-transform-class-properties",
+      "@babel/plugin-transform-private-methods"
     ]
   },
   "prettier": "@wfcd/eslint-config/prettier",
