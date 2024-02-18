@@ -22,19 +22,9 @@ export default class LoadOutItem {
 
     /**
      * Item name
-     *
-     * notes:
-     * Looks like it's the same but have some additional information depending
-     * on the weapon
-     *
-     * i.e
-     * /Lotus/Language/Weapons/CrpBriefcaseAkimboPistolName|CAELLIA NOB
-     * /Lotus/Weapons/Corpus/Pistols/CrpBriefcaseAkimbo/CrpBriefcaseAkimboPistol
-     *
-     * are both Tenet Diplos but the first one comes from a sister of parvo
      * @type {String}
      */
-    this.litchName = this.ItemName;
+    this.itemName = this.ItemName;
 
     /**
      * Configuration for this weapon. Such as colors and skins applied by the player
