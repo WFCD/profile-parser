@@ -1,8 +1,8 @@
+import { colors, find } from 'warframe-items/utilities';
 import { parseDate } from 'warframe-worldstate-data/utilities';
 
 import ItemConfig from './ItemConfig.js';
 import Polarity from './Polarity.js';
-import { findItem, mapColors } from './utils.js';
 
 export default class LoadOutItem {
   constructor(weapon) {
@@ -18,7 +18,7 @@ export default class LoadOutItem {
      */
     this.uniqueName = weapon.ItemType;
 
-    this.name = findItem(weapon.ItemType);
+    this.name = find.findItem(weapon.ItemType);
 
     /**
      * Item name
@@ -89,25 +89,25 @@ export default class LoadOutItem {
      * Primary colors applied to item if they exist
      * @type {import('./utils.js').ColorMap}
      */
-    if (weapon.pricol) this.primaryColor = mapColors(weapon.pricol.toString(16));
+    if (weapon.pricol) this.primaryColor = colors.mapColors(weapon.pricol.toString(16));
 
     /**
      * Sigil colors applied to item if they exist
      * @type {import('./utils.js').ColorMap}
      */
-    if (weapon.sigcol) this.sigilColor = mapColors(weapon.sigcol.toString(16));
+    if (weapon.sigcol) this.sigilColor = colors.mapColors(weapon.sigcol.toString(16));
 
     /**
      * Attachment colors applied to item if they exist
      * @type {import('./utils.js').ColorMap}
      */
-    if (weapon.attcol) this.attachmentsColor = mapColors(weapon.attcol.toString(16));
+    if (weapon.attcol) this.attachmentsColor = colors.mapColors(weapon.attcol.toString(16));
 
     /**
      * Syandana colors applied to item if they exist
      * @type {import('./utils.js').ColorMap}
      */
-    if (weapon.syancol) this.syandanaColor = mapColors(weapon.syancol.toString(16));
+    if (weapon.syancol) this.syandanaColor = colors.mapColors(weapon.syancol.toString(16));
 
     /**
      * If set will show when the player's warframe was infested.

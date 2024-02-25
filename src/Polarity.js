@@ -1,4 +1,4 @@
-import { translatePolarity } from './utils.js';
+import { translatePolarity } from 'warframe-worldstate-data/utilities';
 
 export default class Polarity {
   constructor(polarity) {

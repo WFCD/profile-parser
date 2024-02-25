@@ -1,5 +1,4 @@
-import { mapColors } from './utils.js';
-
+import { colors } from 'warframe-items/utilities';
 /**
  * Represents the data configureation for an item
  */
@@ -24,24 +23,24 @@ export default class ItemConfig {
      * Primary colors applied to item if they exist
      * @type {import('./utils.js').ColorMap}
      */
-    if (config.pricol) this.primaryColor = mapColors(config.pricol.toString(16));
+    if (config.pricol) this.primaryColor = colors.mapColors(config.pricol.toString(16));
 
     /**
      * Sigil colors applied to item if they exist
      * @type {import('./utils.js').ColorMap}
      */
-    if (config.sigcol) this.sigilColor = mapColors(config.sigcol.toString(16));
+    if (config.sigcol) this.sigilColor = colors.mapColors(config.sigcol.toString(16));
 
     /**
      * Attachment colors applied to item if they exist
      * @type {import('./utils.js').ColorMap}
      */
-    if (config.attcol) this.attachmentsColor = mapColors(config.attcol.toString(16));
+    if (config.attcol) this.attachmentsColor = colors.mapColors(config.attcol.toString(16));
 
     /**
      * Syandana colors applied to item if they exist
      * @type {import('./utils.js').ColorMap}
      */
-    if (config.syancol) this.syandanaColor = mapColors(config.syancol.toString(16));
+    if (config.syancol) this.syandanaColor = colors.mapColors(config.syancol.toString(16));
   }
 }
