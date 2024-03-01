@@ -1,4 +1,6 @@
-import { colors } from 'warframe-items/utilities';
+import { colors, find } from 'warframe-items/utilities';
+
+import mapToHex from './Util.js';
 /**
  * Represents the data configureation for an item
  */
@@ -11,36 +13,38 @@ export default class ItemConfig {
      * Array of uniue names for the skins applied to item
      * @type {Array<String>}
      */
-    this.skins = config.Skins;
+    this.skins = config.Skins.filter(Boolean)
+      .map((s) => find.findItem(s))
+      .filter(Boolean);
 
     /**
      * Array of PVP unique name upgrades applied
      * @type {Array<String>}
      */
-    this.conclaveUpgrades = config.PvpUpgrades;
+    if (config.PvpUpgrades) this.conclaveUpgrades = config.PvpUpgrades;
 
     /**
      * Primary colors applied to item if they exist
      * @type {import('./utils.js').ColorMap}
      */
-    if (config.pricol) this.primaryColor = colors.mapColors(config.pricol.toString(16));
+    if (config.pricol) this.primaryColor = colors.mapColors(mapToHex(config.pricol));
 
     /**
      * Sigil colors applied to item if they exist
      * @type {import('./utils.js').ColorMap}
      */
-    if (config.sigcol) this.sigilColor = colors.mapColors(config.sigcol.toString(16));
+    if (config.sigcol) this.sigilColor = colors.mapColors(mapToHex(config.sigcol));
 
     /**
      * Attachment colors applied to item if they exist
      * @type {import('./utils.js').ColorMap}
      */
-    if (config.attcol) this.attachmentsColor = colors.mapColors(config.attcol.toString(16));
+    if (config.attcol) this.attachmentsColor = colors.mapColors(mapToHex(config.attcol));
 
     /**
      * Syandana colors applied to item if they exist
      * @type {import('./utils.js').ColorMap}
      */
-    if (config.syancol) this.syandanaColor = colors.mapColors(config.syancol.toString(16));
+    if (config.syancol) this.syandanaColor = colors.mapColors(mapToHex(config.syancol));
   }
 }

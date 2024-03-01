@@ -1,5 +1,7 @@
 import { colors } from 'warframe-items/utilities';
 
+import mapToHex from './Util.js';
+
 export default class OperatorLoadOuts {
   constructor(loadout) {
     /**
@@ -25,42 +27,42 @@ export default class OperatorLoadOuts {
      * Operator primary colors
      * @type {import('./utils.js').ColorMap}
      */
-    if (loadout.pricol) this.primaryColor = colors.mapColors(loadout.pricol.toString(16));
+    if (loadout.pricol) this.primaryColor = colors.mapColors(mapToHex(loadout.pricol));
 
     /**
      * Operator sigil colors
      * @type {import('./utils.js').ColorMap}
      */
-    if (loadout.sigcol) this.sigilColor = colors.mapColors(loadout.sigcol.toString(16));
+    if (loadout.sigcol) this.sigilColor = colors.mapColors(mapToHex(loadout.sigcol));
 
     /**
      * Operator attachment colors
      * @type {import('./utils.js').ColorMap}
      */
-    if (loadout.attcol) this.attachmentsColor = colors.mapColors(loadout.attcol.toString(16));
+    if (loadout.attcol) this.attachmentsColor = colors.mapColors(mapToHex(loadout.attcol));
 
     /**
      * Operator syandana colors
      * @type {import('./utils.js').ColorMap}
      */
-    if (loadout.syancol) this.syandanaColor = colors.mapColors(loadout.syancol.toString(16));
+    if (loadout.syancol) this.syandanaColor = colors.mapColors(mapToHex(loadout.syancol));
 
     /**
      * Operator eye colors
      * @type {import('./utils.js').ColorMap}
      */
-    if (loadout.eyecol) this.eyeColor = colors.mapColors(loadout.eyecol.toString(16));
+    if (loadout.eyecol) this.eyeColor = colors.mapColors(mapToHex(loadout.eyecol));
 
     /**
      * Operator facial colors
      * @type {import('./utils.js').ColorMap}
      */
-    if (loadout.facial) this.facial = colors.mapColors(loadout.facial.toString(16));
+    if (loadout.facial) this.facial = colors.mapColors(mapToHex(loadout.facial));
 
     /**
      * Operator cloth colors
      * @type {import('./utils.js').ColorMap}
      */
-    if (loadout.cloth) this.cloth = colors.mapColors(loadout.cloth.toString(16));
+    if (loadout.cloth) this.cloth = colors.mapColors(mapToHex(loadout.cloth));
   }
 }

@@ -18,13 +18,17 @@ export default class LoadOutItem {
      */
     this.uniqueName = weapon.ItemType;
 
+    /**
+     * Item in-game name
+     * @type {String}
+     */
     this.name = find.findItem(weapon.ItemType);
 
     /**
-     * Item name
+     * Item lich name
      * @type {String}
      */
-    this.itemName = this.ItemName;
+    this.itemName = weapon.ItemName;
 
     /**
      * Configuration for this weapon. Such as colors and skins applied by the player
@@ -87,31 +91,31 @@ export default class LoadOutItem {
 
     /**
      * Primary colors applied to item if they exist
-     * @type {import('./utils.js').ColorMap}
+     * @type {ColorMap}
      */
-    if (weapon.pricol) this.primaryColor = colors.mapColors(weapon.pricol.toString(16));
+    if (weapon.pricol) this.primaryColor = colors.mapColors(weapon.pricol);
 
     /**
      * Sigil colors applied to item if they exist
-     * @type {import('./utils.js').ColorMap}
+     * @type {ColorMap}
      */
     if (weapon.sigcol) this.sigilColor = colors.mapColors(weapon.sigcol.toString(16));
 
     /**
      * Attachment colors applied to item if they exist
-     * @type {import('./utils.js').ColorMap}
+     * @type {ColorMap}
      */
     if (weapon.attcol) this.attachmentsColor = colors.mapColors(weapon.attcol.toString(16));
 
     /**
      * Syandana colors applied to item if they exist
-     * @type {import('./utils.js').ColorMap}
+     * @type {ColorMap}
      */
     if (weapon.syancol) this.syandanaColor = colors.mapColors(weapon.syancol.toString(16));
 
     /**
      * If set will show when the player's warframe was infested.
-     * @type {import('./utils.js').ColorMap}
+     * @type {ColorMap}
      */
     if (weapon.InfestationDate) this.infestationDate = parseDate(weapon.InfestationDate);
   }
