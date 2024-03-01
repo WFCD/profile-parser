@@ -21,7 +21,7 @@ export default class ProfileParser {
     this.xpCacheExpiryDate = parseDate(data.XpCacheExpiryDate);
 
     // N/A
-    this.ceremonyResetDate = data.CeremonyResetDate;
+    this.ceremonyResetDate = parseDate(data.CeremonyResetDate);
 
     /**
      * Player stats
