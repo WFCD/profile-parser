@@ -65,7 +65,11 @@ describe('ItemConfig', () => {
       assert.strictEqual(skins.includes(undefined), false);
       assert.exists(primaryColor);
       assert.notExists(primaryColor.primaryColor);
-      assert.isEmpty(primaryColor.emissive);
+      const primary = primaryColor.primary.toJSON();
+      assert.exists(primary);
+      assert.strictEqual(primary.hex, '26D300');
+      assert.strictEqual(!!primary.isTransparent, false);
+      assert.isNotEmpty(primaryColor.emissive);
     });
   });
 });

@@ -1,6 +1,12 @@
+/**
+ * Map base10 int colors to hex color strings
+ * @param {Record<string, number | undefined>} colors color map
+ * @returns {Record<string, string>}
+ */
 export default function mapToHex(colors) {
-  const hex = new Map(Object.entries(colors));
-  hex.forEach((value, key, map) => map.set(key, value.toString(16)));
-
+  const hex = {};
+  Object.entries(colors).forEach(([key, /** @type {undefined | number}  */ value]) => {
+    hex[key] = Math.abs(value).toString(16).toUpperCase();
+  });
   return hex;
 }
