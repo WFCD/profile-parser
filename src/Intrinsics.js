@@ -7,60 +7,60 @@ export default class Intrinsics {
      * Railjack engineering rank
      * @type {number}
      */
-    this.engineeringRank = skills.LPS_ENGINEERING;
+    this.engineering = skills.LPS_ENGINEERING;
 
     /**
      * Railjack gunnery rank
      * @type {number}
      */
-    this.gunneryRank = skills.LPS_GUNNERY;
+    this.gunnery = skills.LPS_GUNNERY;
 
     /**
      * Railjack piloting rank
      * @type {number}
      */
-    this.pilotingRank = skills.LPS_PILOTING;
+    this.piloting = skills.LPS_PILOTING;
 
     /**
      * Railjack tactical rank
      * @type {number}
      */
-    this.tacticalRank = skills.LPS_TACTICAL;
+    this.tactical = skills.LPS_TACTICAL;
 
     /**
      * Railjack command rank
      * @type {number}
      */
-    this.commandRank = skills.LPS_COMMAND;
+    this.command = skills.LPS_COMMAND;
 
     // Not sure what the context for this one is either
     /**
      * @type {number}
      */
-    this.difter = skills.LPP_DRIFTER;
+    this.drifter = skills.LPP_DRIFTER;
 
     /**
      * Drifter riding rank
      * @type {number}
      */
-    this.ridingRank = skills.LPS_DRIFT_RIDING;
+    this.riding = skills.LPS_DRIFT_RIDING;
 
     /**
      * Drifter combat rank
      * @type {number}
      */
-    this.combatRank = skills.LPS_DRIFT_COMBAT;
+    this.combat = skills.LPS_DRIFT_COMBAT;
 
     /**
      * Drifter opportunity rank
      * @type {number}
      */
-    this.opportunityRank = skills.LPS_DRIFT_OPPORTUNITY;
+    this.opportunity = skills.LPS_DRIFT_OPPORTUNITY;
 
     /**
      * Drifter endurance rank
      * @type {number}
      */
-    this.enduranceRank = skills.LPS_DRIFT_ENDURANCE;
+    this.endurance = skills.LPS_DRIFT_ENDURANCE;
   }
 }
