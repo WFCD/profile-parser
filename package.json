@@ -4,6 +4,12 @@
   "description": "Parser for Digital Extreme's profile data",
   "type": "module",
   "main": "src/ProfileParser.js",
+  "exports": {
+    ".": {
+      "import": "./src/ProfileParser.js",
+      "types": "./index.d.ts"
+    }
+  },
   "public": true,
   "files": [
     "src",
@@ -21,7 +27,6 @@
     "coveralls": "^3.1.1",
     "install-peerdeps": "^3.0.3",
     "mocha": "^10.3.0",
-    "node-fetch": "^3.3.2",
     "typescript": "^5.3.3"
   },
   "scripts": {
