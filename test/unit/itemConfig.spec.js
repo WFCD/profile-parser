@@ -3,7 +3,7 @@ import { describe, it } from 'mocha';
 
 import ItemConfig from '../../src/ItemConfig.js';
 
-describe('Intrinsics', () => {
+describe('ItemConfig', () => {
   describe('#constructor', () => {
     it('should handle creating items when parsing data', () => {
       const config = {
@@ -56,14 +56,16 @@ describe('Intrinsics', () => {
         },
       };
 
-      const configCon = new ItemConfig(config);
-      const { skins } = configCon;
+      const { skins, primaryColor } = new ItemConfig(config);
 
       assert.strictEqual(
         skins.map((s) => s.uniqueName).includes('/Lotus/Upgrades/Skins/Berserker/ValkyrDeluxeHelmet'),
         true
       );
-      assert.strictEqual(configCon.skins.includes(undefined), false);
+      assert.strictEqual(skins.includes(undefined), false);
+      assert.exists(primaryColor);
+      assert.notExists(primaryColor.primaryColor);
+      assert.isEmpty(primaryColor.emissive);
     });
   });
 });

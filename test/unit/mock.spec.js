@@ -1,9 +1,8 @@
-/* eslint-disable prettier/prettier */
 import { assert } from 'chai';
 import { describe, it } from 'mocha';
+import ProfileParser from '@wfcd/profile-parser';
 
-import ProfileParser from '../../src/ProfileParser.js';
-import example from '../data/exampleData.json' with { type: 'json' };
+import example from '../data/exampleData.json' assert { type: 'json' };
 
 // Test the main class
 describe('Mock ProfileParser', () => {
