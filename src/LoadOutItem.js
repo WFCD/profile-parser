@@ -18,11 +18,18 @@ export default class LoadOutItem {
      */
     this.uniqueName = weapon.ItemType;
 
+    const item = find.findItem(weapon.ItemType);
+
     /**
      * Item in-game name
      * @type {String}
      */
-    this.name = find.findItem(weapon.ItemType);
+    this.name = item.name;
+
+    /**
+     * Complete item with stats
+     */
+    this.item = item;
 
     /**
      * Item lich name
