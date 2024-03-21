@@ -18,16 +18,15 @@
     "types"
   ],
   "devDependencies": {
-    "@types/chai": "^4.3.11",
-    "@types/node-fetch": "^2.6.11",
+    "@types/chai": "^4.3.14",
     "@wfcd/eslint-config": "^1.6.1",
     "c8": "^9.1.0",
-    "chai": "^5.0.3",
+    "chai": "^5.1.0",
     "chai-json-equal": "^0.0.1",
     "coveralls": "^3.1.1",
     "install-peerdeps": "^3.0.3",
     "mocha": "^10.3.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.3"
   },
   "scripts": {
     "test": "c8 mocha",
@@ -84,8 +83,8 @@
     "skip-full": true
   },
   "peerDependencies": {
-    "warframe-items": "^1.1262.1",
-    "warframe-worldstate-data": "^2.3.2"
+    "warframe-items": "^1.1262.9",
+    "warframe-worldstate-data": "^2.3.9"
   },
   "pre-commit": [
     "lint",
