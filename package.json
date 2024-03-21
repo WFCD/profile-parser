@@ -24,7 +24,9 @@
     "chai": "^5.1.0",
     "chai-json-equal": "^0.0.1",
     "coveralls": "^3.1.1",
+    "husky": "^9.0.11",
     "install-peerdeps": "^3.0.3",
+    "lint-staged": "^15.2.2",
     "mocha": "^10.3.0",
     "typescript": "^5.4.3"
   },
@@ -37,7 +39,7 @@
     "build:docs": "jsdoc -c .github/docs/conf.json -d docs",
     "build:types": "tsc -p tsconfig.declaration.json",
     "postinstall": "if [ \"$NODE_ENV\" = \"dev\" ] ; then npx -p install-peerdeps@latest install-peerdeps @wfcd/eslint-config@latest -S ; fi",
-    "validate": "npm ls"
+    "prepare": "husky"
   },
   "author": "",
   "license": "MIT",
@@ -86,9 +88,17 @@
     "warframe-items": "^1.1262.9",
     "warframe-worldstate-data": "^2.3.9"
   },
-  "pre-commit": [
-    "lint",
-    "validate",
-    "test"
-  ]
+  "lint-staged": {
+    "*.js": [
+      "eslint --cache --fix",
+      "npm test"
+    ],
+    "package*.json": [
+      "prettier --write",
+      "npm -q --no-progress dedupe"
+    ],
+    "*.{json,md,yaml}": [
+      "prettier --write"
+    ]
+  }
 }

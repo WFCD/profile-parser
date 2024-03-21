@@ -25,43 +25,43 @@ export default class OperatorLoadOuts {
 
     /**
      * Operator primary colors
-     * @type {import('./utils.js').ColorMap}
+     * @type {import('warframe-items').ColorMap}
      */
     if (loadout.pricol) this.primaryColor = colors.mapColors(mapToHex(loadout.pricol));
 
     /**
      * Operator sigil colors
-     * @type {import('./utils.js').ColorMap}
+     * @type {import('warframe-items').ColorMap}
      */
     if (loadout.sigcol) this.sigilColor = colors.mapColors(mapToHex(loadout.sigcol));
 
     /**
      * Operator attachment colors
-     * @type {import('./utils.js').ColorMap}
+     * @type {import('warframe-items').ColorMap}
      */
     if (loadout.attcol) this.attachmentsColor = colors.mapColors(mapToHex(loadout.attcol));
 
     /**
      * Operator syandana colors
-     * @type {import('./utils.js').ColorMap}
+     * @type {import('warframe-items').ColorMap}
      */
     if (loadout.syancol) this.syandanaColor = colors.mapColors(mapToHex(loadout.syancol));
 
     /**
      * Operator eye colors
-     * @type {import('./utils.js').ColorMap}
+     * @type {import('warframe-items').ColorMap}
      */
     if (loadout.eyecol) this.eyeColor = colors.mapColors(mapToHex(loadout.eyecol));
 
     /**
      * Operator facial colors
-     * @type {import('./utils.js').ColorMap}
+     * @type {import('warframe-items').ColorMap}
      */
     if (loadout.facial) this.facial = colors.mapColors(mapToHex(loadout.facial));
 
     /**
      * Operator cloth colors
-     * @type {import('./utils.js').ColorMap}
+     * @type {import('warframe-items').ColorMap}
      */
     if (loadout.cloth) this.cloth = colors.mapColors(mapToHex(loadout.cloth));
   }

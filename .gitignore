@@ -47,3 +47,6 @@ data.*.json
 .jshintrc
 
 .vscode/
+
+# generated at release as part of the package
+types/

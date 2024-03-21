@@ -1,6 +1,7 @@
 import { colors, find } from 'warframe-items/utilities';
 
 import mapToHex from './Util.js';
+
 /**
  * Represents the data configuration for an item
  */
@@ -10,7 +11,7 @@ export default class ItemConfig {
    */
   constructor(config) {
     /**
-     * Array of uniue names for the skins applied to item
+     * Array of unique names for the skins applied to item
      * @type {Array<String>}
      */
     this.skins = config.Skins.filter(Boolean)
@@ -25,25 +26,25 @@ export default class ItemConfig {
 
     /**
      * Primary colors applied to item if they exist
-     * @type {import('./utils.js').ColorMap}
+     * @type {import('warframe-items').ColorMap}
      */
     if (config.pricol) this.primaryColor = colors.mapColors(mapToHex(config.pricol));
 
     /**
      * Sigil colors applied to item if they exist
-     * @type {import('./utils.js').ColorMap}
+     * @type {import('warframe-items').ColorMap}
      */
     if (config.sigcol) this.sigilColor = colors.mapColors(mapToHex(config.sigcol));
 
     /**
      * Attachment colors applied to item if they exist
-     * @type {import('./utils.js').ColorMap}
+     * @type {import('warframe-items').ColorMap}
      */
     if (config.attcol) this.attachmentsColor = colors.mapColors(mapToHex(config.attcol));
 
     /**
      * Syandana colors applied to item if they exist
-     * @type {import('./utils.js').ColorMap}
+     * @type {import('warframe-items').ColorMap}
      */
     if (config.syancol) this.syandanaColor = colors.mapColors(mapToHex(config.syancol));
   }
