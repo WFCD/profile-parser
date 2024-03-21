@@ -7,7 +7,7 @@
   "exports": {
     ".": {
       "import": "./src/ProfileParser.js",
-      "types": "./index.d.ts"
+      "types": "./types/index.d.ts"
     }
   },
   "public": true,
