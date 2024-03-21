@@ -1,0 +1,21 @@
+{
+    "inlcude": [
+        "lib/**/*.js"
+    ],
+    "exclude": [
+        "test/**/*.*",
+        "types/**/*.*",
+        "node_modules/**/*.*",
+        "coverage/**/*.*"
+    ],
+    "compilerOptions": {
+        "outDir": "./types",
+        "declaration": true,
+        "noEmit": false,
+        "allowJs": true,
+        "emitDeclarationOnly": true,
+        "lib": [
+            "es6"
+        ]
+    }
+}
