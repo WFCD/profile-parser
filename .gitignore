@@ -50,3 +50,6 @@ data.*.json
 
 # generated at release as part of the package
 types/
+
+# eslint cache
+.eslintcache
