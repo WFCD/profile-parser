@@ -1,8 +1,8 @@
+import ProfileParser from '@wfcd/profile-parser';
 import { assert } from 'chai';
 import { describe, it } from 'mocha';
-import ProfileParser from '@wfcd/profile-parser';
 
-import example from '../data/exampleData.json' assert { type: 'json' };
+import example from '../data/OrnsteinTheSlayer.json' assert { type: 'json' };
 
 // Test the main class
 describe('Mock ProfileParser', () => {
