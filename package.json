@@ -85,7 +85,7 @@
     "skip-full": true
   },
   "peerDependencies": {
-    "warframe-items": "^1.1262.9",
+    "warframe-items": "^1.1262.30",
     "warframe-worldstate-data": "^2.5.0"
   },
   "lint-staged": {
