@@ -1,3 +1,5 @@
+import { find } from 'warframe-items/utilities';
+
 export default class XpInfo {
   constructor(info) {
     /**
@@ -11,5 +13,11 @@ export default class XpInfo {
      * @type {number}
      */
     this.xp = info.XP;
+
+    /**
+     * The item corrosponding to the unique name.
+     * @type {import('warframe-items').Item | undefined}
+     */
+    this.item = find.findItem(info.ItemType);
   }
 }

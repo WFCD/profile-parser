@@ -1,5 +1,5 @@
 import { colors, find } from 'warframe-items/utilities';
-import { parseDate } from 'warframe-worldstate-data/utilities';
+import { parseDate, toTitleCase } from 'warframe-worldstate-data/utilities';
 
 import ItemConfig from './ItemConfig.js';
 import Polarity from './Polarity.js';
@@ -19,23 +19,29 @@ export default class LoadOutItem {
     this.uniqueName = weapon.ItemType;
 
     const item = find.findItem(weapon.ItemType);
+    if (item) {
+      /**
+       * Item in-game name
+       * @type {String}
+       */
+      this.name = item.name;
 
-    /**
-     * Item in-game name
-     * @type {String}
-     */
-    this.name = item.name;
+      /**
+       * Complete item from Warframe-items
+       * @type {import('warframe-items').Item}
+       */
+      this.item = item;
+    }
 
-    /**
-     * Complete item with stats
-     */
-    this.item = item;
+    if (weapon.ItemName) {
+      const [, nemesis] = weapon.ItemName.split('|');
 
-    /**
-     * Item lich name
-     * @type {String}
-     */
-    this.itemName = weapon.ItemName;
+      /**
+       * Item lich name
+       * @type {String}
+       */
+      this.nemesis = toTitleCase(nemesis);
+    }
 
     /**
      * Configuration for this weapon. Such as colors and skins applied by the player
