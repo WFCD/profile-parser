@@ -2,6 +2,9 @@
 
 import { archonShardColor, archonShardUpgradeType } from 'warframe-worldstate-data/utilities';
 
+/**
+ * Represents an Archon shard
+ */
 export default class ArchonCrystal {
   constructor(crystal, local) {
     /**

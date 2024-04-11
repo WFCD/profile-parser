@@ -1,5 +1,8 @@
 /** @module */
 
+/**
+ * Represents a player's used weapon stats
+ */
 export default class Weapon {
   constructor(weapon) {
     /**

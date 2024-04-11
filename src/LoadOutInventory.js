@@ -4,6 +4,9 @@ import LoadOutItem from './LoadOutItem.js';
 import WeaponSkin from './WeaponSkin.js';
 import XpInfo from './XpInfo.js';
 
+/**
+ * Player loudout
+ */
 export default class LoadOutInventory {
   constructor(item) {
     /**

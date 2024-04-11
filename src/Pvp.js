@@ -1,5 +1,8 @@
 /** @module */
 
+/**
+ * Player's conclave stats
+ */
 export default class Pvp {
   constructor(pvp) {
     /**

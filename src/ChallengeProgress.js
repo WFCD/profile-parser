@@ -1,5 +1,8 @@
 /** @module */
 
+/**
+ * Player completed or in progress challenges
+ */
 export default class ChallengeProgress {
   constructor(challenge) {
     /**

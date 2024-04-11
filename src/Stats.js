@@ -8,6 +8,9 @@ import Race from './Race.js';
 import Scan from './Scan.js';
 import Weapon from './Weapon.js';
 
+/**
+ * A player's overall career stats
+ */
 export default class Stats {
   /**
    *

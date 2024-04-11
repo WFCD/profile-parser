@@ -9,6 +9,9 @@ import Mission from './Mission.js';
 import OperatorLoadOuts from './OperatorLoadOuts.js';
 import Syndicate from './Syndicate.js';
 
+/**
+ * A player's profile
+ */
 export default class Profile {
   constructor(profile, locale) {
     /**

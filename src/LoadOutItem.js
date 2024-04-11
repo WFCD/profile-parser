@@ -6,6 +6,9 @@ import { parseDate, toTitleCase } from 'warframe-worldstate-data/utilities';
 import ItemConfig from './ItemConfig.js';
 import Polarity from './Polarity.js';
 
+/**
+ * An an item in LoadOutInventory
+ */
 export default class LoadOutItem {
   constructor(weapon) {
     /**

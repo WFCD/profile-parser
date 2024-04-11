@@ -2,6 +2,9 @@
 
 import { translatePolarity } from 'warframe-worldstate-data/utilities';
 
+/**
+ * A polarity in a LoadOutItem
+ */
 export default class Polarity {
   constructor(polarity) {
     /**

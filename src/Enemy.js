@@ -1,5 +1,8 @@
 /** @module */
 
+/**
+ * An enemy killed/executed by player
+ */
 export default class Enemy {
   /**
    * @param {Object} enemy The enemy

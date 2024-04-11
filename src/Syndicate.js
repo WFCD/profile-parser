@@ -1,10 +1,13 @@
 /** @module */
 
+import { syndicate } from 'warframe-worldstate-data/utilities';
+
 export default class Syndicate {
   /**
    * @param {Object} affiliation The syndicate data
+   * @param {string} locale  locale code
    */
-  constructor(affiliation) {
+  constructor(affiliation, locale) {
     // TODO: name is readable but still might want to clean them up
     // i.e "NewLokaSyndicate" can be "New Loka"" instead
 
@@ -12,7 +15,7 @@ export default class Syndicate {
      * Name of the syndicate
      * @type {String}
      */
-    this.name = affiliation.Tag;
+    this.name = syndicate(affiliation.Tag, locale);
 
     /**
      * Current standing the player has with the syndicate

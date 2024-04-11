@@ -2,6 +2,9 @@
 
 import { node, nodeEnemy, nodeMissionType } from 'warframe-worldstate-data/utilities';
 
+/**
+ * A mission completed by the player
+ */
 export default class Mission {
   constructor(mission, locale) {
     const uniqueName = mission.Type || mission.Tag;

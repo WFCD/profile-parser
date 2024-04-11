@@ -1,5 +1,8 @@
 /** @module */
 
+/**
+ * Represents a k-drive race
+ */
 export default class Race {
   constructor(race) {
     /**
