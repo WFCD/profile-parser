@@ -1,7 +1,6 @@
-/** @module */
-
 /**
  * A weapon skin
+ * @module
  */
 export default class WeaponSkin {
   constructor(skin) {

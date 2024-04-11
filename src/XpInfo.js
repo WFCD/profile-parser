@@ -1,9 +1,8 @@
-/** @module */
-
 import { find } from 'warframe-items/utilities';
 
 /**
  * An item that has contributed to a player's mastery rank
+ * @module
  */
 export default class XpInfo {
   constructor(info) {

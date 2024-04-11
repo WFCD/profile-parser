@@ -1,7 +1,9 @@
-/** @module */
-
 import { syndicate } from 'warframe-worldstate-data/utilities';
 
+/**
+ * Represents a syndicate
+ * @module
+ */
 export default class Syndicate {
   /**
    * @param {Object} affiliation The syndicate data

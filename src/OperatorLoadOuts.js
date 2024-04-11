@@ -1,11 +1,10 @@
-/** @module */
-
 import { colors } from 'warframe-items/utilities';
 
 import mapToHex from './Util.js';
 
 /**
  * Player's operator loadout
+ * @module
  */
 export default class OperatorLoadOuts {
   constructor(loadout) {

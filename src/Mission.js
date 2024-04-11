@@ -1,9 +1,8 @@
-/** @module */
-
 import { node, nodeEnemy, nodeMissionType } from 'warframe-worldstate-data/utilities';
 
 /**
  * A mission completed by the player
+ * @module
  */
 export default class Mission {
   constructor(mission, locale) {

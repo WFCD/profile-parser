@@ -1,5 +1,3 @@
-/** @module */
-
 import { parseDate } from 'warframe-worldstate-data/utilities';
 
 import Profile from './Profile.js';
@@ -7,6 +5,7 @@ import Stats from './Stats.js';
 
 /**
  * Parser entry point
+ * @module
  */
 export default class ProfileParser {
   constructor(data, locale) {

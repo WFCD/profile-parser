@@ -1,7 +1,6 @@
-/** @module */
-
 /**
  * Player's intrinsics ranks
+ * @module
  */
 export default class Intrinsics {
   constructor(skills) {

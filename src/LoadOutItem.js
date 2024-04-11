@@ -1,5 +1,3 @@
-/** @module */
-
 import { colors, find } from 'warframe-items/utilities';
 import { parseDate, toTitleCase } from 'warframe-worldstate-data/utilities';
 
@@ -8,6 +6,7 @@ import Polarity from './Polarity.js';
 
 /**
  * An an item in LoadOutInventory
+ * @module
  */
 export default class LoadOutItem {
   constructor(weapon) {

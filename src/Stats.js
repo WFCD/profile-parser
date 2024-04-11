@@ -1,5 +1,3 @@
-/** @module */
-
 import Ability from './Ability.js';
 import Enemy from './Enemy.js';
 import Mission from './Mission.js';
@@ -10,6 +8,7 @@ import Weapon from './Weapon.js';
 
 /**
  * A player's overall career stats
+ * @module
  */
 export default class Stats {
   /**
