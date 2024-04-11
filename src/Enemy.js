@@ -32,6 +32,7 @@ export default class Enemy {
 
     /**
      * The amount of kills that were assits
+     * @type {number}
      */
     this.assists = enemy.assists;
 

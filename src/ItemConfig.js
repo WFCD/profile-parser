@@ -26,25 +26,25 @@ export default class ItemConfig {
 
     /**
      * Primary colors applied to item if they exist
-     * @type {import('warframe-items').ColorMap}
+     * @type {module:"warframe-items".ColorMap}
      */
     if (config.pricol) this.primaryColor = colors.mapColors(mapToHex(config.pricol));
 
     /**
      * Sigil colors applied to item if they exist
-     * @type {import('warframe-items').ColorMap}
+     * @type {module:"warframe-items".ColorMap}
      */
     if (config.sigcol) this.sigilColor = colors.mapColors(mapToHex(config.sigcol));
 
     /**
      * Attachment colors applied to item if they exist
-     * @type {import('warframe-items').ColorMap}
+     * @type {module:"warframe-items".ColorMap}
      */
     if (config.attcol) this.attachmentsColor = colors.mapColors(mapToHex(config.attcol));
 
     /**
      * Syandana colors applied to item if they exist
-     * @type {import('warframe-items').ColorMap}
+     * @type {module:"warframe-items".ColorMap}
      */
     if (config.syancol) this.syandanaColor = colors.mapColors(mapToHex(config.syancol));
   }

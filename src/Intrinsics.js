@@ -1,6 +1,9 @@
 export default class Intrinsics {
   constructor(skills) {
     // I know this is railjack but I'm not sure what the context is
+    /**
+     * @type {number}
+     */
     this.space = skills.LPP_SPACE;
 
     /**

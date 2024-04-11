@@ -28,7 +28,7 @@ export default class LoadOutItem {
 
       /**
        * Complete item from Warframe-items
-       * @type {import('warframe-items').Item}
+       * @type {module:"warframe-items".Item}
        */
       this.item = item;
     }

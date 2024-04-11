@@ -16,7 +16,7 @@ export default class XpInfo {
 
     /**
      * The item corrosponding to the unique name.
-     * @type {import('warframe-items').Item | undefined}
+     * @type {module:"warframe-items".Item | undefined}
      */
     this.item = find.findItem(info.ItemType);
   }
