@@ -1,0 +1,104 @@
+{
+  "name": "@wfcd/profile-parser",
+  "version": "0.0-dev",
+  "description": "Parser for Digital Extreme's profile data",
+  "type": "module",
+  "main": "src/ProfileParser.js",
+  "exports": {
+    ".": {
+      "import": "./src/ProfileParser.js",
+      "types": "./types/index.d.ts"
+    }
+  },
+  "public": true,
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md",
+    "types"
+  ],
+  "devDependencies": {
+    "@types/chai": "^4.3.14",
+    "@wfcd/eslint-config": "^1.6.1",
+    "c8": "^9.1.0",
+    "chai": "^5.1.0",
+    "chai-json-equal": "^0.0.1",
+    "coveralls": "^3.1.1",
+    "husky": "^9.0.11",
+    "install-peerdeps": "^3.0.3",
+    "lint-staged": "^15.2.2",
+    "mocha": "^10.3.0",
+    "typescript": "^5.4.3"
+  },
+  "scripts": {
+    "test": "c8 mocha",
+    "coverage": "npm test && c8 report --reporter=text-lcov | coveralls",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ test/ --fix",
+    "prepublishOnly": "npm run build:types",
+    "build:docs": "jsdoc -c .github/docs/conf.json -d docs",
+    "build:types": "tsc -p tsconfig.declaration.json",
+    "postinstall": "if [ \"$NODE_ENV\" = \"dev\" ] ; then npx -p install-peerdeps@latest install-peerdeps @wfcd/eslint-config@latest -S ; fi",
+    "prepare": "husky"
+  },
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "eslintConfig": {
+    "extends": "@wfcd/eslint-config/esm",
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 6,
+      "ecmaFeatures": {
+        "modules": true
+      },
+      "babelOptions": {
+        "plugins": [
+          "@babel/plugin-transform-class-properties",
+          "@babel/plugin-transform-private-methods"
+        ]
+      }
+    }
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-class-properties",
+      "@babel/plugin-transform-private-methods"
+    ]
+  },
+  "prettier": "@wfcd/eslint-config/prettier",
+  "mocha": {
+    "exit": true,
+    "spec": "test/**/*.spec.js"
+  },
+  "c8": {
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "skip-full": true
+  },
+  "peerDependencies": {
+    "warframe-items": "^1.1262.30",
+    "warframe-worldstate-data": "^2.5.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --cache --fix",
+      "npm test"
+    ],
+    "package*.json": [
+      "prettier --write",
+      "npm -q --no-progress dedupe"
+    ],
+    "*.{json,md,yaml}": [
+      "prettier --write"
+    ]
+  }
+}
