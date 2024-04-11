@@ -1,6 +1,6 @@
 {
   "name": "@wfcd/profile-parser",
-  "version": "0.0-dev",
+  "version": "0.0.0",
   "description": "Parser for Digital Extreme's profile data",
   "type": "module",
   "main": "src/ProfileParser.js",
