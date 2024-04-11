@@ -1,3 +1,5 @@
+/** @module */
+
 import { colors, find } from 'warframe-items/utilities';
 import { parseDate, toTitleCase } from 'warframe-worldstate-data/utilities';
 

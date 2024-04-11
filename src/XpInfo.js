@@ -1,3 +1,5 @@
+/** @module */
+
 import { find } from 'warframe-items/utilities';
 
 export default class XpInfo {

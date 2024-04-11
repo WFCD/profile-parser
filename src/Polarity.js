@@ -1,3 +1,5 @@
+/** @module */
+
 import { translatePolarity } from 'warframe-worldstate-data/utilities';
 
 export default class Polarity {

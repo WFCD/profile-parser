@@ -1,6 +1,5 @@
-/**
- * Represents a player's progress with a Syndicate
- */
+/** @module */
+
 export default class Syndicate {
   /**
    * @param {Object} affiliation The syndicate data

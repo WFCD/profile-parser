@@ -1,3 +1,5 @@
+/** @module */
+
 export default class Scan {
   constructor(scan) {
     /**

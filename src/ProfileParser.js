@@ -1,3 +1,5 @@
+/** @module */
+
 import { parseDate } from 'warframe-worldstate-data/utilities';
 
 import Profile from './Profile.js';

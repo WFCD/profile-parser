@@ -1,3 +1,5 @@
+/** @module */
+
 import Ability from './Ability.js';
 import Enemy from './Enemy.js';
 import Mission from './Mission.js';
@@ -6,9 +8,6 @@ import Race from './Race.js';
 import Scan from './Scan.js';
 import Weapon from './Weapon.js';
 
-/**
- * Player stats
- */
 export default class Stats {
   /**
    *

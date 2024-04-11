@@ -1,6 +1,5 @@
-/**
- * Represents an ability used by the player
- */
+/** @module */
+
 export default class Ability {
   /**
    * @param {Object} ability The ability

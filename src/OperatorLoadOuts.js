@@ -1,3 +1,5 @@
+/** @module */
+
 import { colors } from 'warframe-items/utilities';
 
 import mapToHex from './Util.js';

@@ -1,3 +1,5 @@
+/** @module */
+
 import { node, nodeEnemy, nodeMissionType } from 'warframe-worldstate-data/utilities';
 
 export default class Mission {
