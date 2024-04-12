@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>@wfcd/profile-parser Source: Syndicate.js</title>
+	<title>@wfcd/profile-parser Module: Util</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -60,54 +60,210 @@
 <div class="row">
 
 	
-	<div class="col-md-12">
+	<div class="col-md-8">
 	
 		<div id="main">
 			
 
-		<h1 class="page-title">Source: Syndicate.js</h1>
-    
+	<h1 class="page-title">Module: Util</h1>
 <section>
-    <article>
-        <pre
-            class="sunlight-highlight-javascript linenums">import { syndicate } from 'warframe-worldstate-data/utilities';
 
-/**
- * Represents a syndicate
- * @module
- */
-export default class Syndicate {
-  /**
-   * @param {Object} affiliation The syndicate data
-   * @param {string} locale  locale code
-   */
-  constructor(affiliation, locale) {
-    // TODO: name is readable but still might want to clean them up
-    // i.e "NewLokaSyndicate" can be "New Loka"" instead
+<header>
+    
+        
+            
+        
+    
+</header>
 
-    /**
-     * Name of the syndicate
-     * @type {String}
-     */
-    this.name = syndicate(affiliation.Tag, locale);
 
-    /**
-     * Current standing the player has with the syndicate
-     * @type {number}
-     */
-    this.standing = affiliation.Standing;
+<article>
+    <div class="container-overview">
+    
+        
 
-    /**
-     * The player's current syndicate title
-     * @type {String}
-     */
-    this.title = affiliation.Title;
-  }
-}
-</pre>
-    </article>
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="module:Util"><span class="type-signature"></span>(require("Util"))(colors)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Map base10 int colors to hex color strings
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>colors</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Record.&lt;string, (number|undefined)></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">color map</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="Util.js.html">Util.js</a>,
+				 <a href="Util.js.html#sunlight-1-line-8">line 8</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Record.&lt;string, string></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
 </section>
-
 
 
 
@@ -117,6 +273,10 @@ export default class Syndicate {
 
 	<div class="clearfix"></div>
 
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
 	
 
 </div>

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>@wfcd/profile-parser Source: Syndicate.js</title>
+	<title>@wfcd/profile-parser Source: ArchonCrystal.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -65,43 +65,30 @@
 		<div id="main">
 			
 
-		<h1 class="page-title">Source: Syndicate.js</h1>
+		<h1 class="page-title">Source: ArchonCrystal.js</h1>
     
 <section>
     <article>
         <pre
-            class="sunlight-highlight-javascript linenums">import { syndicate } from 'warframe-worldstate-data/utilities';
+            class="sunlight-highlight-javascript linenums">import { archonShardColor, archonShardUpgradeType } from 'warframe-worldstate-data/utilities';
 
 /**
- * Represents a syndicate
+ * Represents an Archon shard
  * @module
  */
-export default class Syndicate {
-  /**
-   * @param {Object} affiliation The syndicate data
-   * @param {string} locale  locale code
-   */
-  constructor(affiliation, locale) {
-    // TODO: name is readable but still might want to clean them up
-    // i.e "NewLokaSyndicate" can be "New Loka"" instead
-
+export default class ArchonCrystal {
+  constructor(crystal, local) {
     /**
-     * Name of the syndicate
+     * Archon shard color
      * @type {String}
      */
-    this.name = syndicate(affiliation.Tag, locale);
+    this.color = archonShardColor(crystal.Color, local);
 
     /**
-     * Current standing the player has with the syndicate
-     * @type {number}
-     */
-    this.standing = affiliation.Standing;
-
-    /**
-     * The player's current syndicate title
+     * Archon shard modifier
      * @type {String}
      */
-    this.title = affiliation.Title;
+    this.modifier = archonShardUpgradeType(crystal.Color, crystal.UpgradeType, local);
   }
 }
 </pre>

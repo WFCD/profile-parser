@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>@wfcd/profile-parser Source: Syndicate.js</title>
+	<title>@wfcd/profile-parser Module: LoadOutInventory</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -60,54 +60,590 @@
 <div class="row">
 
 	
-	<div class="col-md-12">
+	<div class="col-md-8">
 	
 		<div id="main">
 			
 
-		<h1 class="page-title">Source: Syndicate.js</h1>
-    
+	<h1 class="page-title">Module: LoadOutInventory</h1>
 <section>
-    <article>
-        <pre
-            class="sunlight-highlight-javascript linenums">import { syndicate } from 'warframe-worldstate-data/utilities';
 
-/**
- * Represents a syndicate
- * @module
- */
-export default class Syndicate {
-  /**
-   * @param {Object} affiliation The syndicate data
-   * @param {string} locale  locale code
-   */
-  constructor(affiliation, locale) {
-    // TODO: name is readable but still might want to clean them up
-    // i.e "NewLokaSyndicate" can be "New Loka"" instead
+<header>
+    
+</header>
 
-    /**
-     * Name of the syndicate
-     * @type {String}
-     */
-    this.name = syndicate(affiliation.Tag, locale);
 
-    /**
-     * Current standing the player has with the syndicate
-     * @type {number}
-     */
-    this.standing = affiliation.Standing;
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description">Player loudout</div>
+        
 
-    /**
-     * The player's current syndicate title
-     * @type {String}
-     */
-    this.title = affiliation.Title;
-  }
-}
-</pre>
-    </article>
+        
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutInventory.js.html">LoadOutInventory.js</a>,
+				 <a href="LoadOutInventory.js.html#sunlight-1-line-5">line 5</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+<hr>
+<dt class="name" id="melee">
+    <h4 id="melee"><span class="type-signature"></span>melee<span class="type-signature"> :LoadOutItem</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        An array of the player's currently equiped melee weapon
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">LoadOutItem</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutInventory.js.html">LoadOutInventory.js</a>,
+				 <a href="LoadOutInventory.js.html#sunlight-1-line-39">line 39</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="primary">
+    <h4 id="primary"><span class="type-signature"></span>primary<span class="type-signature"> :LoadOutItem</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        An array of the player's currently equiped primary weapon
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">LoadOutItem</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutInventory.js.html">LoadOutInventory.js</a>,
+				 <a href="LoadOutInventory.js.html#sunlight-1-line-33">line 33</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="secondary">
+    <h4 id="secondary"><span class="type-signature"></span>secondary<span class="type-signature"> :LoadOutItem</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        An array of the player's currently equiped secondary weapon
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">LoadOutItem</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutInventory.js.html">LoadOutInventory.js</a>,
+				 <a href="LoadOutInventory.js.html#sunlight-1-line-27">line 27</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="suits">
+    <h4 id="suits"><span class="type-signature"></span>suits<span class="type-signature"> :LoadOutItem</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        An array of the player's currently equiped Warframe (or powersuits)
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">LoadOutItem</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutInventory.js.html">LoadOutInventory.js</a>,
+				 <a href="LoadOutInventory.js.html#sunlight-1-line-21">line 21</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="weaponSkins">
+    <h4 id="weaponSkins"><span class="type-signature"></span>weaponSkins<span class="type-signature"> :WeaponSkin</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Skins applied to weapons
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">WeaponSkin</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutInventory.js.html">LoadOutInventory.js</a>,
+				 <a href="LoadOutInventory.js.html#sunlight-1-line-15">line 15</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="xpInfo">
+    <h4 id="xpInfo"><span class="type-signature"></span>xpInfo<span class="type-signature"> :XpInfo</span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Items that have counted towards the players mastery rank
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">XpInfo</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutInventory.js.html">LoadOutInventory.js</a>,
+				 <a href="LoadOutInventory.js.html#sunlight-1-line-45">line 45</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+
+    
+</article>
+
 </section>
-
 
 
 
@@ -117,6 +653,10 @@ export default class Syndicate {
 
 	<div class="clearfix"></div>
 
+	
+		<div class="col-md-3">
+			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
+		</div>
 	
 
 </div>
