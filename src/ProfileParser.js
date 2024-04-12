@@ -3,6 +3,10 @@ import { parseDate } from 'warframe-worldstate-data/utilities';
 import Profile from './Profile.js';
 import Stats from './Stats.js';
 
+/**
+ * Parser entry point
+ * @module
+ */
 export default class ProfileParser {
   constructor(data, locale) {
     /**
@@ -11,16 +15,24 @@ export default class ProfileParser {
      */
     this.profile = new Profile(data.Results[0], locale);
 
-    // N/A
+    /**
+     * @type {number}
+     */
     this.techProjects = data.TechProjects;
 
-    // N/A
+    /**
+     * @type {number}
+     */
     this.xpComponents = data.XpCompoents;
 
-    // N/A
+    /**
+     * @type {number}
+     */
     this.xpCacheExpiryDate = parseDate(data.XpCacheExpiryDate);
 
-    // N/A
+    /**
+     * @type {number}
+     */
     this.ceremonyResetDate = parseDate(data.CeremonyResetDate);
 
     /**

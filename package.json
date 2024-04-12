@@ -38,10 +38,9 @@
     "prepublishOnly": "npm run build:types",
     "build:docs": "jsdoc -c .github/docs/conf.json -d docs",
     "build:types": "tsc -p tsconfig.declaration.json",
-    "postinstall": "if [ \"$NODE_ENV\" = \"dev\" ] ; then npx -p install-peerdeps@latest install-peerdeps @wfcd/eslint-config@latest -S ; fi",
-    "prepare": "husky"
+    "prepare": "husky && if [ \"$NODE_ENV\" = \"dev\" ] ; then npx -p install-peerdeps@latest install-peerdeps @wfcd/eslint-config@latest -S ; fi"
   },
-  "author": "",
+  "author": "SlayerOrnstein",
   "license": "MIT",
   "engines": {
     "node": ">=18.0.0"

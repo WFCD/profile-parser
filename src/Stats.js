@@ -7,7 +7,8 @@ import Scan from './Scan.js';
 import Weapon from './Weapon.js';
 
 /**
- * Player stats
+ * A player's overall career stats
+ * @module
  */
 export default class Stats {
   /**

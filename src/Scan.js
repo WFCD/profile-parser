@@ -1,3 +1,7 @@
+/**
+ * Represents an enemy scanned to the codex
+ * @module
+ */
 export default class Scan {
   constructor(scan) {
     /**

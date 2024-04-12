@@ -1,5 +1,6 @@
 /**
- * Represents the enemies killed
+ * An enemy killed/executed by player
+ * @module
  */
 export default class Enemy {
   /**
@@ -37,7 +38,7 @@ export default class Enemy {
     this.assists = enemy.assists;
 
     /**
-     * How many times tis enemy type has killed the player
+     * How many times this enemy type has killed the player
      * @type {number}
      */
     this.deaths = enemy.deaths;

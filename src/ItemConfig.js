@@ -3,7 +3,8 @@ import { colors, find } from 'warframe-items/utilities';
 import mapToHex from './Util.js';
 
 /**
- * Represents the data configuration for an item
+ * Item customizations such as colors and applied skins
+ * @module
  */
 export default class ItemConfig {
   /**

@@ -1,3 +1,5 @@
+/** @module */
+
 /**
  * Map base10 int colors to hex color strings
  * @param {Record<string, number | undefined>} colors color map
