@@ -180,9 +180,9 @@ export default class Profile {
 
     /**
      * Operator loadout
-     * @type {OperatorLoadOuts}
+     * @type {OperatorLoadOuts | undefined}
      */
-    this.operatorLoadouts = profile.OperatorLoadOuts.map((ol) => new OperatorLoadOuts(ol));
+    this.operatorLoadouts = profile.OperatorLoadOuts?.map((ol) => new OperatorLoadOuts(ol));
 
     /**
      * Player's alignment

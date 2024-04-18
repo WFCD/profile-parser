@@ -90,9 +90,9 @@ export default class LoadOutItem {
 
     /**
      * Which polarity types exist on the weapon
-     * @type {Array<Polarity>}
+     * @type {Array<Polarity> | undefined}
      */
-    this.polarity = weapon.Polarity.map((p) => new Polarity(p));
+    this.polarity = weapon.Polarity?.map((p) => new Polarity(p));
 
     /**
      * Focus lens applied

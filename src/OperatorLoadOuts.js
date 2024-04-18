@@ -16,9 +16,9 @@ export default class OperatorLoadOuts {
 
     /**
      * Operator amp ID
-     * @type {String}
+     * @type {String | undefined}
      */
-    this.operatorAmp = loadout.OperatorAmp.$oid;
+    this.operatorAmp = loadout.OperatorAmp?.$oid;
 
     /**
      * Applied upgrade IDs
