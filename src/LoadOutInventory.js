@@ -22,21 +22,21 @@ export default class LoadOutInventory {
 
     /**
      * An array of the player's currently equiped secondary weapon
-     * @type {LoadOutItem}
+     * @type {LoadOutItem | undefined}
      */
-    this.secondary = item.Pistols.map((p) => new LoadOutItem(p));
+    this.secondary = item.Pistols?.map((p) => new LoadOutItem(p));
 
     /**
      * An array of the player's currently equiped primary weapon
-     * @type {LoadOutItem}
+     * @type {LoadOutItem | undefined}
      */
-    this.primary = item.LongGuns.map((lg) => new LoadOutItem(lg));
+    this.primary = item.LongGuns?.map((lg) => new LoadOutItem(lg));
 
     /**
      * An array of the player's currently equiped melee weapon
-     * @type {LoadOutItem}
+     * @type {LoadOutItem | undefined}
      */
-    this.melee = item.Melee.map((m) => new LoadOutItem(m));
+    this.melee = item.Melee?.map((m) => new LoadOutItem(m));
 
     /**
      * Items that have counted towards the players mastery rank

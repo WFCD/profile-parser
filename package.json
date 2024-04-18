@@ -96,7 +96,7 @@
       "prettier --write",
       "npm -q --no-progress dedupe"
     ],
-    "*.{json,md,yaml}": [
+    "*.{json,md,yaml},!test/data/*.json": [
       "prettier --write"
     ]
   }
