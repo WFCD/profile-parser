@@ -1,3 +1,5 @@
+import { find } from 'warframe-items/utilities';
+
 /**
  * A weapon skin
  * @module
@@ -8,6 +10,9 @@ export default class WeaponSkin {
      * Unique name
      * @type {String}
      */
-    this.unuqueName = skin.ItemType;
+    this.uniqueName = skin.ItemType;
+
+    const item = find.findItem(skin.ItemType);
+    if (item) this.item = item;
   }
 }
