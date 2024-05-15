@@ -108,31 +108,31 @@ export default class LoadOutItem {
 
     /**
      * Primary colors applied to item if they exist
-     * @type {ColorMap}
+     * @type {module:"warframe-items".ColorMap | undefined}
      */
     if (weapon.pricol) this.primaryColor = colors.mapColors(weapon.pricol);
 
     /**
      * Sigil colors applied to item if they exist
-     * @type {ColorMap}
+     * @type {module:"warframe-items".ColorMap | undefined}
      */
     if (weapon.sigcol) this.sigilColor = colors.mapColors(weapon.sigcol.toString(16));
 
     /**
      * Attachment colors applied to item if they exist
-     * @type {ColorMap}
+     * @type {module:"warframe-items".ColorMap | undefined}
      */
     if (weapon.attcol) this.attachmentsColor = colors.mapColors(weapon.attcol.toString(16));
 
     /**
      * Syandana colors applied to item if they exist
-     * @type {ColorMap}
+     * @type {module:"warframe-items".ColorMap | undefined}
      */
     if (weapon.syancol) this.syandanaColor = colors.mapColors(weapon.syancol.toString(16));
 
     /**
      * If set will show when the player's warframe was infested.
-     * @type {ColorMap}
+     * @type {module:"warframe-items".ColorMap | undefined}
      */
     if (weapon.InfestationDate) this.infestationDate = parseDate(weapon.InfestationDate);
   }
