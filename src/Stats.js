@@ -174,7 +174,7 @@ export default class Stats {
 
     /**
      * Event Scores for Operation breeding grounds
-     * @type {Map<String,numbert>}
+     * @type {Map<String,number>}
      */
     this.breedGrounds = {
       personalScore: stats.HiveEventScore,
@@ -183,7 +183,7 @@ export default class Stats {
 
     /**
      * Event Scores for The Gradivus Dilemma
-     * @type {Map<String,numbert>}
+     * @type {Map<String,number>}
      */
     this.gradivusDilemma = {
       grineer: stats.InvasionEventGrineerScore,
