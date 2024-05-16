@@ -3,6 +3,9 @@
  * @module
  */
 export default class Scan {
+  /**
+   * @param {Object} scan The scanned Warframe object
+   */
   constructor(scan) {
     /**
      * Enemy unique name
