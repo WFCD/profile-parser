@@ -8,6 +8,18 @@
     ".": {
       "import": "./src/ProfileParser.js",
       "types": "./types/index.d.ts"
+    },
+    "./XpInfo": {
+      "import": "./src/XpInfo.js",
+      "types": "./types/index.d.ts"
+    },
+    "./Stats": {
+      "import": "./src/Stats.js",
+      "types": "./types/index.d.ts"
+    },
+    "./Profile": {
+      "import": "./src/Profile.js",
+      "types": "./types/index.d.ts"
     }
   },
   "public": true,
