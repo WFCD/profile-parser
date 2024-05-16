@@ -9,6 +9,7 @@ import mapToHex from './Util.js';
  */
 export default class ItemConfig {
   /**
+   *
    * @param {Object} config The configuration
    */
   constructor(config) {

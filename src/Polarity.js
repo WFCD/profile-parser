@@ -5,6 +5,10 @@ import { translatePolarity } from 'warframe-worldstate-data/utilities';
  * @module
  */
 export default class Polarity {
+  /**
+   *
+   * @param {Object} polarity The polarity to parse
+   */
   constructor(polarity) {
     /**
      * Polarity name

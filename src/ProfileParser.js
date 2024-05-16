@@ -8,6 +8,11 @@ import Stats from './Stats.js';
  * @module
  */
 export default class ProfileParser {
+  /**
+   *
+   * @param {Object} data The data returned by getProfile endpoint
+   * @param {string} locale The locale to return where possible
+   */
   constructor(data, locale) {
     /**
      * Player's profile

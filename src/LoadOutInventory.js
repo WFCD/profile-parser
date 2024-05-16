@@ -7,6 +7,10 @@ import XpInfo from './XpInfo.js';
  * @module
  */
 export default class LoadOutInventory {
+  /**
+   *
+   * @param {Object} item The loadout data
+   */
   constructor(item) {
     /**
      * Skins applied to weapons

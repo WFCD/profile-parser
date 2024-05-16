@@ -4,6 +4,7 @@
  */
 export default class Enemy {
   /**
+   *
    * @param {Object} enemy The enemy
    */
   constructor(enemy) {

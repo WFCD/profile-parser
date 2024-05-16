@@ -9,6 +9,10 @@ import Polarity from './Polarity.js';
  * @module
  */
 export default class LoadOutItem {
+  /**
+   *
+   * @param {Object} weapon The loadout item from LoadoutInventory
+   */
   constructor(weapon) {
     /**
      * Item ID

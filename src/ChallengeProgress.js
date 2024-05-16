@@ -3,6 +3,10 @@
  * @module
  */
 export default class ChallengeProgress {
+  /**
+   *
+   * @param {Object} challenge The challenge object to parse
+   */
   constructor(challenge) {
     /**
      * Name of the challenge

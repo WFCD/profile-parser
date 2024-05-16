@@ -5,6 +5,11 @@ import { node, nodeEnemy, nodeMissionType } from 'warframe-worldstate-data/utili
  * @module
  */
 export default class Mission {
+  /**
+   *
+   * @param {Object} mission The mission data
+   * @param {string} locale The locale to return in
+   */
   constructor(mission, locale) {
     const uniqueName = mission.type || mission.Tag;
 

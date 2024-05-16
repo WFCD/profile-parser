@@ -3,6 +3,10 @@
  * @module
  */
 export default class Pvp {
+  /**
+   *
+   * @param {Object} pvp PVP data to parse
+   */
   constructor(pvp) {
     /**
      * PVP match unique name

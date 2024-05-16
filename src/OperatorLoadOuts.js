@@ -8,6 +8,10 @@ import mapToHex from './Util.js';
  * @module
  */
 export default class OperatorLoadOuts {
+  /**
+   *
+   * @param {Object} loadout The operator loadout
+   */
   constructor(loadout) {
     /**
      * Skins that have been applied to the player's operator.
