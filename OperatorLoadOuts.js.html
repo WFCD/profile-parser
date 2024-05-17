@@ -33,7 +33,7 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-Ability.html">Ability</a></li><li><a href="module-ArchonCrystal.html">ArchonCrystal</a></li><li><a href="module-ChallengeProgress.html">ChallengeProgress</a></li><li><a href="module-Enemy.html">Enemy</a></li><li><a href="module-Intrinsics.html">Intrinsics</a></li><li><a href="module-ItemConfig.html">ItemConfig</a></li><li><a href="module-LoadOutInventory.html">LoadOutInventory</a></li><li><a href="module-LoadOutItem.html">LoadOutItem</a></li><li><a href="module-Mission.html">Mission</a></li><li><a href="module-OperatorLoadOuts.html">OperatorLoadOuts</a></li><li><a href="module-Polarity.html">Polarity</a></li><li><a href="module-Profile.html">Profile</a></li><li><a href="module-ProfileParser.html">ProfileParser</a></li><li><a href="module-Pvp.html">Pvp</a></li><li><a href="module-Race.html">Race</a></li><li><a href="module-Scan.html">Scan</a></li><li><a href="module-Stats.html">Stats</a></li><li><a href="module-Syndicate.html">Syndicate</a></li><li><a href="module-Util.html">Util</a></li><li><a href="module-Weapon.html">Weapon</a></li><li><a href="module-WeaponSkin.html">WeaponSkin</a></li><li><a href="module-XpInfo.html">XpInfo</a></li>
+					<li><a href="module-Ability.html">Ability</a></li><li><a href="module-ArchonCrystal.html">ArchonCrystal</a></li><li><a href="module-ChallengeProgress.html">ChallengeProgress</a></li><li><a href="module-Enemy.html">Enemy</a></li><li><a href="module-Intrinsics.html">Intrinsics</a></li><li><a href="module-ItemConfig.html">ItemConfig</a></li><li><a href="module-LoadOutInventory.html">LoadOutInventory</a></li><li><a href="module-LoadOutItem.html">LoadOutItem</a></li><li><a href="module-Mission.html">Mission</a></li><li><a href="module-OperatorLoadOuts.html">OperatorLoadOuts</a></li><li><a href="module-Polarity.html">Polarity</a></li><li><a href="module-Profile.html">Profile</a></li><li><a href="module-ProfileParser.html">ProfileParser</a></li><li><a href="module-Pvp.html">Pvp</a></li><li><a href="module-Race.html">Race</a></li><li><a href="module-Scan.html">Scan</a></li><li><a href="module-Skin.html">Skin</a></li><li><a href="module-Stats.html">Stats</a></li><li><a href="module-Syndicate.html">Syndicate</a></li><li><a href="module-Util.html">Util</a></li><li><a href="module-Weapon.html">Weapon</a></li><li><a href="module-XpInfo.html">XpInfo</a></li>
 				</ul>
 			</li>
 			
@@ -72,6 +72,7 @@
         <pre
             class="sunlight-highlight-javascript linenums">import { colors } from 'warframe-items/utilities';
 
+import Skin from './Skin.js';
 import mapToHex from './Util.js';
 
 /**
@@ -79,12 +80,16 @@ import mapToHex from './Util.js';
  * @module
  */
 export default class OperatorLoadOuts {
+  /**
+   *
+   * @param {Object} loadout The operator loadout
+   */
   constructor(loadout) {
     /**
      * Skins that have been applied to the player's operator.
-     * @type {Array&lt;String>}
+     * @type {Array&lt;Skin>}
      */
-    this.skins = loadout.Skins;
+    this.skins = loadout.Skins.filter(Boolean).map((s) => new Skin({ ItemType: s }));
 
     /**
      * Operator amp ID
@@ -101,43 +106,43 @@ export default class OperatorLoadOuts {
 
     /**
      * Operator primary colors
-     * @type {module:"warframe-items".ColorMap}
+     * @type {module:"warframe-items".ColorMap | undefined}
      */
     if (loadout.pricol) this.primaryColor = colors.mapColors(mapToHex(loadout.pricol));
 
     /**
      * Operator sigil colors
-     * @type {module:"warframe-items".ColorMap}
+     * @type {module:"warframe-items".ColorMap | undefined}
      */
     if (loadout.sigcol) this.sigilColor = colors.mapColors(mapToHex(loadout.sigcol));
 
     /**
      * Operator attachment colors
-     * @type {module:"warframe-items".ColorMap}
+     * @type {module:"warframe-items".ColorMap | undefined}
      */
     if (loadout.attcol) this.attachmentsColor = colors.mapColors(mapToHex(loadout.attcol));
 
     /**
      * Operator syandana colors
-     * @type {module:"warframe-items".ColorMap}
+     * @type {module:"warframe-items".ColorMap | undefined}
      */
     if (loadout.syancol) this.syandanaColor = colors.mapColors(mapToHex(loadout.syancol));
 
     /**
      * Operator eye colors
-     * @type {module:"warframe-items".ColorMap}
+     * @type {module:"warframe-items".ColorMap | undefined}
      */
     if (loadout.eyecol) this.eyeColor = colors.mapColors(mapToHex(loadout.eyecol));
 
     /**
      * Operator facial colors
-     * @type {module:"warframe-items".ColorMap}
+     * @type {module:"warframe-items".ColorMap | undefined}
      */
     if (loadout.facial) this.facial = colors.mapColors(mapToHex(loadout.facial));
 
     /**
      * Operator cloth colors
-     * @type {module:"warframe-items".ColorMap}
+     * @type {module:"warframe-items".ColorMap | undefined}
      */
     if (loadout.cloth) this.cloth = colors.mapColors(mapToHex(loadout.cloth));
   }
@@ -187,7 +192,7 @@ export default class OperatorLoadOuts {
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a>
 	
-		on Saturday, May 11th 2024, 04:16:11
+		on Friday, May 17th 2024, 21:02:03
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
