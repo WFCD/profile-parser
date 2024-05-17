@@ -33,7 +33,7 @@ export default class ItemConfig {
 
     /**
      * Sigil colors applied to item if they exist
-     * @type {module:("warframe-items").ColorMap | undefined}
+     * @type {module:"warframe-items".ColorMap | undefined}
      */
     if (config.sigcol) this.sigilColor = colors.mapColors(mapToHex(config.sigcol));
 
