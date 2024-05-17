@@ -5,8 +5,13 @@ import { node, nodeEnemy, nodeMissionType } from 'warframe-worldstate-data/utili
  * @module
  */
 export default class Mission {
+  /**
+   *
+   * @param {Object} mission The mission data
+   * @param {string} locale The locale to return in
+   */
   constructor(mission, locale) {
-    const uniqueName = mission.Type || mission.Tag;
+    const uniqueName = mission.type || mission.Tag;
 
     /**
      * Node name
@@ -18,7 +23,7 @@ export default class Mission {
      * Node mission type
      * @type {String}
      */
-    this.misstionType = nodeMissionType(uniqueName, locale);
+    this.missionType = nodeMissionType(uniqueName, locale);
 
     /**
      * Node faction
@@ -28,17 +33,20 @@ export default class Mission {
 
     /**
      * Highest score earned in this mission
-     * @type {number}
+     * @type {number | undefined}
      */
-    if (mission.highScore) this.highScore = mission.HighScore;
+    if (mission.highScore) this.highScore = mission.highScore;
 
     /**
      * How many times the mission was completed
-     * @type {number}
+     * @type {number | undefined}
      */
     if (mission.Completes) this.completes = mission.Completes;
 
-    // Not sure.
+    /**
+     * Denotes a steel path node
+     * @type {number | undefined}
+     */
     if (mission.Tier) this.tier = mission.Tier;
   }
 }

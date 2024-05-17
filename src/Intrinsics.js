@@ -3,6 +3,10 @@
  * @module
  */
 export default class Intrinsics {
+  /**
+   *
+   * @param {Object} skills The intrinsics object
+   */
   constructor(skills) {
     // I know this is railjack but I'm not sure what the context is
     /**

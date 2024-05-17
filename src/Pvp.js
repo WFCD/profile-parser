@@ -3,6 +3,10 @@
  * @module
  */
 export default class Pvp {
+  /**
+   *
+   * @param {Object} pvp PVP data to parse
+   */
   constructor(pvp) {
     /**
      * PVP match unique name
@@ -12,19 +16,19 @@ export default class Pvp {
 
     /**
      * Deaths for this match
-     * @type {number}
+     * @type {number | undefined}
      */
     this.suitDeaths = pvp.suitDeaths;
 
     /**
      * Warframe kills
-     * @type {number}
+     * @type {number | undefined}
      */
     this.suitKills = pvp.suitKills;
 
     /**
      * Weapon killes
-     * @type {number}
+     * @type {number | undefined}
      */
     this.weaponKills = pvp.weaponKills;
   }

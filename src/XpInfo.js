@@ -5,6 +5,10 @@ import { find } from 'warframe-items/utilities';
  * @module
  */
 export default class XpInfo {
+  /**
+   *
+   * @param {Object} info The info for a given ranked item
+   */
   constructor(info) {
     /**
      * Unique name

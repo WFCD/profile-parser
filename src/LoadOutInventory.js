@@ -1,5 +1,5 @@
 import LoadOutItem from './LoadOutItem.js';
-import WeaponSkin from './WeaponSkin.js';
+import Skin from './Skin.js';
 import XpInfo from './XpInfo.js';
 
 /**
@@ -7,12 +7,16 @@ import XpInfo from './XpInfo.js';
  * @module
  */
 export default class LoadOutInventory {
+  /**
+   *
+   * @param {Object} item The loadout data
+   */
   constructor(item) {
     /**
      * Skins applied to weapons
      * @type {WeaponSkin}
      */
-    this.weaponSkins = item.WeaponSkins.map((s) => new WeaponSkin(s));
+    this.weaponSkins = item.WeaponSkins.map((s) => new Skin(s));
 
     /**
      * An array of the player's currently equiped Warframe (or powersuits)

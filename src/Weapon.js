@@ -3,6 +3,10 @@
  * @module
  */
 export default class Weapon {
+  /**
+   *
+   * @param {Object} weapon The weapon stats being parsed
+   */
   constructor(weapon) {
     /**
      * Weapon unique name

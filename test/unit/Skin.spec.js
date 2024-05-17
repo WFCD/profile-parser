@@ -1,9 +1,9 @@
 import { assert } from 'chai';
 import { describe, it } from 'mocha';
 
-import WeaponSkin from '../../src/WeaponSkin.js';
+import Skin from '../../src/Skin.js';
 
-describe('WeaponSkins', () => {
+describe('Skin', () => {
   describe('#constructor', () => {
     it('handles some data', () => {
       const data = [
@@ -18,7 +18,7 @@ describe('WeaponSkins', () => {
         },
       ];
 
-      const skins = data.map((d) => new WeaponSkin(d));
+      const skins = data.map((d) => new Skin(d));
 
       for (let i = 0; i < skins.length; i += 1) {
         assert.strictEqual(skins[i].item.uniqueName, data[i].ItemType);
@@ -38,7 +38,7 @@ describe('WeaponSkins', () => {
         },
       ];
 
-      const skins = data.map((d) => new WeaponSkin(d));
+      const skins = data.map((d) => new Skin(d));
 
       for (let i = 0; i < skins.length; i += 1) {
         assert.strictEqual(skins[i].uniqueName, data[i].ItemType);

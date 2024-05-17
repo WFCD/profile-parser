@@ -174,7 +174,7 @@ export default class Stats {
 
     /**
      * Event Scores for Operation breeding grounds
-     * @type {Map<String,numbert>}
+     * @type {Map<String,number>}
      */
     this.breedGrounds = {
       personalScore: stats.HiveEventScore,
@@ -183,7 +183,7 @@ export default class Stats {
 
     /**
      * Event Scores for The Gradivus Dilemma
-     * @type {Map<String,numbert>}
+     * @type {Map<String,number>}
      */
     this.gradivusDilemma = {
       grineer: stats.InvasionEventGrineerScore,
@@ -191,7 +191,7 @@ export default class Stats {
     };
 
     /**
-     * List of scans
+     * List of scanned Warframe objects
      * @type {Array<Scan>}
      */
     this.scans = stats.Scans.map((s) => new Scan(s));
@@ -288,7 +288,7 @@ export default class Stats {
     this.orphixVenomScore = stats.MechSurvivalScoreMax;
     this.happyZephyrScore = stats.ZephyrScore;
 
-    this.kDriveRaces = Object.entries(stats.Races).map(([type, { highScore }]) => new Race({ type, highScore }));
+    this.kDriveRaces = Race.fromRaceObject(stats.Races);
 
     /**
      * Operation Gate Crash event

@@ -12,6 +12,11 @@ import Syndicate from './Syndicate.js';
  * @module
  */
 export default class Profile {
+  /**
+   *
+   * @param {Object} profile The profile data to parse
+   * @param {string} locale The locale to return in where possible
+   */
   constructor(profile, locale) {
     /**
      * Player's acount ID

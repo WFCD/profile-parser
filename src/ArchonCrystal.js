@@ -5,6 +5,11 @@ import { archonShardColor, archonShardUpgradeType } from 'warframe-worldstate-da
  * @module
  */
 export default class ArchonCrystal {
+  /**
+   *
+   * @param {Object} crystal The archon crystal object
+   * @param {string} local The locale to get translations in
+   */
   constructor(crystal, local) {
     /**
      * Archon shard color
