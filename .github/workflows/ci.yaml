@@ -55,3 +55,16 @@ jobs:
         uses: coverallsapp/github-action@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+      - run: npm i
+      - run: npm install jsdoc ink-docstrap tsd-jsdoc
+      - name: Build
+        run: npm run build:docs
