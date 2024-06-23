@@ -15,9 +15,9 @@ export default class ItemConfig {
   constructor(config) {
     /**
      * Array of unique names for the skins applied to item
-     * @type {Array<String>}
+     * @type {Array<String> | undefined}
      */
-    this.skins = config.Skins.filter(Boolean).map((s) => new Skin({ ItemType: s }));
+    this.skins = config.Skins?.filter(Boolean).map((s) => new Skin({ ItemType: s }));
 
     /**
      * Array of PVP unique name upgrades applied
