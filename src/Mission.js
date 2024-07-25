@@ -20,6 +20,12 @@ export default class Mission {
     this.node = node(uniqueName, locale);
 
     /**
+     * Node unique name
+     * @type {String}
+     */
+    this.nodeKey = uniqueName;
+
+    /**
      * Node mission type
      * @type {String}
      */
