@@ -15,6 +15,7 @@ describe('Mission', () => {
       const mission = new Mission(data, 'en');
 
       assert.strictEqual(mission.node, 'M Prime (Mercury)');
+      assert.strictEqual(mission.nodeKey, data.Tag);
       assert.strictEqual(mission.missionType, 'Extermination');
       assert.strictEqual(mission.faction, 'Crossfire');
     });
@@ -27,6 +28,7 @@ describe('Mission', () => {
       const mission = new Mission(data, 'en');
 
       assert.strictEqual(mission.node, 'Arcadia (Mars)');
+      assert.strictEqual(mission.nodeKey, data.type);
       assert.strictEqual(mission.missionType, 'Ancient Retribution');
       assert.strictEqual(mission.faction, 'Grineer');
       assert.strictEqual(mission.highScore, data.highScore);
