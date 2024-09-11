@@ -11,7 +11,7 @@ describe('ArchonShard', () => {
         UpgradeType: '/Lotus/Upgrades/Invigorations/ArchonCrystalUpgrades/ArchonCrystalUpgradeWarframeArmourMaxMythic',
       };
 
-      const shard = new ArchonCrystal(shardData, 'en');
+      const shard = new ArchonCrystal(shardData);
 
       assert.strictEqual(shard.color, 'Tauforged Azure');
       assert.strictEqual(shard.modifier, '+225 Armor');

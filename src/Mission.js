@@ -10,7 +10,7 @@ export default class Mission {
    * @param {Object} mission The mission data
    * @param {string} locale The locale to return in
    */
-  constructor(mission, locale) {
+  constructor(mission, locale = 'en') {
     const uniqueName = mission.type || mission.Tag;
 
     /**

@@ -13,7 +13,7 @@ export default class ProfileParser {
    * @param {Object} data The data returned by getProfile endpoint
    * @param {string} locale The locale to return where possible
    */
-  constructor(data, locale) {
+  constructor(data, locale = 'en') {
     /**
      * Player's profile
      * @type {Profile}

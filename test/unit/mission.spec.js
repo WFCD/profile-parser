@@ -25,7 +25,7 @@ describe('Mission', () => {
         type: 'SolNode35',
       };
 
-      const mission = new Mission(data, 'en');
+      const mission = new Mission(data);
 
       assert.strictEqual(mission.node, 'Arcadia (Mars)');
       assert.strictEqual(mission.nodeKey, data.type);

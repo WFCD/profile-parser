@@ -8,19 +8,19 @@ export default class ArchonCrystal {
   /**
    *
    * @param {Object} crystal The archon crystal object
-   * @param {string} local The locale to get translations in
+   * @param {string} locale The locale to get translations in
    */
-  constructor(crystal, local) {
+  constructor(crystal, locale = 'en') {
     /**
      * Archon shard color
      * @type {String}
      */
-    this.color = archonShardColor(crystal.Color, local);
+    this.color = archonShardColor(crystal.Color, locale);
 
     /**
      * Archon shard modifier
      * @type {String}
      */
-    this.modifier = archonShardUpgradeType(crystal.Color, crystal.UpgradeType, local);
+    this.modifier = archonShardUpgradeType(crystal.Color, crystal.UpgradeType, locale);
   }
 }
