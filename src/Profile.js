@@ -40,7 +40,7 @@ export default class Profile {
      * Current loadout
      * @type {LoadOutInventory}
      */
-    this.loadout = new LoadOutInventory(profile.LoadOutInventory);
+    this.loadout = new LoadOutInventory(profile.LoadOutInventory, locale);
 
     /**
      * Railjack and drifter Intrinsics
