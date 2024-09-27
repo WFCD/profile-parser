@@ -1,4 +1,4 @@
-import find from './Utils.js';
+import { find } from './Utils.js';
 
 /**
  * A skin class

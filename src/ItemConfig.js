@@ -1,7 +1,7 @@
 import { colors } from 'warframe-items/utilities';
 
 import Skin from './Skin.js';
-import mapToHex from './Util.js';
+import { mapToHex } from './Utils.js';
 
 /**
  * Item customizations such as colors and applied skins

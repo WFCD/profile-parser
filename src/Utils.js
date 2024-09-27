@@ -1,8 +1,36 @@
 import Items from 'warframe-items';
 
-const find = (name, locale = 'en') => {
+/** @module */
+
+/**
+ * Map base10 int colors to hex color strings
+ * @param {Record<string, number | undefined>} colors color map
+ * @returns {Record<string, string>}
+ */
+export const mapToHex = (colors) => {
+  const hex = {};
+  Object.entries(colors).forEach(([key, /** @type {undefined | number}  */ value]) => {
+    hex[key] = Math.abs(value).toString(16).toUpperCase();
+  });
+  return hex;
+};
+
+const categories = [
+  'Skins',
+  'Primary',
+  'Secondary',
+  'Melee',
+  'Arch-Melee',
+  'Arch-Gun',
+  'Warframes',
+  'Archwing',
+  'Sentinels',
+  'Pets',
+];
+
+export const find = (name, locale = 'en') => {
   const items = new Items({
-    category: ['Skins', 'Primary', 'Secondary', 'Melee', 'Arch-Melee', 'Arch-Gun', 'Warframes', 'Archwing'],
+    category: categories,
     i18n: locale,
     i18nOnObject: true,
   });
@@ -28,5 +56,3 @@ const find = (name, locale = 'en') => {
 
   return item;
 };
-
-export default find;

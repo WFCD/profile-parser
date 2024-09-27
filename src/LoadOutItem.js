@@ -3,7 +3,7 @@ import { parseDate, toTitleCase } from 'warframe-worldstate-data/utilities';
 
 import ItemConfig from './ItemConfig.js';
 import Polarity from './Polarity.js';
-import find from './Utils.js';
+import { find } from './Utils.js';
 
 /**
  * An an item in LoadOutInventory

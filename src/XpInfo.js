@@ -1,4 +1,4 @@
-import find from './Utils.js';
+import { find } from './Utils.js';
 
 /**
  * An item that has contributed to a player's mastery rank
