@@ -28,6 +28,12 @@ const categories = [
   'Pets',
 ];
 
+/**
+ * Find an item by Item#uniqueName
+ * @param {string} name string with which to query
+ * @param {string} [locale='en'] locale to use for internationalization
+ * @returns {Item}
+ */
 export const find = (name, locale = 'en') => {
   const items = new Items({
     category: categories,
