@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>@wfcd/profile-parser Source: Util.js</title>
+	<title>@wfcd/profile-parser Source: Utils.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -33,7 +33,7 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-Ability.html">Ability</a></li><li><a href="module-ArchonCrystal.html">ArchonCrystal</a></li><li><a href="module-ChallengeProgress.html">ChallengeProgress</a></li><li><a href="module-Enemy.html">Enemy</a></li><li><a href="module-Intrinsics.html">Intrinsics</a></li><li><a href="module-ItemConfig.html">ItemConfig</a></li><li><a href="module-LoadOutInventory.html">LoadOutInventory</a></li><li><a href="module-LoadOutItem.html">LoadOutItem</a></li><li><a href="module-Mission.html">Mission</a></li><li><a href="module-OperatorLoadOuts.html">OperatorLoadOuts</a></li><li><a href="module-Polarity.html">Polarity</a></li><li><a href="module-Profile.html">Profile</a></li><li><a href="module-ProfileParser.html">ProfileParser</a></li><li><a href="module-Pvp.html">Pvp</a></li><li><a href="module-Race.html">Race</a></li><li><a href="module-Scan.html">Scan</a></li><li><a href="module-Skin.html">Skin</a></li><li><a href="module-Stats.html">Stats</a></li><li><a href="module-Syndicate.html">Syndicate</a></li><li><a href="module-Util.html">Util</a></li><li><a href="module-Weapon.html">Weapon</a></li><li><a href="module-XpInfo.html">XpInfo</a></li>
+					<li><a href="module-Ability.html">Ability</a></li><li><a href="module-ArchonCrystal.html">ArchonCrystal</a></li><li><a href="module-ChallengeProgress.html">ChallengeProgress</a></li><li><a href="module-Enemy.html">Enemy</a></li><li><a href="module-Intrinsics.html">Intrinsics</a></li><li><a href="module-ItemConfig.html">ItemConfig</a></li><li><a href="module-LoadOutInventory.html">LoadOutInventory</a></li><li><a href="module-LoadOutItem.html">LoadOutItem</a></li><li><a href="module-Mission.html">Mission</a></li><li><a href="module-OperatorLoadOuts.html">OperatorLoadOuts</a></li><li><a href="module-Polarity.html">Polarity</a></li><li><a href="module-Profile.html">Profile</a></li><li><a href="module-ProfileParser.html">ProfileParser</a></li><li><a href="module-Pvp.html">Pvp</a></li><li><a href="module-Race.html">Race</a></li><li><a href="module-Scan.html">Scan</a></li><li><a href="module-Skin.html">Skin</a></li><li><a href="module-Stats.html">Stats</a></li><li><a href="module-Syndicate.html">Syndicate</a></li><li><a href="module-Utils.html">Utils</a></li><li><a href="module-Weapon.html">Weapon</a></li><li><a href="module-XpInfo.html">XpInfo</a></li>
 				</ul>
 			</li>
 			
@@ -65,25 +65,75 @@
 		<div id="main">
 			
 
-		<h1 class="page-title">Source: Util.js</h1>
+		<h1 class="page-title">Source: Utils.js</h1>
     
 <section>
     <article>
         <pre
-            class="sunlight-highlight-javascript linenums">/** @module */
+            class="sunlight-highlight-javascript linenums">import Items from 'warframe-items';
+
+/** @module */
 
 /**
  * Map base10 int colors to hex color strings
  * @param {Record&lt;string, number | undefined>} colors color map
  * @returns {Record&lt;string, string>}
  */
-export default function mapToHex(colors) {
+export const mapToHex = (colors) => {
   const hex = {};
   Object.entries(colors).forEach(([key, /** @type {undefined | number}  */ value]) => {
     hex[key] = Math.abs(value).toString(16).toUpperCase();
   });
   return hex;
-}
+};
+
+const categories = [
+  'Skins',
+  'Primary',
+  'Secondary',
+  'Melee',
+  'Arch-Melee',
+  'Arch-Gun',
+  'Warframes',
+  'Archwing',
+  'Sentinels',
+  'Pets',
+];
+
+/**
+ * Find an item by Item#uniqueName
+ * @param {string} name string with which to query
+ * @param {string} [locale='en'] locale to use for internationalization
+ * @returns {Item}
+ */
+export const find = (name, locale = 'en') => {
+  const items = new Items({
+    category: categories,
+    i18n: locale,
+    i18nOnObject: true,
+  });
+
+  const item = items.find((i) => i.uniqueName === name);
+
+  let itemClone = { ...item };
+  if (locale !== 'en' &amp;&amp; itemClone.i18n[locale] &amp;&amp; itemClone.i18n[locale]) {
+    itemClone = { ...itemClone, ...itemClone.i18n[locale] };
+
+    if (itemClone.abilities) {
+      itemClone.abilities = itemClone.abilities.map((ability) => ({
+        uniqueName: ability.abilityUniqueName || ability.uniqueName || undefined,
+        name: ability.abilityName || ability.name,
+        description: ability.abilityDescription || ability.description,
+        imageName: ability.imageName ?? undefined,
+      }));
+    }
+
+    delete itemClone.i18n;
+    return itemClone;
+  }
+
+  return item;
+};
 </pre>
     </article>
 </section>
@@ -129,7 +179,7 @@ export default function mapToHex(colors) {
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a>
 	
-		on Thursday, July 25th 2024, 14:30:29
+		on Friday, September 27th 2024, 01:33:05
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
