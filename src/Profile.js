@@ -17,7 +17,7 @@ export default class Profile {
    * @param {Object} profile The profile data to parse
    * @param {string} locale The locale to return in where possible
    */
-  constructor(profile, locale) {
+  constructor(profile, locale = 'en') {
     /**
      * Player's acount ID
      * @type {Stirng}
@@ -40,7 +40,7 @@ export default class Profile {
      * Current loadout
      * @type {LoadOutInventory}
      */
-    this.loadout = new LoadOutInventory(profile.LoadOutInventory);
+    this.loadout = new LoadOutInventory(profile.LoadOutInventory, locale);
 
     /**
      * Railjack and drifter Intrinsics

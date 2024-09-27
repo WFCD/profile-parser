@@ -11,8 +11,8 @@ describe('Mock ProfileParser', () => {
     it('should handle real data', function () {
       this.timeout(10000);
 
-      assert.isOk(new Stats(ornstein.Stats, 'en'));
-      assert.isOk(new Stats(tobiah.Stats, 'en'));
+      assert.isOk(new Stats(ornstein.Stats));
+      assert.isOk(new Stats(tobiah.Stats));
     });
   });
 });

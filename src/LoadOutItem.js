@@ -1,8 +1,9 @@
-import { colors, find } from 'warframe-items/utilities';
+import { colors } from 'warframe-items/utilities';
 import { parseDate, toTitleCase } from 'warframe-worldstate-data/utilities';
 
 import ItemConfig from './ItemConfig.js';
 import Polarity from './Polarity.js';
+import { find } from './Utils.js';
 
 /**
  * An an item in LoadOutInventory
@@ -12,8 +13,9 @@ export default class LoadOutItem {
   /**
    *
    * @param {Object} weapon The loadout item from LoadoutInventory
+   * @param {string} [locale='en'] The locale to return item in
    */
-  constructor(weapon) {
+  constructor(weapon, locale = 'en') {
     /**
      * Item ID
      * @type {String}
@@ -26,7 +28,7 @@ export default class LoadOutItem {
      */
     this.uniqueName = weapon.ItemType;
 
-    const item = find.findItem(weapon.ItemType);
+    const item = find(weapon.ItemType, locale);
     if (item) {
       /**
        * Item in-game name

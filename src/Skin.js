@@ -1,4 +1,4 @@
-import { find } from 'warframe-items/utilities';
+import { find } from './Utils.js';
 
 /**
  * A skin class
@@ -8,15 +8,16 @@ export default class Skin {
   /**
    *
    * @param {Object} skin The skin data  to parse
+   * @param {string} [locale='en'] The locale to return skin item in
    */
-  constructor(skin) {
+  constructor(skin, locale = 'en') {
     /**
      * Unique name
      * @type {String}
      */
     this.uniqueName = skin.ItemType;
 
-    const item = find.findItem(skin.ItemType);
+    const item = find(skin.ItemType, locale);
     /**
      * The Warframe item that matches the unique name
      */

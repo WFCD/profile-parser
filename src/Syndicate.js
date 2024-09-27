@@ -9,7 +9,7 @@ export default class Syndicate {
    * @param {Object} affiliation The syndicate data
    * @param {string} locale  locale code
    */
-  constructor(affiliation, locale) {
+  constructor(affiliation, locale = 'en') {
     // TODO: name is readable but still might want to clean them up
     // i.e "NewLokaSyndicate" can be "New Loka"" instead
 
