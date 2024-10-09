@@ -8,11 +8,11 @@ export default class Intrinsics {
    * @param {Object} skills The intrinsics object
    */
   constructor(skills) {
-    // I know this is railjack but I'm not sure what the context is
     /**
+     * Intrinsic points for railjack
      * @type {number}
      */
-    this.space = skills.LPP_SPACE;
+    this.railjack = Math.floor(skills.LPP_SPACE / 1000);
 
     /**
      * Railjack engineering rank
@@ -44,11 +44,11 @@ export default class Intrinsics {
      */
     this.command = skills.LPS_COMMAND;
 
-    // Not sure what the context for this one is either
     /**
+     * Intrinsic points for railjack
      * @type {number}
      */
-    this.drifter = skills.LPP_DRIFTER;
+    this.drifter = Math.floor(skills.LPP_DRIFTER / 1000);
 
     /**
      * Drifter riding rank

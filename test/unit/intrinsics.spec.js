@@ -19,7 +19,7 @@ describe('Intrinsics', () => {
 
       const intrinsics = new Intrinsics(playerSkills);
 
-      assert.strictEqual(intrinsics.space, playerSkills.LPP_SPACE);
+      assert.strictEqual(intrinsics.railjack, 125);
     });
   });
 });
