@@ -94,7 +94,7 @@ export default class Profile {
      * Alliance ID
      * @type {String}
      */
-    this.allianceId = profile.AllianceId.$oid;
+    if (profile.AllianceId.$oid) this.allianceId = profile.AllianceId.$oid;
 
     /**
      * Assassins currently asfter the player
