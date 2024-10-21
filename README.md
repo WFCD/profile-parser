@@ -14,7 +14,7 @@ You can find the documentation [here](https://wfcd.github.io/profile-parser/)
 ## Installation
 
 ```shell
-$ npm i -S profile-parser
+$ npm i -S @wfcd/profile-parser
 ```
 
 ## Example usage
