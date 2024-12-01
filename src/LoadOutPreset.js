@@ -4,7 +4,7 @@ import { numberToLetter } from './Utils.js';
 
 class SlotPreset {
   constructor(slot) {
-    if (slot?.ItemId.$oid) this.id = slot.ItemId.$oid;
+    if (slot?.ItemId?.$oid) this.id = slot.ItemId.$oid;
 
     if (slot?.mod !== undefined) this.modPreset = numberToLetter(slot.mod);
 
@@ -53,13 +53,13 @@ export default class LoadOutPreset {
      * Primary equipped in preset
      * @type {SlotPreset}
      */
-    if (preset.p) this.primary = new SlotPreset(preset.l);
+    if (preset.l) this.primary = new SlotPreset(preset.l);
 
     /**
      * Secondary equipped in preset
      * @type {SlotPreset}
      */
-    if (preset.s) this.secondary = new SlotPreset(preset.p);
+    if (preset.p) this.secondary = new SlotPreset(preset.p);
 
     /**
      * Heavy equipped in preset
