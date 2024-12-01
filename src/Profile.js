@@ -6,6 +6,7 @@ import LoadOutInventory from './LoadOutInventory.js';
 import Mission from './Mission.js';
 import OperatorLoadOuts from './OperatorLoadOuts.js';
 import Syndicate from './Syndicate.js';
+import LoadOutPreset from './LoadOutPreset.js';
 
 /**
  * A player's profile
@@ -16,8 +17,9 @@ export default class Profile {
    *
    * @param {Object} profile The profile data to parse
    * @param {string} locale The locale to return in where possible
+   * @param {boolean} [withItem=false] Whether or not to include items
    */
-  constructor(profile, locale = 'en') {
+  constructor(profile, locale = 'en', withItem = false) {
     /**
      * Player's acount ID
      * @type {Stirng}
@@ -31,16 +33,28 @@ export default class Profile {
     this.displayName = profile.DisplayName;
 
     /**
+     * List of usernames across supported platforms
+     *@type {Array<String>}
+     */
+    this.platformNames = profile.PlatformNames;
+
+    /**
      * Mastery rank
      * @type {String}
      */
     this.masteryRank = profile.PlayerLevel;
 
     /**
+     * Load out preset equiped
+     * @type {LoadOutPreset}
+     */
+    if (profile.LoadOutPreset) this.preset = new LoadOutPreset(profile.LoadOutPreset);
+
+    /**
      * Current loadout
      * @type {LoadOutInventory}
      */
-    this.loadout = new LoadOutInventory(profile.LoadOutInventory, locale);
+    this.loadout = new LoadOutInventory(profile.LoadOutInventory, locale, withItem);
 
     /**
      * Railjack and drifter Intrinsics

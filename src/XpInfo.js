@@ -9,8 +9,9 @@ export default class XpInfo {
    *
    * @param {Object} info The info for a given ranked item
    * @param {string} locale langauge to return item in
+   * @param {boolean} [withItem=false] Whether or not to include items
    */
-  constructor(info, locale = 'en') {
+  constructor(info, locale = 'en', withItem = false) {
     /**
      * Unique name
      * @type {String}
@@ -23,10 +24,12 @@ export default class XpInfo {
      */
     this.xp = info.XP;
 
-    /**
-     * The item corrosponding to the unique name.
-     * @type {module:"warframe-items".Item | undefined}
-     */
-    this.item = find(info.ItemType, locale);
+    if (withItem) {
+      /**
+       * The item corrosponding to the unique name.
+       * @type {module:"warframe-items".Item | undefined}
+       */
+      this.item = find(info.ItemType, locale);
+    }
   }
 }

@@ -12,13 +12,14 @@ export default class ProfileParser {
    *
    * @param {Object} data The data returned by getProfile endpoint
    * @param {string} locale The locale to return where possible
+   * @param {boolean} [withItem=false] Whether or not to include items
    */
-  constructor(data, locale = 'en') {
+  constructor(data, locale = 'en', withItem = false) {
     /**
      * Player's profile
      * @type {Profile}
      */
-    this.profile = new Profile(data.Results[0], locale);
+    this.profile = new Profile(data.Results[0], locale, withItem);
 
     /**
      * @type {number}

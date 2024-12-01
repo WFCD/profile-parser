@@ -62,3 +62,5 @@ export const find = (name, locale = 'en') => {
 
   return item;
 };
+
+export const numbertoLetter = (num) => String.fromCharCode(64 + (num + 1));
