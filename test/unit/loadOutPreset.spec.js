@@ -11,7 +11,7 @@ describe('LoudOutPreset', () => {
 
       assert.strictEqual(preset.focusSchool, 'Naramon');
       assert.strictEqual(preset.exaltedB.modPreset, 'C');
-      assert.strictEqual(preset.exaltedB.apperancePreset, 'B');
+      assert.strictEqual(preset.exaltedB.appearancePreset, 'B');
     });
   });
 });

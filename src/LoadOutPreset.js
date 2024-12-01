@@ -8,7 +8,7 @@ class SlotPreset {
 
     if (slot?.mod !== undefined) this.modPreset = numberToLetter(slot.mod);
 
-    if (slot?.cus !== undefined) this.apperancePreset = numberToLetter(slot.cus);
+    if (slot?.cus !== undefined) this.appearancePreset = numberToLetter(slot.cus);
 
     this.isHidden = slot?.hide ?? false;
   }
