@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>@wfcd/profile-parser Source: ProfileParser.js</title>
+	<title>@wfcd/profile-parser Source: LoadOutPreset.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -65,59 +65,99 @@
 		<div id="main">
 			
 
-		<h1 class="page-title">Source: ProfileParser.js</h1>
+		<h1 class="page-title">Source: LoadOutPreset.js</h1>
     
 <section>
     <article>
         <pre
-            class="sunlight-highlight-javascript linenums">import { parseDate } from 'warframe-worldstate-data/utilities';
+            class="sunlight-highlight-javascript linenums">import { translatePolarity } from 'warframe-worldstate-data/utilities';
 
-import Profile from './Profile.js';
-import Stats from './Stats.js';
+import { numberToLetter } from './Utils.js';
 
-/**
- * Parser entry point
- * @module
- */
-export default class ProfileParser {
-  /**
-   *
-   * @param {Object} data The data returned by getProfile endpoint
-   * @param {string} locale The locale to return where possible
-   * @param {boolean} [withItem=false] Whether or not to include items
-   */
-  constructor(data, locale = 'en', withItem = false) {
+class SlotPreset {
+  constructor(slot) {
+    if (slot?.ItemId?.$oid) this.id = slot.ItemId.$oid;
+
+    if (slot?.mod !== undefined) this.modPreset = numberToLetter(slot.mod);
+
+    if (slot?.cus !== undefined) this.appearancePreset = numberToLetter(slot.cus);
+
+    this.isHidden = slot?.hide ?? false;
+  }
+}
+
+export default class LoadOutPreset {
+  constructor(preset) {
     /**
-     * Player's profile
-     * @type {Profile}
+     * Focus School
+     * @type {String}
      */
-    this.profile = new Profile(data.Results[0], locale, withItem);
-
-    /**
-     * @type {number}
-     */
-    this.techProjects = data.TechProjects;
+    this.focusSchool = translatePolarity(preset.FocusSchool);
 
     /**
-     * @type {number}
+     * Preset icon
+     *
+     * Note:
+     * Icon in-game seems to be an image of whatever Warframe is equipped on it
+     * @type {String}
      */
-    this.xpComponents = data.XpCompoents;
+    this.icon = preset.PresetIcon;
 
     /**
-     * @type {number}
+     * Whether this preset is a favorite
+     * @type {boolean}
      */
-    this.xpCacheExpiryDate = parseDate(data.XpCacheExpiryDate);
+    this.isFavorite = preset.Favorite;
 
     /**
-     * @type {number}
+     * Preset name
+     * @type {String}
      */
-    this.ceremonyResetDate = parseDate(data.CeremonyResetDate);
+    this.name = preset.n;
 
     /**
-     * Player stats
-     * @type {Stats}
+     * Warframe equipped in preset
+     * @type {SlotPreset}
      */
-    this.stats = new Stats(data.Stats);
+    this.warframe = new SlotPreset(preset.s);
+
+    /**
+     * Primary equipped in preset
+     * @type {SlotPreset}
+     */
+    if (preset.l) this.primary = new SlotPreset(preset.l);
+
+    /**
+     * Secondary equipped in preset
+     * @type {SlotPreset}
+     */
+    if (preset.p) this.secondary = new SlotPreset(preset.p);
+
+    /**
+     * Heavy equipped in preset
+     * @type {SlotPreset}
+     */
+    if (preset.h) this.heavy = new SlotPreset(preset.h);
+
+    /**
+     * Melee equiped in preset
+     * @type {SlotPreset}
+     */
+    if (preset.m) this.melee = new SlotPreset(preset.m);
+
+    /**
+     * Exalted ability
+     * @type {SlotPreset}
+     */
+    if (preset.a) this.exalted = new SlotPreset(preset.a);
+
+    /**
+     * Secondary exalted ability
+     *
+     * i.e Sevagoth has his shadow and his shadow's claws both of which can be modded separately
+     * @type {SlotPreset}
+     */
+    if (preset.b) this.exaltedB = new SlotPreset(preset.b);
   }
 }
 </pre>
