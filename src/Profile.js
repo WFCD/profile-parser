@@ -34,7 +34,7 @@ export default class Profile {
 
     /**
      * List of usernames across supported platforms
-     *@type {Array<String>}
+     * @type {Array<String>}
      */
     this.platformNames = profile.PlatformNames;
 
@@ -46,7 +46,7 @@ export default class Profile {
 
     /**
      * Load out preset equiped
-     * @type {LoadOutPreset}
+     * @type {LoadOutPreset | undefined}
      */
     if (profile.LoadOutPreset) this.preset = new LoadOutPreset(profile.LoadOutPreset);
 
@@ -64,7 +64,7 @@ export default class Profile {
 
     /**
      * Nightwave challenges progress
-     * @type {}
+     * @type {Array<ChallengeProgress>}
      */
     this.challengeProgress = profile.ChallengeProgress.map((c) => new ChallengeProgress(c));
 
@@ -106,7 +106,7 @@ export default class Profile {
 
     /**
      * Alliance ID
-     * @type {String}
+     * @type {String | undefined}
      */
     if (profile.AllianceId?.$oid) this.allianceId = profile.AllianceId.$oid;
 
