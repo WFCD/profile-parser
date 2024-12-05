@@ -211,7 +211,7 @@ export default class Stats {
      * Conclave scores
      * @type {Array<Pvp>}
      */
-    this.pvp = stats.PVP.map((pvp) => new Pvp(pvp));
+    if (stats.PVP) this.pvp = stats.PVP.map((pvp) => new Pvp(pvp));
 
     /**
      * Lunaro stats
