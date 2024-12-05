@@ -11,8 +11,9 @@ export default class LoadOutInventory {
    *
    * @param {Object} item The loadout data
    * @param {string} [locale='en'] The locale to return loudout items in
+   * @param {boolean} [withItem=false] Whether or not to include items
    */
-  constructor(item, locale = 'en') {
+  constructor(item, locale = 'en', withItem = false) {
     /**
      * Skins applied to weapons
      * @type {WeaponSkin}
@@ -47,6 +48,6 @@ export default class LoadOutInventory {
      * Items that have counted towards the players mastery rank
      * @type {XpInfo}
      */
-    this.xpInfo = item.XPInfo.map((xp) => new XpInfo(xp, locale));
+    this.xpInfo = item.XPInfo.map((xp) => new XpInfo(xp, locale, withItem));
   }
 }
