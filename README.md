@@ -27,3 +27,5 @@ const user = new ProfileParser(await profileData.text());
 
 console.log(user.profile.displayName);
 ```
+
+If this data is stale, you can check the `Cache-Control` header of the response from DE's server to see how long to wait for retry, and you could have the above retry after that amount of time. However, this may cause _significant_ delay if the data is not saved/hydrated in a fully asynchronous or event-based timeframe.
