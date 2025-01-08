@@ -172,6 +172,7 @@ export default class Profile {
       holdfasts: profile.DailyAffiliationZariman,
       kahl: profile.DailyAffiliationKahl,
       cavia: profile.DailyAffiliationCavia,
+      hex: profile.DailyAffiliationHex,
     };
 
     /**
