@@ -142,7 +142,7 @@ export default class Profile {
 
     /**
      * List of completed missions and their completions
-     * @type {MIssion}
+     * @type {Mission}
      */
     this.missions = profile.Missions.map((m) => new Mission(m, locale));
 
