@@ -28,6 +28,6 @@ export default class Race {
    * @returns {Race[]} An array of races formatted in a more consumable way.
    */
   static fromRaceObject(races) {
-    return Object.entries(races).map(([type, { highScore }]) => new Race(type, highScore));
+    return Object.entries(races || []).map(([type, { highScore }]) => new Race(type, highScore));
   }
 }
