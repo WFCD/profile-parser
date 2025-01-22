@@ -46,11 +46,15 @@ export default class LoadOutItem {
     if (weapon.ItemName) {
       const [, nemesis] = weapon.ItemName.split('|');
 
-      /**
-       * Item lich name
-       * @type {String}
-       */
-      this.nemesis = toTitleCase(nemesis);
+      if (nemesis !== undefined) {
+        /**
+         * The name of the Lich, Sister, or Technocyte
+         * @type {String}
+         */
+        this.nemesis = toTitleCase(nemesis);
+      } else {
+        this.name = weapon.ItemName;
+      }
     }
 
     /**
@@ -123,6 +127,12 @@ export default class LoadOutItem {
      * @type {module:"warframe-items".ColorMap | undefined}
      */
     if (weapon.sigcol) this.sigilColor = colors.mapColors(weapon.sigcol.toString(16));
+
+    /**
+     * Whether prime details are enabled or not
+     * @type {boolean}
+     */
+    this.enablePrime = weapon.ugly ?? false;
 
     /**
      * Attachment colors applied to item if they exist
