@@ -46,11 +46,15 @@ export default class LoadOutItem {
     if (weapon.ItemName) {
       const [, nemesis] = weapon.ItemName.split('|');
 
-      /**
-       * The name of the Lich, Sister, or Technocyte
-       * @type {String}
-       */
-      this.nemesis = toTitleCase(nemesis);
+      if (nemesis !== undefined) {
+        /**
+         * The name of the Lich, Sister, or Technocyte
+         * @type {String}
+         */
+        this.nemesis = toTitleCase(nemesis);
+      } else {
+        this.name = weapon.ItemName;
+      }
     }
 
     /**
