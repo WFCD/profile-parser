@@ -23,7 +23,7 @@ $ npm i -S @wfcd/profile-parser
 import { ProfileParser } from 'profile-parser';
 
 const profileData = await fetch('https://content.warframe.com/dynamic/getProfileViewingData.php?n=${username}');
-const user = new ProfileParser(await profileData.text());
+const user = new ProfileParser(await profileData.json());
 
 console.log(user.profile.displayName);
 ```
