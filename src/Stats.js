@@ -23,7 +23,7 @@ export default class Stats {
     this.guildName = stats.GuildName;
 
     /**
-     * Player's total accumalted xp
+     * Player's total accumulated xp
      * @type {String}
      */
     this.xp = stats.XP;
@@ -35,25 +35,25 @@ export default class Stats {
     this.missionsCompleted = stats.MissionsCompleted;
 
     /**
-     * MIssions quit
+     * Missions quit
      * @type {number}
      */
     this.missionsQuit = stats.MissionsQuit;
 
     /**
-     * MIsions failed
+     * Misions failed
      * @type {number}
      */
     this.missionsFailed = stats.missionsFailed;
 
     /**
-     * MIssions interrupted
+     * Missions interrupted
      * @type {number}
      */
     this.missionsInterrupted = stats.MissionsInterrupted;
 
     /**
-     * MIssions dumped
+     * Missions dumped
      * @type {number}
      */
     this.missionsDumped = stats.MissionsDumped;
@@ -95,7 +95,7 @@ export default class Stats {
     this.forestEventScoreSum = stats.ForestEventScoreSum;
 
     /**
-     * Melee kilss
+     * Melee kills
      * @type {number}
      */
     this.meleeKills = stats.MeleeKills;
@@ -107,7 +107,7 @@ export default class Stats {
     this.abilities = stats.Abilities.map((a) => new Ability(a));
 
     /**
-     * Ciphers completed succefully
+     * Ciphers completed successfully
      * @type {number}
      */
     this.ciphersSolved = stats.CiphersSolved;
@@ -194,7 +194,7 @@ export default class Stats {
      * List of scanned Warframe objects
      * @type {Array<Scan>}
      */
-    this.scans = stats.Scans.map((s) => new Scan(s));
+    this.scans = stats.Scans?.map((s) => new Scan(s)) ?? [];
 
     /**
      * Team revives

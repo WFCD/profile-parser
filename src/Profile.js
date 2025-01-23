@@ -21,8 +21,8 @@ export default class Profile {
    */
   constructor(profile, locale = 'en', withItem = false) {
     /**
-     * Player's acount ID
-     * @type {Stirng}
+     * Player's account ID
+     * @type {String}
      */
     this.accountId = profile.AccountId.$oid;
 
@@ -45,7 +45,7 @@ export default class Profile {
     this.masteryRank = profile.PlayerLevel;
 
     /**
-     * Load out preset equiped
+     * Load out preset equipped
      * @type {LoadOutPreset | undefined}
      */
     if (profile.LoadOutPreset) this.preset = new LoadOutPreset(profile.LoadOutPreset);
@@ -60,7 +60,7 @@ export default class Profile {
      * Railjack and drifter Intrinsics
      * @type {Intrinsics}
      */
-    this.intrinsics = new Intrinsics(profile.PlayerSkills);
+    this.intrinsics = new Intrinsics(profile.PlayerSkills ?? {});
 
     /**
      * Nightwave challenges progress
@@ -72,7 +72,7 @@ export default class Profile {
      * Guild ID
      * @type {String}
      */
-    this.guildId = profile.GuildId.$oid;
+    if (profile.GuildId?.$oid) this.guildId = profile.GuildId.$oid;
 
     /**
      * Guild name
@@ -118,13 +118,13 @@ export default class Profile {
 
     /**
      * Whether or not the player is qualified as a target for Zanuka
-     * @type {bool}
+     * @type {boolean}
      */
     this.harvestable = profile.Harvestable;
 
     /**
      * Whether or not the player is qualified as a target for a syndicate death squad
-     * @type {bool}
+     * @type {boolean}
      */
     this.deathSquadable = profile.DeathSquadable;
 
@@ -136,7 +136,7 @@ export default class Profile {
 
     /**
      * Whether the user has migrated to console or not
-     * @type {bool}
+     * @type {boolean}
      */
     this.migratedToConsole = profile.MigratedToConsole;
 
@@ -150,7 +150,7 @@ export default class Profile {
      * Player standing and title across all syndicates
      * @type {Array<Syndicate>}
      */
-    this.syndicates = profile.Affiliations.map((a) => new Syndicate(a));
+    this.syndicates = profile.Affiliations?.map((a) => new Syndicate(a)) ?? [];
 
     /**
      * Daily standing per Syndicate
@@ -187,14 +187,14 @@ export default class Profile {
     this.wishList = profile.Wishlist;
 
     /**
-     * Whhether the player has unlocked thier operator or not
-     * @type {bool}
+     * Whether the player has unlocked their operator or not
+     * @type {boolean}
      */
     this.unlockedOperator = profile.UnlockedOperator;
 
     /**
-     * Whether the player has unlocked their alignement or not
-     * @type {bool}
+     * Whether the player has unlocked their alignment or not
+     * @type {boolean}
      */
     this.unlockedAlignment = profile.UnlockedAlignment;
 
@@ -206,8 +206,8 @@ export default class Profile {
 
     /**
      * Player's alignment
-     * @type {Map<String,number>}
+     * @type {Map<String,number | undefined>}
      */
-    this.alignment = { wisdom: profile.Alignment.Wisdom, alignment: profile.Alignment.Alignment };
+    this.alignment = { wisdom: profile.Alignment?.Wisdom, alignment: profile.Alignment?.Alignment };
   }
 }
