@@ -194,7 +194,7 @@ export default class Stats {
      * List of scanned Warframe objects
      * @type {Array<Scan>}
      */
-    this.scans = stats.Scans.map((s) => new Scan(s));
+    this.scans = stats.Scans?.map((s) => new Scan(s)) ?? [];
 
     /**
      * Team revives

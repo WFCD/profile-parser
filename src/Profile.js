@@ -60,7 +60,7 @@ export default class Profile {
      * Railjack and drifter Intrinsics
      * @type {Intrinsics}
      */
-    this.intrinsics = new Intrinsics(profile.PlayerSkills);
+    this.intrinsics = new Intrinsics(profile.PlayerSkills ?? {});
 
     /**
      * Nightwave challenges progress
@@ -72,7 +72,7 @@ export default class Profile {
      * Guild ID
      * @type {String}
      */
-    this.guildId = profile.GuildId.$oid;
+    if (profile.GuildId?.$oid) this.guildId = profile.GuildId.$oid;
 
     /**
      * Guild name
@@ -150,7 +150,7 @@ export default class Profile {
      * Player standing and title across all syndicates
      * @type {Array<Syndicate>}
      */
-    this.syndicates = profile.Affiliations.map((a) => new Syndicate(a));
+    this.syndicates = profile.Affiliations?.map((a) => new Syndicate(a)) ?? [];
 
     /**
      * Daily standing per Syndicate
@@ -206,8 +206,8 @@ export default class Profile {
 
     /**
      * Player's alignment
-     * @type {Map<String,number>}
+     * @type {Map<String,number | undefined>}
      */
-    this.alignment = { wisdom: profile.Alignment.Wisdom, alignment: profile.Alignment.Alignment };
+    this.alignment = { wisdom: profile.Alignment?.Wisdom, alignment: profile.Alignment?.Alignment };
   }
 }
