@@ -57,59 +57,8 @@
   "engines": {
     "node": ">=20.0.0"
   },
-  "eslintConfig": {
-    "extends": "@wfcd/eslint-config/esm",
-    "parser": "@babel/eslint-parser",
-    "parserOptions": {
-      "sourceType": "module",
-      "ecmaVersion": 6,
-      "ecmaFeatures": {
-        "modules": true
-      },
-      "babelOptions": {
-        "plugins": [
-          "@babel/plugin-transform-class-properties",
-          "@babel/plugin-transform-private-methods"
-        ]
-      }
-    }
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ],
-    "plugins": [
-      "@babel/plugin-transform-class-properties",
-      "@babel/plugin-transform-private-methods"
-    ]
-  },
-  "prettier": "@wfcd/eslint-config/prettier",
-  "mocha": {
-    "exit": true,
-    "spec": "test/**/*.spec.js"
-  },
-  "c8": {
-    "reporter": [
-      "lcov",
-      "text"
-    ],
-    "skip-full": true
-  },
   "peerDependencies": {
-    "warframe-items": "^1.1262.30",
+    "@wfcd/items": "^1.1270.0",
     "warframe-worldstate-data": "^2.5.0"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --cache --fix",
-      "npm test"
-    ],
-    "package*.json": [
-      "prettier --write",
-      "npm -q --no-progress dedupe"
-    ],
-    "*.{json,md,yaml},!test/data/*.json": [
-      "prettier --write"
-    ]
   }
 }

@@ -1,4 +1,4 @@
-import { colors } from 'warframe-items/utilities';
+import { colors } from '@wfcd/items/utilities';
 import { parseDate, toTitleCase } from 'warframe-worldstate-data/utilities';
 
 import ItemConfig from './ItemConfig.js';
@@ -37,8 +37,8 @@ export default class LoadOutItem {
       this.name = item.name;
 
       /**
-       * Complete item from Warframe-items
-       * @type {module:"warframe-items".Item}
+       * Complete item from @wfcd/items
+       * @type {module:"@wfcd/items".Item}
        */
       this.item = item;
     }
@@ -118,13 +118,13 @@ export default class LoadOutItem {
 
     /**
      * Primary colors applied to item if they exist
-     * @type {module:"warframe-items".ColorMap | undefined}
+     * @type {module:"@wfcd/items".ColorMap | undefined}
      */
     if (weapon.pricol) this.primaryColor = colors.mapColors(weapon.pricol);
 
     /**
      * Sigil colors applied to item if they exist
-     * @type {module:"warframe-items".ColorMap | undefined}
+     * @type {module:"@wfcd/items".ColorMap | undefined}
      */
     if (weapon.sigcol) this.sigilColor = colors.mapColors(weapon.sigcol.toString(16));
 
@@ -136,19 +136,19 @@ export default class LoadOutItem {
 
     /**
      * Attachment colors applied to item if they exist
-     * @type {module:"warframe-items".ColorMap | undefined}
+     * @type {module:"@wfcd/items".ColorMap | undefined}
      */
     if (weapon.attcol) this.attachmentsColor = colors.mapColors(weapon.attcol.toString(16));
 
     /**
      * Syandana colors applied to item if they exist
-     * @type {module:"warframe-items".ColorMap | undefined}
+     * @type {module:"@wfcd/items".ColorMap | undefined}
      */
     if (weapon.syancol) this.syandanaColor = colors.mapColors(weapon.syancol.toString(16));
 
     /**
      * If set will show when the player's warframe was infested.
-     * @type {module:"warframe-items".ColorMap | undefined}
+     * @type {module:"@wfcd/items".ColorMap | undefined}
      */
     if (weapon.InfestationDate) this.infestationDate = parseDate(weapon.InfestationDate);
   }
