@@ -27,7 +27,7 @@ export default class XpInfo {
     if (withItem) {
       /**
        * The item corrosponding to the unique name.
-       * @type {module:"warframe-items".Item | undefined}
+       * @type {module:"@wfcd/items".Item | undefined}
        */
       this.item = find(info.ItemType, locale);
     }

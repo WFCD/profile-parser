@@ -1,4 +1,4 @@
-import { colors } from 'warframe-items/utilities';
+import { colors } from '@wfcd/items/utilities';
 
 import Skin from './Skin.js';
 import { mapToHex } from './Utils.js';
@@ -27,25 +27,25 @@ export default class ItemConfig {
 
     /**
      * Primary colors applied to item if they exist
-     * @type {module:"warframe-items".ColorMap | undefined}
+     * @type {module:"@wfcd/items".ColorMap | undefined}
      */
     if (config.pricol) this.primaryColor = colors.mapColors(mapToHex(config.pricol));
 
     /**
      * Sigil colors applied to item if they exist
-     * @type {module:"warframe-items".ColorMap | undefined}
+     * @type {module:"@wfcd/items".ColorMap | undefined}
      */
     if (config.sigcol) this.sigilColor = colors.mapColors(mapToHex(config.sigcol));
 
     /**
      * Attachment colors applied to item if they exist
-     * @type {module:"warframe-items".ColorMap | undefined}
+     * @type {module:"@wfcd/items".ColorMap | undefined}
      */
     if (config.attcol) this.attachmentsColor = colors.mapColors(mapToHex(config.attcol));
 
     /**
      * Syandana colors applied to item if they exist
-     * @type {module:"warframe-items".ColorMap | undefined}
+     * @type {module:"@wfcd/items".ColorMap | undefined}
      */
     if (config.syancol) this.syandanaColor = colors.mapColors(mapToHex(config.syancol));
   }

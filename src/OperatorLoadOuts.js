@@ -1,4 +1,4 @@
-import { colors } from 'warframe-items/utilities';
+import { colors } from '@wfcd/items/utilities';
 
 import Skin from './Skin.js';
 import { mapToHex } from './Utils.js';
@@ -34,43 +34,43 @@ export default class OperatorLoadOuts {
 
     /**
      * Operator primary colors
-     * @type {module:"warframe-items".ColorMap | undefined}
+     * @type {module:"@wfcd/items".ColorMap | undefined}
      */
     if (loadout.pricol) this.primaryColor = colors.mapColors(mapToHex(loadout.pricol));
 
     /**
      * Operator sigil colors
-     * @type {module:"warframe-items".ColorMap | undefined}
+     * @type {module:"@wfcd/items".ColorMap | undefined}
      */
     if (loadout.sigcol) this.sigilColor = colors.mapColors(mapToHex(loadout.sigcol));
 
     /**
      * Operator attachment colors
-     * @type {module:"warframe-items".ColorMap | undefined}
+     * @type {module:"@wfcd/items".ColorMap | undefined}
      */
     if (loadout.attcol) this.attachmentsColor = colors.mapColors(mapToHex(loadout.attcol));
 
     /**
      * Operator syandana colors
-     * @type {module:"warframe-items".ColorMap | undefined}
+     * @type {module:"@wfcd/items".ColorMap | undefined}
      */
     if (loadout.syancol) this.syandanaColor = colors.mapColors(mapToHex(loadout.syancol));
 
     /**
      * Operator eye colors
-     * @type {module:"warframe-items".ColorMap | undefined}
+     * @type {module:"@wfcd/items".ColorMap | undefined}
      */
     if (loadout.eyecol) this.eyeColor = colors.mapColors(mapToHex(loadout.eyecol));
 
     /**
      * Operator facial colors
-     * @type {module:"warframe-items".ColorMap | undefined}
+     * @type {module:"@wfcd/items".ColorMap | undefined}
      */
     if (loadout.facial) this.facial = colors.mapColors(mapToHex(loadout.facial));
 
     /**
      * Operator cloth colors
-     * @type {module:"warframe-items".ColorMap | undefined}
+     * @type {module:"@wfcd/items".ColorMap | undefined}
      */
     if (loadout.cloth) this.cloth = colors.mapColors(mapToHex(loadout.cloth));
   }
