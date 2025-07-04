@@ -53,3 +53,5 @@ types/
 
 # eslint cache
 .eslintcache
+
+dist/
