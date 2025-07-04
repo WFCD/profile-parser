@@ -43,7 +43,7 @@
     "node": ">=20.0.0"
   },
   "peerDependencies": {
-    "@wfcd/items": "^1.1270.614",
+    "@wfcd/items": "^1.1270.621",
     "warframe-worldstate-data": "^3.0.0"
   }
 }
