@@ -66,8 +66,6 @@ describe('ItemConfig', () => {
       assert.exists(primaryColor);
 
       const primary = primaryColor.primary;
-
-      console.log(primaryColor)
       assert.exists(primary);
       assert.strictEqual(primary.hex, '26D300');
       assert.strictEqual(primary.isTransparent, false);
