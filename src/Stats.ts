@@ -335,7 +335,7 @@ export default class Stats {
   /**
    * Total even score for Operation: False Profit
    */
-  fasleProfitEventScore?: number;
+  falseProfitEventScore?: number;
 
   /**
    * Operation: Shadow Debt event score
@@ -489,7 +489,7 @@ export default class Stats {
 
     if (stats.RiotMoaEventScore) this.falseProfitMissionScore = stats.RiotMoaEventScore;
 
-    if (stats.RiotMoaEventScoreMax) this.fasleProfitEventScore = stats.RiotMoaEventScoreMax;
+    if (stats.RiotMoaEventScoreMax) this.falseProfitEventScore = stats.RiotMoaEventScoreMax;
 
     if (stats.ProjectSinisterEventScore) this.shadowDebtEventScore = stats.ProjectSinisterEventScore;
 

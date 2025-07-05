@@ -1,19 +1,20 @@
 import { colors } from '@wfcd/items/utilities';
-import { parseDate, toTitleCase } from 'warframe-worldstate-data/utilities';
+import { parseDate, toTitleCase, WorldStateDate } from 'warframe-worldstate-data/utilities';
 
 import ItemConfig, { type RawItemConfig } from './ItemConfig';
 import Polarity, { type RawPolarity } from './Polarity';
-import { find } from './Utils';
+import { find, RawDate } from './Utils';
 import type { ColorMap, Item, RawColors } from '@wfcd/items';
+
 
 export interface RawLoadOutItem {
   ItemId: { $oid: string };
   ItemType: string;
   ItemName?: string;
   Configs: RawItemConfig[];
-  UpgradeType?: any;
-  UpgradeFingerprint?: any;
-  Features: any;
+  UpgradeType?: string;
+  UpgradeFingerprint?: unknown;
+  Features: number;
   UpgradeVer: number;
   XP?: number;
   Polarized?: number;
@@ -25,7 +26,7 @@ export interface RawLoadOutItem {
   ugly?: boolean;
   attcol?: RawColors;
   syancol?: RawColors;
-  InfestationDate?: object;
+  InfestationDate?: WorldStateDate;
 }
 
 /**
@@ -72,7 +73,7 @@ export default class LoadOutItem {
    * Information on the upgradeType that was applied
    * TODO need model for for fingerprint
    */
-  upgradeFingerprint: any;
+  upgradeFingerprint: unknown;
 
   features: number;
 

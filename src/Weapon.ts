@@ -16,7 +16,7 @@ export interface RawWeapon {
 export default class Weapon {
   uniqueName: string;
   xp: number;
-  equiptime: number;
+  equipTime: number;
   headShots: number;
   hits: number;
   assists: number;
@@ -44,7 +44,7 @@ export default class Weapon {
      * Time using this weapon
      * @type {number}
      */
-    this.equiptime = weapon.equipTime;
+    this.equipTime = weapon.equipTime;
 
     /**
      * Headshots using this weapon
