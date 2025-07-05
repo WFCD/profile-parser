@@ -1,3 +1,4 @@
+import { Locale } from 'warframe-worldstate-data';
 import LoadOutItem, { type RawLoadOutItem } from './LoadOutItem';
 import Skin, { type RawSkin } from './Skin';
 import XpInfo, { type RawXpItem } from './XpInfo';
@@ -48,12 +49,12 @@ export default class LoadOutInventory {
 
   /**
    *
-   * @param {Object} item The loadout data
-   * @param {string} [locale='en'] The locale to return loudout items in
-   * @param {boolean} [withItem=false] Whether or not to include items
+   * @param item The loadout data
+   * @param locale The locale to return loudout items in. Default is en
+   * @param withItem Whether or not to include items
    */
-  constructor(item: RawLoadOut, locale = 'en', withItem = false) {
-    this.weaponSkins = item.WeaponSkins.map((s) => new Skin(s));
+  constructor(item: RawLoadOut, locale: Locale = 'en', withItem = false) {
+    this.weaponSkins = item.WeaponSkins.map((s) => new Skin(s, locale));
 
     this.suits = item.Suits.map((s) => new LoadOutItem(s, locale));
 

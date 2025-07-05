@@ -3,6 +3,7 @@ import { parseDate } from 'warframe-worldstate-data/utilities';
 import Profile, { type RawProfile } from './Profile';
 import Stats, { type RawStats } from './Stats';
 import type { RawDate } from './Utils';
+import { Locale } from 'warframe-worldstate-data';
 
 interface ProfileData {
   Results: RawProfile[];
@@ -54,7 +55,7 @@ export default class ProfileParser {
    * @param {string} locale The locale to return where possible
    * @param {boolean} [withItem=false] Whether or not to include items
    */
-  constructor(data: ProfileData, locale: string = 'en', withItem: boolean = false) {
+  constructor(data: ProfileData, locale: Locale = 'en', withItem: boolean = false) {
     this.profile = new Profile(data.Results[0], locale, withItem);
     this.techProjects = data.TechProjects;
     this.xpComponents = data.XpCompoents;

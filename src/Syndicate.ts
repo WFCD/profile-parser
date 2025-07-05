@@ -1,3 +1,4 @@
+import { Locale } from 'warframe-worldstate-data';
 import { syndicate } from 'warframe-worldstate-data/utilities';
 
 export interface RawAffiliation {
@@ -30,7 +31,7 @@ export default class Syndicate {
    * @param affiliation The syndicate data
    * @param locale  locale code
    */
-  constructor(affiliation: RawAffiliation, locale = 'en') {
+  constructor(affiliation: RawAffiliation, locale: Locale = 'en') {
     this.name = syndicate(affiliation.Tag, locale);
     this.standing = affiliation.Standing;
     this.title = affiliation.Title;

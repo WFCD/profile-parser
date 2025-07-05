@@ -3,6 +3,7 @@ import { colors } from '@wfcd/items/utilities';
 import Skin from './Skin';
 import { mapToHex, type ProfileRawColors } from './Utils';
 import type { ColorMap } from '@wfcd/items';
+import { Locale } from 'warframe-worldstate-data';
 
 
 
@@ -54,8 +55,8 @@ export default class ItemConfig {
    *
    * @param config The configuration
    */
-  constructor(config: RawItemConfig) {
-    this.skins = config.Skins?.filter(Boolean).map((s: string) => new Skin({ ItemType: s }));
+  constructor(config: RawItemConfig, locale: Locale = 'en') {
+    this.skins = config.Skins?.filter(Boolean).map((s: string) => new Skin({ ItemType: s }, locale));
 
     if (config.PvpUpgrades) this.conclaveUpgrades = config.PvpUpgrades;
 

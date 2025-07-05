@@ -1,4 +1,5 @@
 import Items, { type Category, type RawColors } from '@wfcd/items';
+import { WorldStateDate } from 'warframe-worldstate-data/utilities';
 
 /**
  * interface for DE's ID data
@@ -8,9 +9,7 @@ export interface RawId {
 }
 
 // {"$date":{"$numberLong":"1462464026233"}}
-export interface RawDate {
-  $date: { $numberLong: string };
-}
+export type RawDate = WorldStateDate;
 
 export interface ProfileRawColors {
   t0?: number;

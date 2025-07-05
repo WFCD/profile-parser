@@ -3,6 +3,7 @@ import { colors } from '@wfcd/items/utilities';
 import Skin from './Skin';
 import { mapToHex, type ProfileRawColors } from './Utils';
 import type { ColorMap } from '@wfcd/items';
+import { Locale } from 'warframe-worldstate-data';
 
 export interface RawOperatorLoadOuts {
   Skins: string[];
@@ -78,8 +79,8 @@ export default class OperatorLoadOuts {
    *
    * @param {Object} loadout The operator loadout
    */
-  constructor(loadout: RawOperatorLoadOuts) {
-    this.skins = loadout.Skins.filter(Boolean).map((s) => new Skin({ ItemType: s }));
+  constructor(loadout: RawOperatorLoadOuts, locale: Locale = 'en') {
+    this.skins = loadout.Skins.filter(Boolean).map((s) => new Skin({ ItemType: s }, locale));
 
     this.operatorAmp = loadout.OperatorAmp?.$oid;
 

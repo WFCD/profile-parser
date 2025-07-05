@@ -1,4 +1,4 @@
-import { parseDate } from 'warframe-worldstate-data/utilities';
+import { parseDate, WorldStateDate } from 'warframe-worldstate-data/utilities';
 
 import ChallengeProgress, { type RawChallengeProgress } from './ChallengeProgress';
 import Intrinsics, { type RawIntrinsics } from './Intrinsics';
@@ -8,6 +8,7 @@ import OperatorLoadOuts, { type RawOperatorLoadOuts } from './OperatorLoadOuts';
 import Syndicate, { type RawAffiliation } from './Syndicate';
 import LoadOutPreset, { type RawLoadOutPreset } from './LoadOutPreset';
 import type { RawDate, RawId } from './Utils';
+import { Locale } from 'warframe-worldstate-data';
 
 export interface RawProfile {
   AccountId: { $oid: string };
@@ -228,7 +229,7 @@ export default class Profile {
    * @param locale The locale to return in where possible
    * @param withItem Whether or not to include items
    */
-  constructor(profile: RawProfile, locale: string = 'en', withItem: boolean = false) {
+  constructor(profile: RawProfile, locale: Locale = 'en', withItem: boolean = false) {
     this.accountId = profile.AccountId.$oid;
 
     this.displayName = profile.DisplayName;
@@ -271,7 +272,7 @@ export default class Profile {
 
     this.missions = profile.Missions.map((m) => new Mission(m, locale));
 
-    this.syndicates = profile.Affiliations?.map((a) => new Syndicate(a)) ?? [];
+    this.syndicates = profile.Affiliations?.map((a) => new Syndicate(a, locale)) ?? [];
 
     this.dailyStanding = {
       daily: profile.DailyAffiliation,
@@ -298,7 +299,7 @@ export default class Profile {
 
     this.unlockedAlignment = profile.UnlockedAlignment;
 
-    this.operatorLoadouts = profile.OperatorLoadOuts?.map((ol) => new OperatorLoadOuts(ol));
+    this.operatorLoadouts = profile.OperatorLoadOuts?.map((ol) => new OperatorLoadOuts(ol, locale));
 
     if (profile.Alignment) {
       this.alignment = { wisdom: profile.Alignment?.Wisdom, alignment: profile.Alignment?.Alignment };

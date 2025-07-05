@@ -5,6 +5,7 @@ import ItemConfig, { type RawItemConfig } from './ItemConfig';
 import Polarity, { type RawPolarity } from './Polarity';
 import { find, RawDate } from './Utils';
 import type { ColorMap, Item, RawColors } from '@wfcd/items';
+import { Locale } from 'warframe-worldstate-data';
 
 
 export interface RawLoadOutItem {
@@ -26,7 +27,7 @@ export interface RawLoadOutItem {
   ugly?: boolean;
   attcol?: RawColors;
   syancol?: RawColors;
-  InfestationDate?: WorldStateDate;
+  InfestationDate?: RawDate;
 }
 
 /**
@@ -136,7 +137,7 @@ export default class LoadOutItem {
    * @param {Object} loadOutItem The loadout item from LoadoutInventory
    * @param {string} [locale='en'] The locale to return item in
    */
-  constructor(loadOutItem: RawLoadOutItem, locale = 'en') {
+  constructor(loadOutItem: RawLoadOutItem, locale: Locale = 'en') {
     this.itemId = loadOutItem.ItemId.$oid;
 
     this.uniqueName = loadOutItem.ItemType;
