@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Parser for Digital Extreme's profile data",
   "type": "module",
-  "source": "dist/ProfileParser.js",
+  "exports": "./dist/*.js",
   "public": true,
   "files": [
     "src",
@@ -43,7 +43,7 @@
     "node": ">=20.0.0"
   },
   "peerDependencies": {
-    "@wfcd/items": "^1.1270.621",
+    "@wfcd/items": "^1.1270.626",
     "warframe-worldstate-data": "^3.0.0"
   }
 }
