@@ -3,7 +3,24 @@
   "version": "0.0.0",
   "description": "Parser for Digital Extreme's profile data",
   "type": "module",
-  "exports": "./dist/*.js",
+  "exports": {
+    "./Parser": {
+      "types": "./dist/ProfileParser.d.ts",
+      "default": "./dist/ProfileParser.js"
+    },
+    "./Profile": {
+      "types": "./dist/Profile.d.ts",
+      "default": "./dist/Profile.js"
+    },
+    "./XpInfo": {
+      "types": "./dist/XpInfo.d.ts",
+      "default": "./dist/XpInfo.js"
+    },
+    "./Stats": {
+      "types": "./dist/Stats.d.ts",
+      "default": "./dist/Stats.js"
+    }
+  },
   "public": true,
   "files": [
     "src",
