@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>@wfcd/profile-parser Modules</title>
+	<title>@wfcd/profile-parser Source: LoadOutPreset-CMbZo-II.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -74,157 +74,102 @@
 <div class="row">
 
 	
-	<div class="col-md-8">
+	<div class="col-md-12">
 	
 		<div id="main">
 			
 
-	<h1 class="page-title">Modules</h1>
+		<h1 class="page-title">Source: LoadOutPreset-CMbZo-II.js</h1>
+    
 <section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">import { numberToLetter } from "./Utils-C3kZCO6a.js";
+import { translatePolarity } from "warframe-worldstate-data/utilities";
 
-<header>
-    
-        <h2>
-        
-        </h2>
-        
-    
-</header>
+//#region src/LoadOutPreset.ts
+var SlotPreset = class {
+	id;
+	modPreset;
+	appearancePreset;
+	isHidden;
+	constructor(slot) {
+		if (slot?.ItemId?.$oid) this.id = slot.ItemId.$oid;
+		if (slot?.mod !== void 0) this.modPreset = numberToLetter(slot.mod);
+		if (slot?.cus !== void 0) this.appearancePreset = numberToLetter(slot.cus);
+		this.isHidden = slot?.hide ?? false;
+	}
+};
+var LoadOutPreset = class {
+	/**
+	* Focus School
+	*/
+	focusSchool;
+	/**
+	* Preset icon
+	*
+	* Note:
+	* Icon in-game seems to be an image of whatever Warframe is equipped on it
+	*/
+	icon;
+	/**
+	* Whether this preset is a favorite
+	*/
+	isFavorite;
+	/**
+	* Preset name
+	*/
+	name;
+	/**
+	* Warframe equipped in preset
+	*/
+	warframe;
+	/**
+	* Primary equipped in preset
+	*/
+	primary;
+	/**
+	* Secondary equipped in preset
+	*/
+	secondary;
+	/**
+	* Heavy equipped in preset
+	*/
+	heavy;
+	/**
+	* Melee equiped in preset
+	*/
+	melee;
+	/**
+	* Exalted ability
+	*/
+	exalted;
+	/**
+	* Secondary exalted ability
+	*
+	* i.e Sevagoth has his shadow and his shadow's claws both of which can be modded separately
+	*/
+	exaltedB;
+	constructor(preset) {
+		this.focusSchool = translatePolarity(preset.FocusSchool);
+		this.icon = preset.PresetIcon;
+		this.isFavorite = preset.Favorite;
+		this.name = preset.n;
+		this.warframe = new SlotPreset(preset.s);
+		if (preset.l) this.primary = new SlotPreset(preset.l);
+		if (preset.p) this.secondary = new SlotPreset(preset.p);
+		if (preset.h) this.heavy = new SlotPreset(preset.h);
+		if (preset.m) this.melee = new SlotPreset(preset.m);
+		if (preset.a) this.exalted = new SlotPreset(preset.a);
+		if (preset.b) this.exaltedB = new SlotPreset(preset.b);
+	}
+};
 
-
-<article>
-    <div class="container-overview">
-    
-        
-
-        
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Classes</h3>
-
-        <dl>
-            <dt><a href="Enemy.html">Enemy</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Ability-D1F1s_19-Ability.html">Ability</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-ArchonCrystal-ArchonCrystal.html">ArchonCrystal</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-ChallengeProgress-DKKtijWw-ChallengeProgress.html">ChallengeProgress</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-ItemConfig-uU36aJFJ-ItemConfig.html">ItemConfig</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-LoadOutInventory-CPVZJ_W5-LoadOutInventory.html">LoadOutInventory</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-LoadOutItem-B_6G9dXC-LoadOutItem.html">LoadOutItem</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Mission-D2n1i5R2-Mission.html">Mission</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-OperatorLoadOuts-B8bEy2dp-OperatorLoadOuts.html">OperatorLoadOuts</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Polarity--RYq3iwF-Polarity.html">Polarity</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Profile-WWZ2BDf0-Profile.html">Profile</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-ProfileParser-ProfileParser.html">ProfileParser</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Pvp-hyzYfVBB-Pvp.html">Pvp</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Race-5Q0StEkE-Race.html">Race</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Scan-Dlrv6viG-Scan.html">Scan</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Skin-D6v6jC9U-Skin.html">Skin</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Stats-Bm1bpQe5-Stats.html">Stats</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Syndicate-CjUKKAsk-Syndicate.html">Syndicate</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Weapon-4KlXEHQF-Weapon.html">Weapon</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-XpInfo-CXC3I0NQ-XpInfo.html">XpInfo</a></dt>
-            <dd></dd>
-        </dl>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
+//#endregion
+export { LoadOutPreset };</pre>
+    </article>
 </section>
+
 
 
 
@@ -234,10 +179,6 @@
 
 	<div class="clearfix"></div>
 
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
 	
 
 </div>

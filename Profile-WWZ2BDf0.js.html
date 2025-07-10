@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>@wfcd/profile-parser Modules</title>
+	<title>@wfcd/profile-parser Source: Profile-WWZ2BDf0.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -74,157 +74,212 @@
 <div class="row">
 
 	
-	<div class="col-md-8">
+	<div class="col-md-12">
 	
 		<div id="main">
 			
 
-	<h1 class="page-title">Modules</h1>
+		<h1 class="page-title">Source: Profile-WWZ2BDf0.js</h1>
+    
 <section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">import { ChallengeProgress } from "./ChallengeProgress-DKKtijWw.js";
+import { Intrinsics } from "./Intrinsics-CqFOpLxp.js";
+import { LoadOutInventory } from "./LoadOutInventory-CPVZJ_W5.js";
+import { LoadOutPreset } from "./LoadOutPreset-CMbZo-II.js";
+import { Mission } from "./Mission-D2n1i5R2.js";
+import { OperatorLoadOuts } from "./OperatorLoadOuts-B8bEy2dp.js";
+import { Syndicate } from "./Syndicate-CjUKKAsk.js";
+import { parseDate } from "warframe-worldstate-data/utilities";
 
-<header>
-    
-        <h2>
-        
-        </h2>
-        
-    
-</header>
+//#region src/Profile.ts
+/**
+* A player's profile
+* @module
+*/
+var Profile = class {
+	/**
+	* Player's account ID
+	*/
+	accountId;
+	/**
+	* In-game name
+	*/
+	displayName;
+	/**
+	* List of usernames across supported platforms
+	*/
+	platformNames;
+	/**
+	* Mastery rank
+	*/
+	masteryRank;
+	/**
+	* Load out preset equipped
+	*/
+	preset;
+	/**
+	* Current loadout
+	*/
+	loadout;
+	/**
+	* Railjack and drifter Intrinsics
+	*/
+	intrinsics;
+	/**
+	* Nightwave challenges progress
+	*/
+	challengeProgress;
+	/**
+	* Guild ID
+	*/
+	guildId;
+	/**
+	* Guild name
+	*/
+	guildName;
+	/**
+	* Guild tier
+	*/
+	guildTier;
+	/**
+	* Guild XP
+	*/
+	guildXp;
+	/**
+	* Guild class
+	*/
+	guildClass;
+	/**
+	* Guild emblem.
+	*/
+	guildEmblem;
+	/**
+	* Alliance ID
+	*/
+	allianceId;
+	/**
+	* Assassins currently asfter the player
+	*/
+	deathMarks;
+	/**
+	* Whether or not the player is qualified as a target for Zanuka
+	* @type {boolean}
+	*/
+	harvestable;
+	/**
+	* Whether or not the player is qualified as a target for a syndicate death squad
+	*/
+	deathSquadable;
+	/**
+	* Date the account was created
+	*/
+	created;
+	/**
+	* Whether the user has migrated to console or not
+	*/
+	migratedToConsole;
+	/**
+	* List of completed missions and their completions
+	*/
+	missions;
+	/**
+	* Player standing and title across all syndicates
+	*/
+	syndicates;
+	/**
+	* Daily standing per Syndicate
+	*
+	* Faction syndicates all share daily standing
+	*/
+	dailyStanding;
+	/**
+	* Daily focus
+	*/
+	dailyFocus;
+	/**
+	* Player wishlist for in-game market items
+	*/
+	wishList;
+	/**
+	* Whether the player has unlocked their operator or not
+	*/
+	unlockedOperator;
+	/**
+	* Whether the player has unlocked their alignment or not
+	*/
+	unlockedAlignment;
+	/**
+	* Operator loadout
+	*/
+	operatorLoadouts;
+	/**
+	* Player's alignment
+	*/
+	alignment;
+	/**
+	*
+	* @param profile The profile data to parse
+	* @param locale The locale to return in where possible
+	* @param withItem Whether or not to include items
+	*/
+	constructor(profile, locale = "en", withItem = false) {
+		this.accountId = profile.AccountId.$oid;
+		this.displayName = profile.DisplayName;
+		this.platformNames = profile.PlatformNames ?? [];
+		this.masteryRank = profile.PlayerLevel;
+		if (profile.LoadOutPreset) this.preset = new LoadOutPreset(profile.LoadOutPreset);
+		this.loadout = new LoadOutInventory(profile.LoadOutInventory, locale, withItem);
+		this.intrinsics = new Intrinsics(profile.PlayerSkills ?? {});
+		this.challengeProgress = profile.ChallengeProgress.map((c) => new ChallengeProgress(c));
+		if (profile.GuildId?.$oid) this.guildId = profile.GuildId.$oid;
+		this.guildName = profile.GuildName;
+		this.guildTier = profile.GuildTier;
+		this.guildXp = profile.GuildXp;
+		this.guildClass = profile.GuildClass;
+		this.guildEmblem = profile.GuildEmblem;
+		if (profile.AllianceId) this.allianceId = profile.AllianceId.$oid;
+		this.deathMarks = profile.DeathMarks;
+		this.harvestable = profile.Harvestable;
+		this.deathSquadable = profile.DeathSquadable;
+		this.created = parseDate(profile.Created);
+		this.migratedToConsole = profile.MigratedToConsole;
+		this.missions = profile.Missions.map((m) => new Mission(m, locale));
+		this.syndicates = profile.Affiliations?.map((a) => new Syndicate(a, locale)) ?? [];
+		this.dailyStanding = {
+			daily: profile.DailyAffiliation,
+			conclave: profile.DailyAffiliationPvp,
+			simaris: profile.DailyAffiliationLibrary,
+			ostron: profile.DailyAffiliationCetus,
+			quills: profile.DailyAffiliationQuills,
+			solaris: profile.DailyAffiliationSolaris,
+			ventKids: profile.DailyAffiliationVentkids,
+			voxSolaris: profile.DailyAffiliationVox,
+			entrati: profile.DailyAffiliationEntrati,
+			necraloid: profile.DailyAffiliationNecraloid,
+			holdfasts: profile.DailyAffiliationZariman,
+			kahl: profile.DailyAffiliationKahl,
+			cavia: profile.DailyAffiliationCavia,
+			hex: profile.DailyAffiliationHex
+		};
+		this.dailyFocus = profile.DailyFocus;
+		this.wishList = profile.Wishlist;
+		this.unlockedOperator = profile.UnlockedOperator;
+		this.unlockedAlignment = profile.UnlockedAlignment;
+		this.operatorLoadouts = profile.OperatorLoadOuts?.map((ol) => new OperatorLoadOuts(ol, locale));
+		if (profile.Alignment) this.alignment = {
+			wisdom: profile.Alignment?.Wisdom,
+			alignment: profile.Alignment?.Alignment
+		};
+	}
+};
 
-
-<article>
-    <div class="container-overview">
-    
-        
-
-        
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Classes</h3>
-
-        <dl>
-            <dt><a href="Enemy.html">Enemy</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Ability-D1F1s_19-Ability.html">Ability</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-ArchonCrystal-ArchonCrystal.html">ArchonCrystal</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-ChallengeProgress-DKKtijWw-ChallengeProgress.html">ChallengeProgress</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-ItemConfig-uU36aJFJ-ItemConfig.html">ItemConfig</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-LoadOutInventory-CPVZJ_W5-LoadOutInventory.html">LoadOutInventory</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-LoadOutItem-B_6G9dXC-LoadOutItem.html">LoadOutItem</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Mission-D2n1i5R2-Mission.html">Mission</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-OperatorLoadOuts-B8bEy2dp-OperatorLoadOuts.html">OperatorLoadOuts</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Polarity--RYq3iwF-Polarity.html">Polarity</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Profile-WWZ2BDf0-Profile.html">Profile</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-ProfileParser-ProfileParser.html">ProfileParser</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Pvp-hyzYfVBB-Pvp.html">Pvp</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Race-5Q0StEkE-Race.html">Race</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Scan-Dlrv6viG-Scan.html">Scan</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Skin-D6v6jC9U-Skin.html">Skin</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Stats-Bm1bpQe5-Stats.html">Stats</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Syndicate-CjUKKAsk-Syndicate.html">Syndicate</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Weapon-4KlXEHQF-Weapon.html">Weapon</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-XpInfo-CXC3I0NQ-XpInfo.html">XpInfo</a></dt>
-            <dd></dd>
-        </dl>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
+//#endregion
+export { Profile };</pre>
+    </article>
 </section>
+
 
 
 
@@ -234,10 +289,6 @@
 
 	<div class="clearfix"></div>
 
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
 	
 
 </div>

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>@wfcd/profile-parser Modules</title>
+	<title>@wfcd/profile-parser Source: Stats-Bm1bpQe5.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -74,157 +74,324 @@
 <div class="row">
 
 	
-	<div class="col-md-8">
+	<div class="col-md-12">
 	
 		<div id="main">
 			
 
-	<h1 class="page-title">Modules</h1>
+		<h1 class="page-title">Source: Stats-Bm1bpQe5.js</h1>
+    
 <section>
+    <article>
+        <pre
+            class="sunlight-highlight-javascript linenums">import { Ability } from "./Ability-D1F1s_19.js";
+import { Enemy } from "./Enemy-BqxhFdkB.js";
+import { Mission } from "./Mission-D2n1i5R2.js";
+import { Pvp } from "./Pvp-hyzYfVBB.js";
+import { Race } from "./Race-5Q0StEkE.js";
+import { Scan } from "./Scan-Dlrv6viG.js";
+import { Weapon } from "./Weapon-4KlXEHQF.js";
 
-<header>
-    
-        <h2>
-        
-        </h2>
-        
-    
-</header>
+//#region src/Stats.ts
+/**
+* A player's overall career stats
+* @module
+*/
+var Stats = class {
+	/**
+	* Guild name
+	*/
+	guildName;
+	/**
+	* Missions completed
+	*/
+	missionsCompleted;
+	/**
+	* Missions quit
+	*/
+	missionsQuit;
+	/**
+	* Misions failed
+	*/
+	missionsFailed;
+	/**
+	* Missions interrupted
+	*/
+	missionsInterrupted;
+	/**
+	* Missions dumped
+	*/
+	missionsDumped;
+	/**
+	* Items picked up
+	*/
+	pickupCount;
+	/**
+	* Stats per weapon
+	*/
+	weapons;
+	/**
+	* Stats on enemy encounters.
+	*/
+	enemies;
+	/**
+	* Max score for Operation: Cryotic Front
+	*/
+	excavationEventScoreMax;
+	/**
+	* Max scoring for The Cicero crisis
+	*/
+	forestEventScoreMax;
+	/**
+	* Clan scoring for The Cicero crisis
+	*/
+	forestEventScoreSum;
+	/**
+	* Melee kills
+	*/
+	meleeKills;
+	/**
+	* Used abilities
+	*/
+	abilities;
+	/**
+	* Ciphers completed successfully
+	*/
+	ciphersSolved;
+	/**
+	* Ciphers failed
+	*/
+	ciphersFailed;
+	/**
+	* Gross income
+	*/
+	income;
+	/**
+	* Total play time since account creation
+	*/
+	timePlayedSec;
+	/**
+	* Average time to hack a panel
+	*/
+	cipherTime;
+	/**
+	* N/A
+	*/
+	rating;
+	/**
+	* Mastery rank
+	*/
+	rank;
+	/**
+	* Total deaths since account creation
+	*/
+	deaths;
+	/**
+	* Mastery rank
+	*/
+	playerLevel;
+	/**
+	* List of missions and high scores
+	*/
+	missions;
+	/**
+	* Team heals
+	*/
+	healCount;
+	/**
+	* Event Scores for Operation breeding grounds
+	*/
+	breedGrounds;
+	/**
+	* Event Scores for The Gradivus Dilemma
+	*/
+	gradivusDilemma;
+	/**
+	* List of scanned Warframe objects
+	*/
+	scans;
+	/**
+	* Team revives
+	*/
+	reviveCount;
+	/**
+	* Score for Operation: Eyes of Blight
+	*/
+	fomorianEventScore;
+	/**
+	* Conclave scores
+	*/
+	pvp;
+	/**
+	* Lunaro stats
+	*/
+	lunaro;
+	/**
+	* Dojo obstacle course goal
+	*/
+	dojoObstacleScore;
+	/**
+	* N/A
+	*/
+	pvpGamesPendingMask;
+	/**
+	* N/A
+	*/
+	dedicatedServerGamesCompleted;
+	/**
+	* Event score for the Pacifism Defect
+	*/
+	pacifismDefect;
+	/**
+	* Score for operation Ambulas reborn.
+	*/
+	ambulasReborn;
+	/**
+	* Score for Wyrmius mini game
+	*/
+	sentinelGameScore;
+	/**
+	* Event score for operation hostile merger
+	*/
+	amalgamEventScoreMax;
+	/**
+	* Operation Scarlet spear event score and badges
+	*/
+	scarletSpear;
+	/**
+	* Operation: Orphix Venom score
+	*/
+	orphixVenomScore;
+	/**
+	* Play's Highest score in Happy Zephyr
+	*/
+	happyZephyrScore;
+	/**
+	* K-Drive races
+	*/
+	kDriveRaces;
+	/**
+	* Operation Gate Crash event
+	*/
+	gateCrash;
+	/**
+	* Per mission score for Operation: False Profit
+	*/
+	falseProfitMissionScore;
+	/**
+	* Total even score for Operation: False Profit
+	*/
+	falseProfitEventScore;
+	/**
+	* Operation: Shadow Debt event score
+	*/
+	shadowDebtEventScore;
+	/**
+	* Operation: Rathuum event score
+	*/
+	rathuumEventScore;
+	/**
+	* Hollowed flame event max score
+	*/
+	hallowedFlameScoreMax;
+	/**
+	* Survival Weekend event score
+	*/
+	survivalWeekenedEventScore;
+	/**
+	* N/A
+	*/
+	infestedEventScore;
+	/**
+	*
+	* @param stats Player stats
+	*/
+	constructor(stats) {
+		this.guildName = stats.GuildName;
+		this.missionsCompleted = stats.MissionsCompleted;
+		this.missionsQuit = stats.MissionsQuit;
+		this.missionsFailed = stats.MissionsFailed;
+		this.missionsInterrupted = stats.MissionsInterrupted;
+		this.missionsDumped = stats.MissionsDumped;
+		this.pickupCount = stats.PickupCount;
+		this.weapons = stats.Weapons.map((w) => new Weapon(w));
+		this.enemies = stats.Enemies.map((e) => new Enemy(e));
+		if (stats.ExcavationEventScoreMax) this.excavationEventScoreMax = stats.ExcavationEventScoreMax;
+		if (stats.ForestEventScoreMax) this.forestEventScoreMax = stats.ForestEventScoreMax;
+		if (stats.ForestEventScoreSum) this.forestEventScoreSum = stats.ForestEventScoreSum;
+		this.meleeKills = stats.MeleeKills;
+		this.abilities = stats.Abilities.map((a) => new Ability(a));
+		this.ciphersSolved = stats.CiphersSolved;
+		this.ciphersFailed = stats.CiphersFailed;
+		this.income = stats.Income;
+		this.timePlayedSec = stats.TimePlayedSec;
+		this.cipherTime = stats.CipherTime;
+		this.rating = stats.Rating;
+		this.rank = stats.Rank;
+		this.deaths = stats.Deaths;
+		this.playerLevel = stats.PlayerLevel;
+		this.missions = stats.Missions.map((m) => new Mission(m));
+		this.healCount = stats.HealCount;
+		if (stats.HiveEventScore || stats.HiveEventScoreSum) this.breedGrounds = {
+			personalScore: stats.HiveEventScore,
+			clanScore: stats.HiveEventScoreSum
+		};
+		if (stats.InvasionEventGrineerScore || stats.InvasionEventCorpusScore) this.gradivusDilemma = {
+			grineer: stats.InvasionEventGrineerScore,
+			corpus: stats.InvasionEventCorpusScore
+		};
+		this.scans = stats.Scans?.map((s) => new Scan(s)) ?? [];
+		this.reviveCount = stats.ReviveCount;
+		if (stats.FomorianEventScore) this.fomorianEventScore = stats.FomorianEventScore;
+		this.pvp = stats.PVP?.map((pvp) => new Pvp(pvp)) ?? [];
+		this.lunaro = {
+			ties: stats.PVPSpeedballTies ?? 0,
+			checks: stats.PVPSpeedballChecks ?? 0,
+			goals: stats.PVPSpeedballGoals ?? 0,
+			interceptions: stats.PVPSpeedballInterceptions ?? 0,
+			steals: stats.PVPSpeedballSteals ?? 0,
+			points: stats.PVPSpeedballPoints ?? 0,
+			losses: stats.PVPSpeedballLosses ?? 0,
+			assists: stats.PVPSpeedballAssists ?? 0,
+			wins: stats.PVPSpeedballWins ?? 0,
+			saves: stats.PVPSpeedballSaves ?? 0,
+			passes: stats.PVPSpeedballPasses ?? 0
+		};
+		this.dojoObstacleScore = stats.DojoObstacleScore ?? 0;
+		this.pvpGamesPendingMask = stats.PvpGamesPendingMask ?? 0;
+		this.dedicatedServerGamesCompleted = stats.DedicatedServerGamesCompleted ?? 0;
+		if (stats.ColonistRescueEventScoreMax) this.pacifismDefect = stats.ColonistRescueEventScoreMax;
+		if (stats.AmbulasEventScoreMax) this.ambulasReborn = stats.AmbulasEventScoreMax;
+		if (stats.SentinelGameScore) this.sentinelGameScore = stats.SentinelGameScore;
+		if (stats.AmalgamEventScoreMax) this.amalgamEventScoreMax = stats.AmalgamEventScoreMax;
+		if (stats.FlotillaEventScore) this.scarletSpear = {
+			eventScore: stats.FlotillaEventScore,
+			condrixTier1: stats.FlotillaGroundBadgesTier1,
+			condrixTier2: stats.FlotillaGroundBadgesTier2,
+			condrixTier3: stats.FlotillaGroundBadgesTier3,
+			murexTier1: stats.FlotillaSpaceBadgesTier1,
+			murexTier2: stats.FlotillaSpaceBadgesTier2,
+			murexTier3: stats.FlotillaSpaceBadgesTier3
+		};
+		if (stats.MechSurvivalScoreMax) this.orphixVenomScore = stats.MechSurvivalScoreMax;
+		this.happyZephyrScore = stats.ZephyrScore ?? 0;
+		this.kDriveRaces = Race.fromRaceObject(stats.Races);
+		if (stats.PortalEventScore) this.gateCrash = stats.PortalEventScore;
+		if (stats.RiotMoaEventScore) this.falseProfitMissionScore = stats.RiotMoaEventScore;
+		if (stats.RiotMoaEventScoreMax) this.falseProfitEventScore = stats.RiotMoaEventScoreMax;
+		if (stats.ProjectSinisterEventScore) this.shadowDebtEventScore = stats.ProjectSinisterEventScore;
+		if (stats.KelaEventBonusScoreMax) this.rathuumEventScore = stats.KelaEventBonusScoreMax;
+		if (stats.Halloween19ScoreMax) this.hallowedFlameScoreMax = stats.Halloween19ScoreMax;
+		if (stats.SurvivalEventScore) this.survivalWeekenedEventScore = stats.SurvivalEventScore;
+		if (stats.InfestedEventScore) this.infestedEventScore = stats.InfestedEventScore;
+	}
+};
 
-
-<article>
-    <div class="container-overview">
-    
-        
-
-        
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Classes</h3>
-
-        <dl>
-            <dt><a href="Enemy.html">Enemy</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Ability-D1F1s_19-Ability.html">Ability</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-ArchonCrystal-ArchonCrystal.html">ArchonCrystal</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-ChallengeProgress-DKKtijWw-ChallengeProgress.html">ChallengeProgress</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-ItemConfig-uU36aJFJ-ItemConfig.html">ItemConfig</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-LoadOutInventory-CPVZJ_W5-LoadOutInventory.html">LoadOutInventory</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-LoadOutItem-B_6G9dXC-LoadOutItem.html">LoadOutItem</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Mission-D2n1i5R2-Mission.html">Mission</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-OperatorLoadOuts-B8bEy2dp-OperatorLoadOuts.html">OperatorLoadOuts</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Polarity--RYq3iwF-Polarity.html">Polarity</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Profile-WWZ2BDf0-Profile.html">Profile</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-ProfileParser-ProfileParser.html">ProfileParser</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Pvp-hyzYfVBB-Pvp.html">Pvp</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Race-5Q0StEkE-Race.html">Race</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Scan-Dlrv6viG-Scan.html">Scan</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Skin-D6v6jC9U-Skin.html">Skin</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Stats-Bm1bpQe5-Stats.html">Stats</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Syndicate-CjUKKAsk-Syndicate.html">Syndicate</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-Weapon-4KlXEHQF-Weapon.html">Weapon</a></dt>
-            <dd></dd>
-        
-            <dt><a href="module-XpInfo-CXC3I0NQ-XpInfo.html">XpInfo</a></dt>
-            <dd></dd>
-        </dl>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
+//#endregion
+export { Stats };</pre>
+    </article>
 </section>
+
 
 
 
@@ -234,10 +401,6 @@
 
 	<div class="clearfix"></div>
 
-	
-		<div class="col-md-3">
-			<div id="toc" class="col-md-3 hidden-xs hidden-sm hidden-md"></div>
-		</div>
 	
 
 </div>
