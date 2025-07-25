@@ -23,7 +23,7 @@
   },
   "public": true,
   "files": [
-    "src",
+    "dist",
     "LICENSE",
     "README.md",
     "types"
