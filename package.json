@@ -41,7 +41,7 @@
     "install-peerdeps": "^3.0.7",
     "lint-staged": "^16.1.2",
     "mocha": "^11.7.1",
-    "tsdown": "^0.12.9",
+    "tsdown": "^0.14.2",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   },
