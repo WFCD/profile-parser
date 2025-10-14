@@ -2,6 +2,7 @@
   "name": "@wfcd/profile-parser",
   "version": "0.0.0",
   "description": "Parser for Digital Extreme's profile data",
+  "repository": "https://github.com/WFCD/profile-parser",
   "type": "module",
   "exports": {
     "./Parser": {
@@ -62,5 +63,6 @@
   "peerDependencies": {
     "@wfcd/items": "^1.1270.626",
     "warframe-worldstate-data": "^3.0.0"
-  }
+  },
+  "publishConfig": { "provenance": true }
 }
