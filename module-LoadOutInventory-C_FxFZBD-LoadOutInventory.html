@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>@wfcd/profile-parser Class: ArchonCrystal</title>
+	<title>@wfcd/profile-parser Class: LoadOutInventory</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -79,15 +79,15 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: ArchonCrystal</h1>
+	<h1 class="page-title">Class: LoadOutInventory</h1>
 <section>
 
 <header>
     
         <h2>
-            <span class="ancestors"><a href="module-ArchonCrystal.html">ArchonCrystal</a>~</span>
+            <span class="ancestors"><a href="module-LoadOutInventory-C_FxFZBD.html">LoadOutInventory-C_FxFZBD</a>~</span>
         
-        ArchonCrystal
+        LoadOutInventory
         </h2>
         
     
@@ -100,7 +100,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="ArchonCrystal"><span class="type-signature"></span>new ArchonCrystal(crystal, locale)</h4>
+    <h4 class="name" id="LoadOutInventory"><span class="type-signature"></span>new LoadOutInventory(item, locale, withItem)</h4>
     
     
 </dt>
@@ -141,7 +141,7 @@
 
         <tr>
             
-                <td class="name"><code>crystal</code></td>
+                <td class="name"><code>item</code></td>
             
 
             <td class="type">
@@ -156,7 +156,7 @@
                 </td>
             
 
-            <td class="description last">The archon crystal object</td>
+            <td class="description last">The loadout data</td>
         </tr>
 
     
@@ -180,7 +180,31 @@
                 </td>
             
 
-            <td class="description last">The locale to get translations in</td>
+            <td class="description last">The locale to return loudout items in. Default is en</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>withItem</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">Whether or not to include items</td>
         </tr>
 
     
@@ -224,8 +248,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="ArchonCrystal.js.html">ArchonCrystal.js</a>,
-				 <a href="ArchonCrystal.js.html#sunlight-1-line-16">line 16</a>
+				<a href="LoadOutInventory-C_FxFZBD.js.html">LoadOutInventory-C_FxFZBD.js</a>,
+				 <a href="LoadOutInventory-C_FxFZBD.js.html#sunlight-1-line-41">line 41</a>
 			</li>
 		</ul>
 	</dd>
@@ -273,15 +297,15 @@
         <dl>
             
 <hr>
-<dt class="name" id="color">
-    <h4 id="color"><span class="type-signature"></span>color<span class="type-signature"></span></h4>
+<dt class="name" id="melee">
+    <h4 id="melee"><span class="type-signature"></span>melee<span class="type-signature"></span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        Archon shard color
+        An array of the player's currently equiped melee weapon
     </div>
     
 
@@ -322,8 +346,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="ArchonCrystal.js.html">ArchonCrystal.js</a>,
-				 <a href="ArchonCrystal.js.html#sunlight-1-line-20">line 20</a>
+				<a href="LoadOutInventory-C_FxFZBD.js.html">LoadOutInventory-C_FxFZBD.js</a>,
+				 <a href="LoadOutInventory-C_FxFZBD.js.html#sunlight-1-line-30">line 30</a>
 			</li>
 		</ul>
 	</dd>
@@ -343,15 +367,15 @@
         
             
 <hr>
-<dt class="name" id="modifier">
-    <h4 id="modifier"><span class="type-signature"></span>modifier<span class="type-signature"></span></h4>
+<dt class="name" id="primary">
+    <h4 id="primary"><span class="type-signature"></span>primary<span class="type-signature"></span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        Archon shard modifier
+        An array of the player's currently equiped primary weapon
     </div>
     
 
@@ -392,8 +416,288 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="ArchonCrystal.js.html">ArchonCrystal.js</a>,
-				 <a href="ArchonCrystal.js.html#sunlight-1-line-24">line 24</a>
+				<a href="LoadOutInventory-C_FxFZBD.js.html">LoadOutInventory-C_FxFZBD.js</a>,
+				 <a href="LoadOutInventory-C_FxFZBD.js.html#sunlight-1-line-26">line 26</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="secondary">
+    <h4 id="secondary"><span class="type-signature"></span>secondary<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        An array of the player's currently equiped secondary weapon
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutInventory-C_FxFZBD.js.html">LoadOutInventory-C_FxFZBD.js</a>,
+				 <a href="LoadOutInventory-C_FxFZBD.js.html#sunlight-1-line-22">line 22</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="suits">
+    <h4 id="suits"><span class="type-signature"></span>suits<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        An array of the player's currently equiped Warframe (or powersuits)
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutInventory-C_FxFZBD.js.html">LoadOutInventory-C_FxFZBD.js</a>,
+				 <a href="LoadOutInventory-C_FxFZBD.js.html#sunlight-1-line-18">line 18</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="weaponSkins">
+    <h4 id="weaponSkins"><span class="type-signature"></span>weaponSkins<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Skins applied to weapons
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutInventory-C_FxFZBD.js.html">LoadOutInventory-C_FxFZBD.js</a>,
+				 <a href="LoadOutInventory-C_FxFZBD.js.html#sunlight-1-line-14">line 14</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="xpInfo">
+    <h4 id="xpInfo"><span class="type-signature"></span>xpInfo<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Items that have counted towards the players mastery rank
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutInventory-C_FxFZBD.js.html">LoadOutInventory-C_FxFZBD.js</a>,
+				 <a href="LoadOutInventory-C_FxFZBD.js.html#sunlight-1-line-34">line 34</a>
 			</li>
 		</ul>
 	</dd>

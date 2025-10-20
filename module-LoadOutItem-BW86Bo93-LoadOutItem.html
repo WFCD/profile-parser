@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>@wfcd/profile-parser Class: ProfileParser</title>
+	<title>@wfcd/profile-parser Class: LoadOutItem</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -79,15 +79,15 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: ProfileParser</h1>
+	<h1 class="page-title">Class: LoadOutItem</h1>
 <section>
 
 <header>
     
         <h2>
-            <span class="ancestors"><a href="module-ProfileParser.html">ProfileParser</a>~</span>
+            <span class="ancestors"><a href="module-LoadOutItem-BW86Bo93.html">LoadOutItem-BW86Bo93</a>~</span>
         
-        ProfileParser
+        LoadOutItem
         </h2>
         
     
@@ -100,7 +100,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="ProfileParser"><span class="type-signature"></span>new ProfileParser(data, locale [, withItem])</h4>
+    <h4 class="name" id="LoadOutItem"><span class="type-signature"></span>new LoadOutItem(loadOutItem [, locale])</h4>
     
     
 </dt>
@@ -143,7 +143,7 @@
 
         <tr>
             
-                <td class="name"><code>data</code></td>
+                <td class="name"><code>loadOutItem</code></td>
             
 
             <td class="type">
@@ -172,7 +172,7 @@
                 </td>
             
 
-            <td class="description last">The data returned by getProfile endpoint</td>
+            <td class="description last">The loadout item from LoadoutInventory</td>
         </tr>
 
     
@@ -195,44 +195,6 @@
             
                 <td class="attributes">
                 
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    en
-                
-                </td>
-            
-
-            <td class="description last">The locale to return where possible</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>withItem</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">boolean</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
                     &lt;optional><br>
                 
 
@@ -245,12 +207,12 @@
             
                 <td class="default">
                 
-                    false
+                    'en'
                 
                 </td>
             
 
-            <td class="description last">Whether or not to include items</td>
+            <td class="description last">The locale to return item in</td>
         </tr>
 
     
@@ -294,8 +256,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="ProfileParser.js.html">ProfileParser.js</a>,
-				 <a href="ProfileParser.js.html#sunlight-1-line-60">line 60</a>
+				<a href="LoadOutItem-BW86Bo93.js.html">LoadOutItem-BW86Bo93.js</a>,
+				 <a href="LoadOutItem-BW86Bo93.js.html#sunlight-1-line-94">line 94</a>
 			</li>
 		</ul>
 	</dd>
@@ -343,15 +305,15 @@
         <dl>
             
 <hr>
-<dt class="name" id="ceremonyResetDate">
-    <h4 id="ceremonyResetDate"><span class="type-signature"></span>ceremonyResetDate<span class="type-signature"></span></h4>
+<dt class="name" id="attachmentsColor">
+    <h4 id="attachmentsColor"><span class="type-signature"></span>attachmentsColor<span class="type-signature"></span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        N/A
+        Attachment colors applied to item if they exist
     </div>
     
 
@@ -392,8 +354,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="ProfileParser.js.html">ProfileParser.js</a>,
-				 <a href="ProfileParser.js.html#sunlight-1-line-49">line 49</a>
+				<a href="LoadOutItem-BW86Bo93.js.html">LoadOutItem-BW86Bo93.js</a>,
+				 <a href="LoadOutItem-BW86Bo93.js.html#sunlight-1-line-80">line 80</a>
 			</li>
 		</ul>
 	</dd>
@@ -413,15 +375,15 @@
         
             
 <hr>
-<dt class="name" id="profile">
-    <h4 id="profile"><span class="type-signature"></span>profile<span class="type-signature"></span></h4>
+<dt class="name" id="configs">
+    <h4 id="configs"><span class="type-signature"></span>configs<span class="type-signature"></span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        Player's profile
+        Configuration for this weapon. Such as colors and skins applied by the player
     </div>
     
 
@@ -462,8 +424,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="ProfileParser.js.html">ProfileParser.js</a>,
-				 <a href="ProfileParser.js.html#sunlight-1-line-33">line 33</a>
+				<a href="LoadOutItem-BW86Bo93.js.html">LoadOutItem-BW86Bo93.js</a>,
+				 <a href="LoadOutItem-BW86Bo93.js.html#sunlight-1-line-36">line 36</a>
 			</li>
 		</ul>
 	</dd>
@@ -483,15 +445,15 @@
         
             
 <hr>
-<dt class="name" id="stats">
-    <h4 id="stats"><span class="type-signature"></span>stats<span class="type-signature"></span></h4>
+<dt class="name" id="enablePrime">
+    <h4 id="enablePrime"><span class="type-signature"></span>enablePrime<span class="type-signature"></span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        Player stats
+        Whether prime details are enabled or not
     </div>
     
 
@@ -532,8 +494,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="ProfileParser.js.html">ProfileParser.js</a>,
-				 <a href="ProfileParser.js.html#sunlight-1-line-53">line 53</a>
+				<a href="LoadOutItem-BW86Bo93.js.html">LoadOutItem-BW86Bo93.js</a>,
+				 <a href="LoadOutItem-BW86Bo93.js.html#sunlight-1-line-76">line 76</a>
 			</li>
 		</ul>
 	</dd>
@@ -553,15 +515,15 @@
         
             
 <hr>
-<dt class="name" id="techProjects">
-    <h4 id="techProjects"><span class="type-signature"></span>techProjects<span class="type-signature"></span></h4>
+<dt class="name" id="focuseLens">
+    <h4 id="focuseLens"><span class="type-signature"></span>focuseLens<span class="type-signature"></span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        N/A
+        Focus lens applied
     </div>
     
 
@@ -602,8 +564,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="ProfileParser.js.html">ProfileParser.js</a>,
-				 <a href="ProfileParser.js.html#sunlight-1-line-37">line 37</a>
+				<a href="LoadOutItem-BW86Bo93.js.html">LoadOutItem-BW86Bo93.js</a>,
+				 <a href="LoadOutItem-BW86Bo93.js.html#sunlight-1-line-63">line 63</a>
 			</li>
 		</ul>
 	</dd>
@@ -623,15 +585,15 @@
         
             
 <hr>
-<dt class="name" id="xpCacheExpiryDate">
-    <h4 id="xpCacheExpiryDate"><span class="type-signature"></span>xpCacheExpiryDate<span class="type-signature"></span></h4>
+<dt class="name" id="infestationDate">
+    <h4 id="infestationDate"><span class="type-signature"></span>infestationDate<span class="type-signature"></span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        N/A
+        If set will show when the player's warframe was infested.
     </div>
     
 
@@ -672,8 +634,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="ProfileParser.js.html">ProfileParser.js</a>,
-				 <a href="ProfileParser.js.html#sunlight-1-line-45">line 45</a>
+				<a href="LoadOutItem-BW86Bo93.js.html">LoadOutItem-BW86Bo93.js</a>,
+				 <a href="LoadOutItem-BW86Bo93.js.html#sunlight-1-line-88">line 88</a>
 			</li>
 		</ul>
 	</dd>
@@ -693,15 +655,15 @@
         
             
 <hr>
-<dt class="name" id="xpComponents">
-    <h4 id="xpComponents"><span class="type-signature"></span>xpComponents<span class="type-signature"></span></h4>
+<dt class="name" id="item">
+    <h4 id="item"><span class="type-signature"></span>item<span class="type-signature"></span></h4>
 
     
 </dt>
 <dd>
     
     <div class="description">
-        N/A
+        Complete item from @wfcd/items
     </div>
     
 
@@ -742,8 +704,849 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="ProfileParser.js.html">ProfileParser.js</a>,
-				 <a href="ProfileParser.js.html#sunlight-1-line-41">line 41</a>
+				<a href="LoadOutItem-BW86Bo93.js.html">LoadOutItem-BW86Bo93.js</a>,
+				 <a href="LoadOutItem-BW86Bo93.js.html#sunlight-1-line-28">line 28</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="itemId">
+    <h4 id="itemId"><span class="type-signature"></span>itemId<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Item ID
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutItem-BW86Bo93.js.html">LoadOutItem-BW86Bo93.js</a>,
+				 <a href="LoadOutItem-BW86Bo93.js.html#sunlight-1-line-16">line 16</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="name">
+    <h4 id="name"><span class="type-signature"></span>name<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Item in-game name
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutItem-BW86Bo93.js.html">LoadOutItem-BW86Bo93.js</a>,
+				 <a href="LoadOutItem-BW86Bo93.js.html#sunlight-1-line-24">line 24</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="nemesis">
+    <h4 id="nemesis"><span class="type-signature"></span>nemesis<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        The name of the Lich, Sister, or Technocyte
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutItem-BW86Bo93.js.html">LoadOutItem-BW86Bo93.js</a>,
+				 <a href="LoadOutItem-BW86Bo93.js.html#sunlight-1-line-32">line 32</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="polarity">
+    <h4 id="polarity"><span class="type-signature"></span>polarity<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Which polarity types exist on the weapon
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutItem-BW86Bo93.js.html">LoadOutItem-BW86Bo93.js</a>,
+				 <a href="LoadOutItem-BW86Bo93.js.html#sunlight-1-line-59">line 59</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="polarized">
+    <h4 id="polarized"><span class="type-signature"></span>polarized<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        How many mod slots are currently polarized.
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutItem-BW86Bo93.js.html">LoadOutItem-BW86Bo93.js</a>,
+				 <a href="LoadOutItem-BW86Bo93.js.html#sunlight-1-line-55">line 55</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="primaryColor">
+    <h4 id="primaryColor"><span class="type-signature"></span>primaryColor<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Primary colors applied to item if they exist
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutItem-BW86Bo93.js.html">LoadOutItem-BW86Bo93.js</a>,
+				 <a href="LoadOutItem-BW86Bo93.js.html#sunlight-1-line-68">line 68</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="sigilColor">
+    <h4 id="sigilColor"><span class="type-signature"></span>sigilColor<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Sigil colors applied to item if they exist
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutItem-BW86Bo93.js.html">LoadOutItem-BW86Bo93.js</a>,
+				 <a href="LoadOutItem-BW86Bo93.js.html#sunlight-1-line-72">line 72</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="syandanaColor">
+    <h4 id="syandanaColor"><span class="type-signature"></span>syandanaColor<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Syandana colors applied to item if they exist
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutItem-BW86Bo93.js.html">LoadOutItem-BW86Bo93.js</a>,
+				 <a href="LoadOutItem-BW86Bo93.js.html#sunlight-1-line-84">line 84</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="uniqueName">
+    <h4 id="uniqueName"><span class="type-signature"></span>uniqueName<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Item unique name
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutItem-BW86Bo93.js.html">LoadOutItem-BW86Bo93.js</a>,
+				 <a href="LoadOutItem-BW86Bo93.js.html#sunlight-1-line-20">line 20</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="upgradeFingerprint">
+    <h4 id="upgradeFingerprint"><span class="type-signature"></span>upgradeFingerprint<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Information on the upgradeType that was applied
+TODO need model for for fingerprint
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutItem-BW86Bo93.js.html">LoadOutItem-BW86Bo93.js</a>,
+				 <a href="LoadOutItem-BW86Bo93.js.html#sunlight-1-line-45">line 45</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="upgradeType">
+    <h4 id="upgradeType"><span class="type-signature"></span>upgradeType<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        The upgrade that was applied to this weapon
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutItem-BW86Bo93.js.html">LoadOutItem-BW86Bo93.js</a>,
+				 <a href="LoadOutItem-BW86Bo93.js.html#sunlight-1-line-40">line 40</a>
+			</li>
+		</ul>
+	</dd>
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt class="name" id="xp">
+    <h4 id="xp"><span class="type-signature"></span>xp<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        XP earned with this weapon
+    </div>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+	<dt class="tag-source method-doc-label method-doc-details-label">Source:</dt>
+	<dd class="tag-source">
+		<ul class="dummy">
+			<li>
+				<a href="LoadOutItem-BW86Bo93.js.html">LoadOutItem-BW86Bo93.js</a>,
+				 <a href="LoadOutItem-BW86Bo93.js.html#sunlight-1-line-51">line 51</a>
 			</li>
 		</ul>
 	</dd>
