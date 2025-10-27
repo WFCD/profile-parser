@@ -30,7 +30,7 @@
     "types"
   ],
   "devDependencies": {
-    "@biomejs/biome": "2.3.0",
+    "@biomejs/biome": "2.3.1",
     "@types/chai": "^5.2.2",
     "@types/mocha": "^10.0.10",
     "@wfcd/eslint-config": "^1.6.3",
