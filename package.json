@@ -6,20 +6,20 @@
   "type": "module",
   "exports": {
     "./Parser": {
-      "types": "./dist/ProfileParser.d.ts",
-      "default": "./dist/ProfileParser.js"
+      "types": "./dist/ProfileParser.d.mts",
+      "default": "./dist/ProfileParser.mjs"
     },
     "./Profile": {
-      "types": "./dist/Profile.d.ts",
-      "default": "./dist/Profile.js"
+      "types": "./dist/Profile.d.mts",
+      "default": "./dist/Profile.mjs"
     },
     "./XpInfo": {
-      "types": "./dist/XpInfo.d.ts",
-      "default": "./dist/XpInfo.js"
+      "types": "./dist/XpInfo.d.mts",
+      "default": "./dist/XpInfo.mjs"
     },
     "./Stats": {
-      "types": "./dist/Stats.d.ts",
-      "default": "./dist/Stats.js"
+      "types": "./dist/Stats.d.mts",
+      "default": "./dist/Stats.mjs"
     }
   },
   "public": true,
