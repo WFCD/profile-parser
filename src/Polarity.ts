@@ -1,4 +1,4 @@
-import { translatePolarity } from "warframe-worldstate-data/utilities";
+import { translatePolarity } from 'warframe-worldstate-data/utilities';
 
 export interface RawPolarity {
   Value: string;

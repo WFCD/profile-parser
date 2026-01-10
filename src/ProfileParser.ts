@@ -1,9 +1,9 @@
-import { Locale } from "warframe-worldstate-data";
-import { parseDate } from "warframe-worldstate-data/utilities";
+import { Locale } from 'warframe-worldstate-data';
+import { parseDate } from 'warframe-worldstate-data/utilities';
 
-import Profile, { type RawProfile } from "./Profile";
-import Stats, { type RawStats } from "./Stats";
-import type { RawDate } from "./Utils";
+import Profile, { type RawProfile } from './Profile';
+import Stats, { type RawStats } from './Stats';
+import type { RawDate } from './Utils';
 
 interface ProfileData {
   Results: RawProfile[];
@@ -57,8 +57,8 @@ export default class ProfileParser {
    */
   constructor(
     data: ProfileData,
-    locale: Locale = "en",
-    withItem: boolean = false,
+    locale: Locale = 'en',
+    withItem: boolean = false
   ) {
     this.profile = new Profile(data.Results[0], locale, withItem);
     this.techProjects = data.TechProjects!;

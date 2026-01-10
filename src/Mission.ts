@@ -1,9 +1,9 @@
-import { Locale } from "warframe-worldstate-data";
+import { Locale } from 'warframe-worldstate-data';
 import {
   node,
   nodeEnemy,
   nodeMissionType,
-} from "warframe-worldstate-data/utilities";
+} from 'warframe-worldstate-data/utilities';
 
 export interface RawMission {
   Tag?: string | undefined;
@@ -59,7 +59,7 @@ export default class Mission {
    * @param mission The mission data
    * @param locale The locale to return in
    */
-  constructor(mission: RawMission, locale: Locale = "en") {
+  constructor(mission: RawMission, locale: Locale = 'en') {
     const uniqueName = (mission.type || mission.Tag)!;
 
     this.node = node(uniqueName, locale);

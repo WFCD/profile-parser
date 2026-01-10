@@ -1,9 +1,9 @@
-import type { ColorMap } from "@wfcd/items";
-import { colors } from "@wfcd/items/utilities";
-import { Locale } from "warframe-worldstate-data";
+import type { ColorMap } from '@wfcd/items';
+import { colors } from '@wfcd/items/utilities';
+import { Locale } from 'warframe-worldstate-data';
 
-import Skin from "./Skin";
-import { mapToHex, type ProfileRawColors } from "./Utils";
+import Skin from './Skin';
+import { mapToHex, type ProfileRawColors } from './Utils';
 
 export interface RawOperatorLoadOuts {
   Skins: string[];
@@ -85,9 +85,9 @@ export default class OperatorLoadOuts {
    *
    * @param {Object} loadout The operator loadout
    */
-  constructor(loadout: RawOperatorLoadOuts, locale: Locale = "en") {
+  constructor(loadout: RawOperatorLoadOuts, locale: Locale = 'en') {
     this.skins = loadout.Skins.filter(Boolean).map(
-      (s) => new Skin({ ItemType: s }, locale),
+      (s) => new Skin({ ItemType: s }, locale)
     );
 
     this.operatorAmp = loadout.OperatorAmp?.$oid;

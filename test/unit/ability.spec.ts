@@ -1,13 +1,13 @@
-import { assert } from "chai";
-import { describe, it } from "mocha";
+import { assert } from 'chai';
+import { describe, it } from 'mocha';
 
-import Ability from "../../src/Ability";
+import Ability from '../../src/Ability';
 
-describe("Ability", () => {
-  describe("#constructor", () => {
-    it("handles some data", () => {
+describe('Ability', () => {
+  describe('#constructor', () => {
+    it('handles some data', () => {
       const simpleAbility = {
-        type: "/Lotus/Powersuits/PowersuitAbilities/SlashDashNewAbility",
+        type: '/Lotus/Powersuits/PowersuitAbilities/SlashDashNewAbility',
         used: 1000,
       };
 

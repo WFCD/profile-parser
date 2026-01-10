@@ -1,11 +1,11 @@
-import { assert } from "chai";
-import { describe, test } from "mocha";
+import { assert } from 'chai';
+import { describe, test } from 'mocha';
 
-import Race from "../../src/Race";
+import Race from '../../src/Race';
 
-describe("Races", () => {
-  describe("#constructor", () => {
-    test("handle a little data", () => {
+describe('Races', () => {
+  describe('#constructor', () => {
+    test('handle a little data', () => {
       const data = {
         VenusRace20: {
           highScore: 3216,

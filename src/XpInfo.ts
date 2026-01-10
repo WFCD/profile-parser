@@ -1,6 +1,6 @@
-import { type Item } from "@wfcd/items";
+import { type Item } from '@wfcd/items';
 
-import { find } from "./Utils";
+import { find } from './Utils';
 
 export interface RawXpItem {
   ItemType: string;
@@ -33,7 +33,7 @@ export default class XpInfo {
    * @param locale langauge to return item in
    * @param withItem Whether or not to include items
    */
-  constructor(info: RawXpItem, locale = "en", withItem = false) {
+  constructor(info: RawXpItem, locale = 'en', withItem = false) {
     this.uniqueName = info.ItemType;
     this.xp = info.XP;
 

@@ -1,16 +1,16 @@
-import { assert } from "chai";
-import { describe, test } from "mocha";
+import { assert } from 'chai';
+import { describe, test } from 'mocha';
 
-import Pvp from "../../src/Pvp";
+import Pvp from '../../src/Pvp';
 
-describe("Pvp", () => {
-  describe("#contructor", () => {
-    test("handle data", () => {
+describe('Pvp', () => {
+  describe('#contructor', () => {
+    test('handle data', () => {
       const data = {
         suitKills: 20,
         suitDeaths: 54,
         weaponKills: 1,
-        type: "/Lotus/Powersuits/Rhino/RhinoPrime",
+        type: '/Lotus/Powersuits/Rhino/RhinoPrime',
       };
 
       const pvp = new Pvp(data);

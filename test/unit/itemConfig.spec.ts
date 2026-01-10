@@ -1,29 +1,29 @@
-import { assert } from "chai";
-import { describe, it } from "mocha";
+import { assert } from 'chai';
+import { describe, it } from 'mocha';
 
-import ItemConfig from "../../src/ItemConfig";
+import ItemConfig from '../../src/ItemConfig';
 
-describe("ItemConfig", () => {
-  describe("#constructor", () => {
-    it("should handle creating items when parsing data", () => {
+describe('ItemConfig', () => {
+  describe('#constructor', () => {
+    it('should handle creating items when parsing data', () => {
       const config = {
         Skins: [
-          "/Lotus/Upgrades/Skins/Dragon/ChromaPrimeHelmet",
-          "/Lotus/Upgrades/Skins/Armor/WarframeDefaults/EmptyCustomization",
-          "/Lotus/Upgrades/Skins/Armor/WarframeDefaults/EmptyCustomization",
-          "/Lotus/Upgrades/Skins/Dragon/ChromaNobleAnims",
-          "/Lotus/Upgrades/Skins/Armor/WarframeDefaults/EmptyCustomization",
-          "/Lotus/Upgrades/Skins/Dragon/ChromaPrimeSkin",
-          "/Lotus/Upgrades/Skins/Armor/WarframeDefaults/EmptyCustomization",
-          "/Lotus/Upgrades/Skins/Armor/WarframeDefaults/EmptyCustomization",
-          "/Lotus/Upgrades/Skins/Armor/WarframeDefaults/EmptyCustomization",
-          "/Lotus/Upgrades/Skins/Armor/WarframeDefaults/EmptyCustomization",
-          "",
-          "",
-          "",
-          "",
-          "/Lotus/Upgrades/Skins/Effects/Kuva/KuvaFireEphemera",
-          "/Lotus/Upgrades/Skins/Voices/DefaultWarframeVoiceItem",
+          '/Lotus/Upgrades/Skins/Dragon/ChromaPrimeHelmet',
+          '/Lotus/Upgrades/Skins/Armor/WarframeDefaults/EmptyCustomization',
+          '/Lotus/Upgrades/Skins/Armor/WarframeDefaults/EmptyCustomization',
+          '/Lotus/Upgrades/Skins/Dragon/ChromaNobleAnims',
+          '/Lotus/Upgrades/Skins/Armor/WarframeDefaults/EmptyCustomization',
+          '/Lotus/Upgrades/Skins/Dragon/ChromaPrimeSkin',
+          '/Lotus/Upgrades/Skins/Armor/WarframeDefaults/EmptyCustomization',
+          '/Lotus/Upgrades/Skins/Armor/WarframeDefaults/EmptyCustomization',
+          '/Lotus/Upgrades/Skins/Armor/WarframeDefaults/EmptyCustomization',
+          '/Lotus/Upgrades/Skins/Armor/WarframeDefaults/EmptyCustomization',
+          '',
+          '',
+          '',
+          '',
+          '/Lotus/Upgrades/Skins/Effects/Kuva/KuvaFireEphemera',
+          '/Lotus/Upgrades/Skins/Voices/DefaultWarframeVoiceItem',
         ],
         pricol: {
           t0: -13881549,
@@ -61,14 +61,14 @@ describe("ItemConfig", () => {
       assert.strictEqual(
         skins
           ?.map((s) => s.uniqueName)
-          .includes("/Lotus/Upgrades/Skins/Dragon/ChromaPrimeHelmet"),
-        true,
+          .includes('/Lotus/Upgrades/Skins/Dragon/ChromaPrimeHelmet'),
+        true
       );
       assert.exists(primaryColor);
 
       const primary = primaryColor.primary;
       assert.exists(primary);
-      assert.strictEqual(primary.hex, "D3D0CD");
+      assert.strictEqual(primary.hex, 'D3D0CD');
       assert.isNotEmpty(primaryColor.emissive);
     });
   });

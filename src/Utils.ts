@@ -4,8 +4,8 @@ import Items, {
   type Item,
   type RawColors,
   type Warframe,
-} from "@wfcd/items";
-import { WorldStateDate } from "warframe-worldstate-data/utilities";
+} from '@wfcd/items';
+import { WorldStateDate } from 'warframe-worldstate-data/utilities';
 
 /**
  * interface for DE's ID data
@@ -41,16 +41,16 @@ export const mapToHex = (colors: ProfileRawColors): RawColors => {
 };
 
 const categories = [
-  "Skins",
-  "Primary",
-  "Secondary",
-  "Melee",
-  "Arch-Melee",
-  "Arch-Gun",
-  "Warframes",
-  "Archwing",
-  "Sentinels",
-  "Pets",
+  'Skins',
+  'Primary',
+  'Secondary',
+  'Melee',
+  'Arch-Melee',
+  'Arch-Gun',
+  'Warframes',
+  'Archwing',
+  'Sentinels',
+  'Pets',
 ];
 
 export type RawAbility = {
@@ -76,9 +76,9 @@ export type CleanAbility = {
  * @param {string} locale locale to use for internationalization
  * @returns {Item}
  */
-export const find = (name: string, locale: string = "en"): Item => {
+export const find = (name: string, locale: string = 'en'): Item => {
   const items = new Items({
-    category: categories as (Category | "SentinelWeapons")[],
+    category: categories as (Category | 'SentinelWeapons')[],
     i18n: [locale],
     i18nOnObject: true,
   });
@@ -88,7 +88,7 @@ export const find = (name: string, locale: string = "en"): Item => {
   // @ts-expect-error we know it's an item
   // biome-ignore lint/suspicious/noExplicitAny: it's pretty flexible here, any is fine
   let itemClone: Item & { i18n?: BundleofI18nBundle<any> } = { ...item };
-  if (locale !== "en" && itemClone.i18n?.[locale]) {
+  if (locale !== 'en' && itemClone.i18n?.[locale]) {
     // @ts-expect-error it's a known object type
     itemClone = { ...itemClone, ...itemClone.i18n[locale] };
 
@@ -101,7 +101,7 @@ export const find = (name: string, locale: string = "en"): Item => {
           name: ability.abilityName || ability.name,
           description: ability.abilityDescription || ability.description,
           imageName: ability.imageName ?? undefined,
-        }),
+        })
       );
     }
 

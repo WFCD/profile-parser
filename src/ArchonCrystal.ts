@@ -1,8 +1,8 @@
-import { Locale } from "warframe-worldstate-data";
+import { Locale } from 'warframe-worldstate-data';
 import {
   archonShardColor,
   archonShardUpgradeType,
-} from "warframe-worldstate-data/utilities";
+} from 'warframe-worldstate-data/utilities';
 
 interface RawArchonCrystal {
   Color: string;
@@ -22,7 +22,7 @@ export default class ArchonCrystal {
    * @param crystal The archon crystal object
    * @param locale The locale to get translations in
    */
-  constructor(crystal: RawArchonCrystal, locale: Locale = "en") {
+  constructor(crystal: RawArchonCrystal, locale: Locale = 'en') {
     /**
      * Archon shard color
      */
@@ -34,7 +34,7 @@ export default class ArchonCrystal {
     this.modifier = archonShardUpgradeType(
       crystal.Color,
       crystal.UpgradeType,
-      locale,
+      locale
     );
   }
 }

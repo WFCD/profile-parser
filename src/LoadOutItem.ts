@@ -1,11 +1,11 @@
-import type { ColorMap, Item, RawColors } from "@wfcd/items";
-import { colors } from "@wfcd/items/utilities";
-import { Locale } from "warframe-worldstate-data";
-import { parseDate, toTitleCase } from "warframe-worldstate-data/utilities";
+import type { ColorMap, Item, RawColors } from '@wfcd/items';
+import { colors } from '@wfcd/items/utilities';
+import { Locale } from 'warframe-worldstate-data';
+import { parseDate, toTitleCase } from 'warframe-worldstate-data/utilities';
 
-import ItemConfig, { type RawItemConfig } from "./ItemConfig";
-import Polarity, { type RawPolarity } from "./Polarity";
-import { find, RawDate } from "./Utils";
+import ItemConfig, { type RawItemConfig } from './ItemConfig';
+import Polarity, { type RawPolarity } from './Polarity';
+import { find, RawDate } from './Utils';
 
 export interface RawLoadOutItem {
   ItemId: { $oid: string };
@@ -136,7 +136,7 @@ export default class LoadOutItem {
    * @param {Object} loadOutItem The loadout item from LoadoutInventory
    * @param {string} [locale='en'] The locale to return item in
    */
-  constructor(loadOutItem: RawLoadOutItem, locale: Locale = "en") {
+  constructor(loadOutItem: RawLoadOutItem, locale: Locale = 'en') {
     this.itemId = loadOutItem.ItemId.$oid;
 
     this.uniqueName = loadOutItem.ItemType;
@@ -149,7 +149,7 @@ export default class LoadOutItem {
     }
 
     if (loadOutItem.ItemName) {
-      const [, nemesis] = loadOutItem.ItemName.split("|");
+      const [, nemesis] = loadOutItem.ItemName.split('|');
 
       if (nemesis !== undefined) {
         this.nemesis = toTitleCase(nemesis);

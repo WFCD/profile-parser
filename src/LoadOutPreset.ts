@@ -1,6 +1,6 @@
-import { translatePolarity } from "warframe-worldstate-data/utilities";
+import { translatePolarity } from 'warframe-worldstate-data/utilities';
 
-import { numberToLetter } from "./Utils";
+import { numberToLetter } from './Utils';
 
 interface RawSlotPreset {
   ItemId?: { $oid: string };

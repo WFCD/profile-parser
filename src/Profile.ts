@@ -1,16 +1,16 @@
-import { Locale } from "warframe-worldstate-data";
-import { parseDate } from "warframe-worldstate-data/utilities";
+import { Locale } from 'warframe-worldstate-data';
+import { parseDate } from 'warframe-worldstate-data/utilities';
 
 import ChallengeProgress, {
   type RawChallengeProgress,
-} from "./ChallengeProgress";
-import Intrinsics, { type RawIntrinsics } from "./Intrinsics";
-import LoadOutInventory, { type RawLoadOut } from "./LoadOutInventory";
-import LoadOutPreset, { type RawLoadOutPreset } from "./LoadOutPreset";
-import Mission, { type RawMission } from "./Mission";
-import OperatorLoadOuts, { type RawOperatorLoadOuts } from "./OperatorLoadOuts";
-import Syndicate, { type RawAffiliation } from "./Syndicate";
-import type { RawDate, RawId } from "./Utils";
+} from './ChallengeProgress';
+import Intrinsics, { type RawIntrinsics } from './Intrinsics';
+import LoadOutInventory, { type RawLoadOut } from './LoadOutInventory';
+import LoadOutPreset, { type RawLoadOutPreset } from './LoadOutPreset';
+import Mission, { type RawMission } from './Mission';
+import OperatorLoadOuts, { type RawOperatorLoadOuts } from './OperatorLoadOuts';
+import Syndicate, { type RawAffiliation } from './Syndicate';
+import type { RawDate, RawId } from './Utils';
 
 export interface RawProfile {
   AccountId: { $oid: string };
@@ -233,8 +233,8 @@ export default class Profile {
    */
   constructor(
     profile: RawProfile,
-    locale: Locale = "en",
-    withItem: boolean = false,
+    locale: Locale = 'en',
+    withItem: boolean = false
   ) {
     this.accountId = profile.AccountId.$oid;
 
@@ -250,13 +250,13 @@ export default class Profile {
     this.loadout = new LoadOutInventory(
       profile.LoadOutInventory,
       locale,
-      withItem,
+      withItem
     );
 
     this.intrinsics = new Intrinsics(profile.PlayerSkills ?? {});
 
     this.challengeProgress = profile.ChallengeProgress.map(
-      (c) => new ChallengeProgress(c),
+      (c) => new ChallengeProgress(c)
     );
 
     if (profile.GuildId?.$oid) this.guildId = profile.GuildId.$oid;
@@ -314,7 +314,7 @@ export default class Profile {
     this.unlockedAlignment = profile.UnlockedAlignment;
 
     this.operatorLoadouts = profile.OperatorLoadOuts?.map(
-      (ol) => new OperatorLoadOuts(ol, locale),
+      (ol) => new OperatorLoadOuts(ol, locale)
     );
 
     if (profile.Alignment) {

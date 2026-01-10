@@ -1,6 +1,6 @@
-import type { Item } from "@wfcd/items";
+import type { Item } from '@wfcd/items';
 
-import { find } from "./Utils";
+import { find } from './Utils';
 
 export interface RawSkin {
   ItemType: string;
@@ -19,7 +19,7 @@ export default class Skin {
    * @param skin The skin data  to parse
    * @param locale The locale to return skin item in
    */
-  constructor(skin: RawSkin, locale = "en") {
+  constructor(skin: RawSkin, locale = 'en') {
     /**
      * Unique name
      */

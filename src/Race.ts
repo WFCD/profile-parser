@@ -31,7 +31,7 @@ export default class Race {
    */
   static fromRaceObject(races: RawRace) {
     return Object.entries(races ?? {}).map(
-      ([type, { highScore }]) => new Race(type, highScore),
+      ([type, { highScore }]) => new Race(type, highScore)
     );
   }
 }
