@@ -3,14 +3,14 @@ import { parseDate } from 'warframe-worldstate-data/utilities';
 
 import ChallengeProgress, {
   type RawChallengeProgress,
-} from './ChallengeProgress';
-import Intrinsics, { type RawIntrinsics } from './Intrinsics';
-import LoadOutInventory, { type RawLoadOut } from './LoadOutInventory';
-import LoadOutPreset, { type RawLoadOutPreset } from './LoadOutPreset';
-import Mission, { type RawMission } from './Mission';
-import OperatorLoadOuts, { type RawOperatorLoadOuts } from './OperatorLoadOuts';
-import Syndicate, { type RawAffiliation } from './Syndicate';
-import type { RawDate, RawId } from './Utils';
+} from '@/ChallengeProgress';
+import Intrinsics, { type RawIntrinsics } from '@/Intrinsics';
+import LoadOutInventory, { type RawLoadOut } from '@/LoadOutInventory';
+import LoadOutPreset, { type RawLoadOutPreset } from '@/LoadOutPreset';
+import Mission, { type RawMission } from '@/Mission';
+import OperatorLoadOuts, { type RawOperatorLoadOuts } from '@/OperatorLoadOuts';
+import Syndicate, { type RawAffiliation } from '@/Syndicate';
+import type { RawDate, RawId } from '@/Utils';
 
 export interface RawProfile {
   AccountId: { $oid: string };

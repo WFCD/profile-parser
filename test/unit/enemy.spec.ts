@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { describe, it } from 'mocha';
 
-import Enemy from '../../src/Enemy';
+import Enemy from '@/Enemy';
 
 describe('Enemy', () => {
   describe('#constructor', () => {

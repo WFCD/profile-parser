@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { describe, it } from 'mocha';
 
-import ItemConfig from '../../src/ItemConfig';
+import ItemConfig from '@/ItemConfig';
 
 describe('ItemConfig', () => {
   describe('#constructor', () => {

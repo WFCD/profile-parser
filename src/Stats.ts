@@ -1,10 +1,10 @@
-import Ability, { type RawAbility } from './Ability';
-import Enemy, { type RawEnemy } from './Enemy';
-import Mission, { type RawMission } from './Mission';
-import Pvp, { type RawPvp } from './Pvp';
-import Race, { type RawRace } from './Race';
-import Scan, { type RawScan } from './Scan';
-import Weapon, { type RawWeapon } from './Weapon';
+import Ability, { type RawAbility } from '@/Ability';
+import Enemy, { type RawEnemy } from '@/Enemy';
+import Mission, { type RawMission } from '@/Mission';
+import Pvp, { type RawPvp } from '@/Pvp';
+import Race, { type RawRace } from '@/Race';
+import Scan, { type RawScan } from '@/Scan';
+import Weapon, { type RawWeapon } from '@/Weapon';
 
 export interface RawStats {
   GuildName: string;

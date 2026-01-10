@@ -1,7 +1,8 @@
 import { assert } from 'chai';
 import { describe, it } from 'mocha';
 
-import Stats from '../../src/Stats.js';
+import Stats from '@/Stats.js';
+
 import ornstein from '../data/OrnsteinTheSlayer.json' with { type: 'json' };
 import tobiah from '../data/Tobiah.json' with { type: 'json' };
 

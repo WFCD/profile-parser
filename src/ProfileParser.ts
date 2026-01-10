@@ -1,9 +1,9 @@
 import { Locale } from 'warframe-worldstate-data';
 import { parseDate } from 'warframe-worldstate-data/utilities';
 
-import Profile, { type RawProfile } from './Profile';
-import Stats, { type RawStats } from './Stats';
-import type { RawDate } from './Utils';
+import Profile, { type RawProfile } from '@/Profile';
+import Stats, { type RawStats } from '@/Stats';
+import type { RawDate } from '@/Utils';
 
 interface ProfileData {
   Results: RawProfile[];

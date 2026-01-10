@@ -1,8 +1,8 @@
 import { Locale } from 'warframe-worldstate-data';
 
-import LoadOutItem, { type RawLoadOutItem } from './LoadOutItem';
-import Skin, { type RawSkin } from './Skin';
-import XpInfo, { type RawXpItem } from './XpInfo';
+import LoadOutItem, { type RawLoadOutItem } from '@/LoadOutItem';
+import Skin, { type RawSkin } from '@/Skin';
+import XpInfo, { type RawXpItem } from '@/XpInfo';
 
 export interface RawLoadOut {
   WeaponSkins: RawSkin[];

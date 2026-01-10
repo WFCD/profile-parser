@@ -2,8 +2,8 @@ import type { ColorMap } from '@wfcd/items';
 import { colors } from '@wfcd/items/utilities';
 import { Locale } from 'warframe-worldstate-data';
 
-import Skin from './Skin';
-import { mapToHex, type ProfileRawColors } from './Utils';
+import Skin from '@/Skin';
+import { mapToHex, type ProfileRawColors } from '@/Utils';
 
 export interface RawOperatorLoadOuts {
   Skins: string[];

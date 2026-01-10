@@ -3,9 +3,9 @@ import { colors } from '@wfcd/items/utilities';
 import { Locale } from 'warframe-worldstate-data';
 import { parseDate, toTitleCase } from 'warframe-worldstate-data/utilities';
 
-import ItemConfig, { type RawItemConfig } from './ItemConfig';
-import Polarity, { type RawPolarity } from './Polarity';
-import { find, RawDate } from './Utils';
+import ItemConfig, { type RawItemConfig } from '@/ItemConfig';
+import Polarity, { type RawPolarity } from '@/Polarity';
+import { find, RawDate } from '@/Utils';
 
 export interface RawLoadOutItem {
   ItemId: { $oid: string };

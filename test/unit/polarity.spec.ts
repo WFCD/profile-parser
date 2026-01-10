@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { describe, test } from 'mocha';
 
-import Polarity from '../../src/Polarity';
+import Polarity from '@/Polarity';
 
 describe('Polarity', () => {
   describe('#contructor', () => {

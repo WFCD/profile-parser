@@ -1,7 +1,8 @@
 import { assert } from 'chai';
 import { describe, test } from 'mocha';
 
-import LoadOutItem from '../../src/LoadOutItem';
+import LoadOutItem from '@/LoadOutItem';
+
 import data from '../data/loadoutInventory.data';
 
 describe('Weapon', () => {

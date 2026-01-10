@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { describe, it } from 'mocha';
 
-import Skin from '../../src/Skin';
+import Skin from '@/Skin';
 
 describe('Skin', () => {
   describe('#constructor', () => {

@@ -1,7 +1,8 @@
 import { assert } from 'chai';
 import { describe, it } from 'mocha';
 
-import OperatorLoadOuts from '../../src/OperatorLoadOuts';
+import OperatorLoadOuts from '@/OperatorLoadOuts';
+
 import data from '../data/operatorLoadout.data';
 
 describe('OperatorInventory', () => {

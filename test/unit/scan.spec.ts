@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { describe, test } from 'mocha';
 
-import Scan from '../../src/Scan';
+import Scan from '@/Scan';
 
 describe('Scan', () => {
   describe('#constructor', () => {

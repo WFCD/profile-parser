@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { describe, it } from 'mocha';
 
-import XpInfo from '../../src/XpInfo';
+import XpInfo from '@/XpInfo';
 
 describe('XpInfo', () => {
   describe('#constructor', () => {

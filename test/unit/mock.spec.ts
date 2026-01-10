@@ -1,7 +1,8 @@
 import { assert } from 'chai';
 import { describe, it } from 'mocha';
 
-import ProfileParser from '../../src/ProfileParser';
+import ProfileParser from '@/ProfileParser';
+
 import ornstein from '../data/OrnsteinTheSlayer.json';
 import tobiah from '../data/Tobiah.json';
 

@@ -1,12 +1,12 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.10/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
   "vcs": {
     "enabled": false,
     "clientKind": "git",
     "useIgnoreFile": false
   },
   "files": {
-    "includes": ["test/**/*.ts", "src/*.ts"],
+    "includes": ["test/**/*.ts", "src/**/*.ts"],
     "ignoreUnknown": true
   },
   "formatter": {
@@ -20,7 +20,8 @@
     "bracketSameLine": false,
     "bracketSpacing": true,
     "expand": "auto",
-    "useEditorconfig": true
+    "useEditorconfig": true,
+    "includes": ["test/**/*.ts", "src/**/*.ts", "*.json"]
   },
   "linter": {
     "enabled": true,
@@ -40,7 +41,7 @@
         "noExplicitAny": "warn"
       }
     },
-    "includes": ["**", "!.github/**", "!docs/**", "!data/**"]
+    "includes": ["test/**/*.ts", "src/**/*.ts"]
   },
   "assist": {
     "enabled": true,

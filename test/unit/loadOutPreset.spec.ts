@@ -1,7 +1,8 @@
 import { assert } from 'chai';
 import { describe, it } from 'mocha';
 
-import LoadOutPreset from '../../src/LoadOutPreset';
+import LoadOutPreset from '@/LoadOutPreset';
+
 import data from '../data/preset.data';
 
 describe('LoudOutPreset', () => {

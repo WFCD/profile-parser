@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import { describe, test } from 'mocha';
 import { syndicate } from 'warframe-worldstate-data/utilities';
 
-import Syndicate from '../../src/Syndicate';
+import Syndicate from '@/Syndicate';
 
 describe('Syndicate', () => {
   describe('#constructor', () => {
