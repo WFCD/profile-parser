@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { describe, it } from 'mocha';
 
-import Mission from '../../src/Mission';
+import Mission from '@/Mission';
 
 describe('Mission', () => {
   describe('#constructor', () => {

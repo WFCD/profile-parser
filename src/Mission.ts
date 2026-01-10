@@ -1,5 +1,9 @@
 import { Locale } from 'warframe-worldstate-data';
-import { node, nodeEnemy, nodeMissionType } from 'warframe-worldstate-data/utilities';
+import {
+  node,
+  nodeEnemy,
+  nodeMissionType,
+} from 'warframe-worldstate-data/utilities';
 
 export interface RawMission {
   Tag?: string | undefined;
@@ -19,7 +23,7 @@ export default class Mission {
    * Node name
    */
   node: string;
-  
+
   /**
    * Node unique name
    */

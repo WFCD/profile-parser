@@ -1,6 +1,6 @@
 import { translatePolarity } from 'warframe-worldstate-data/utilities';
 
-import { numberToLetter } from './Utils';
+import { numberToLetter } from '@/Utils';
 
 interface RawSlotPreset {
   ItemId?: { $oid: string };
@@ -34,7 +34,8 @@ class SlotPreset {
 
     if (slot?.mod !== undefined) this.modPreset = numberToLetter(slot.mod);
 
-    if (slot?.cus !== undefined) this.appearancePreset = numberToLetter(slot.cus);
+    if (slot?.cus !== undefined)
+      this.appearancePreset = numberToLetter(slot.cus);
 
     this.isHidden = slot?.hide ?? false;
   }

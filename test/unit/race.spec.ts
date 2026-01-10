@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { describe, test } from 'mocha';
 
-import Race from '../../src/Race';
+import Race from '@/Race';
 
 describe('Races', () => {
   describe('#constructor', () => {

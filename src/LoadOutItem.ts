@@ -1,12 +1,11 @@
-import { colors } from '@wfcd/items/utilities';
-import { parseDate, toTitleCase, WorldStateDate } from 'warframe-worldstate-data/utilities';
-
-import ItemConfig, { type RawItemConfig } from './ItemConfig';
-import Polarity, { type RawPolarity } from './Polarity';
-import { find, RawDate } from './Utils';
 import type { ColorMap, Item, RawColors } from '@wfcd/items';
+import { colors } from '@wfcd/items/utilities';
 import { Locale } from 'warframe-worldstate-data';
+import { parseDate, toTitleCase } from 'warframe-worldstate-data/utilities';
 
+import ItemConfig, { type RawItemConfig } from '@/ItemConfig';
+import Polarity, { type RawPolarity } from '@/Polarity';
+import { find, RawDate } from '@/Utils';
 
 export interface RawLoadOutItem {
   ItemId: { $oid: string };
@@ -177,18 +176,24 @@ export default class LoadOutItem {
 
     this.focuseLens = loadOutItem.FocusLens;
 
-    this.customizationSlotPurchases = loadOutItem.CustomizationSlotPurchases ?? 0;
+    this.customizationSlotPurchases =
+      loadOutItem.CustomizationSlotPurchases ?? 0;
 
-    if (loadOutItem.pricol) this.primaryColor = colors.mapColors(loadOutItem.pricol);
+    if (loadOutItem.pricol)
+      this.primaryColor = colors.mapColors(loadOutItem.pricol);
 
-    if (loadOutItem.sigcol) this.sigilColor = colors.mapColors(loadOutItem.sigcol);
+    if (loadOutItem.sigcol)
+      this.sigilColor = colors.mapColors(loadOutItem.sigcol);
 
     this.enablePrime = loadOutItem.ugly ?? false;
 
-    if (loadOutItem.attcol) this.attachmentsColor = colors.mapColors(loadOutItem.attcol);
+    if (loadOutItem.attcol)
+      this.attachmentsColor = colors.mapColors(loadOutItem.attcol);
 
-    if (loadOutItem.syancol) this.syandanaColor = colors.mapColors(loadOutItem.syancol);
+    if (loadOutItem.syancol)
+      this.syandanaColor = colors.mapColors(loadOutItem.syancol);
 
-    if (loadOutItem.InfestationDate) this.infestationDate = parseDate(loadOutItem.InfestationDate);
+    if (loadOutItem.InfestationDate)
+      this.infestationDate = parseDate(loadOutItem.InfestationDate);
   }
 }

@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { describe, it } from 'mocha';
 
-import ItemConfig from '../../src/ItemConfig';
+import ItemConfig from '@/ItemConfig';
 
 describe('ItemConfig', () => {
   describe('#constructor', () => {
@@ -59,7 +59,9 @@ describe('ItemConfig', () => {
       const { skins, primaryColor } = new ItemConfig(config);
 
       assert.strictEqual(
-        skins?.map((s) => s.uniqueName).includes('/Lotus/Upgrades/Skins/Dragon/ChromaPrimeHelmet'),
+        skins
+          ?.map((s) => s.uniqueName)
+          .includes('/Lotus/Upgrades/Skins/Dragon/ChromaPrimeHelmet'),
         true
       );
       assert.exists(primaryColor);

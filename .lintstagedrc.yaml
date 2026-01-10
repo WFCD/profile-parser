@@ -1,8 +1,8 @@
-'*.js':
-  - eslint --cache --fix
+'*.ts':
+  - biome check --write --no-errors-on-unmatched
   - npm test
 package*.json:
-  - prettier --write
+  - biome format --write --no-errors-on-unmatched
   - npm -q --no-progress dedupe
 '*.{json,md,yaml},!test/data/*.json':
-  - prettier --write
+  - biome format --write --no-errors-on-unmatched

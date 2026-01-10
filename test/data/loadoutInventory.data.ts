@@ -145,10 +145,15 @@ export default {
   ],
   Pistols: [
     {
-      ItemType: '/Lotus/Weapons/Corpus/Pistols/CrpBriefcaseAkimbo/CrpBriefcaseAkimboPistol',
+      ItemType:
+        '/Lotus/Weapons/Corpus/Pistols/CrpBriefcaseAkimbo/CrpBriefcaseAkimboPistol',
       Configs: [
         {
-          Skins: ['', '', '/Lotus/Upgrades/Skins/HolsterCustomizations/DaggerLowerBack'],
+          Skins: [
+            '',
+            '',
+            '/Lotus/Upgrades/Skins/HolsterCustomizations/DaggerLowerBack',
+          ],
           pricol: {
             t0: -10461867,
             t1: -1644569,
@@ -161,7 +166,11 @@ export default {
           },
         },
         {
-          Skins: ['', '', '/Lotus/Upgrades/Skins/HolsterCustomizations/DaggerLowerBack'],
+          Skins: [
+            '',
+            '',
+            '/Lotus/Upgrades/Skins/HolsterCustomizations/DaggerLowerBack',
+          ],
           pricol: {
             t0: -1644569,
             t1: -13881549,
@@ -174,7 +183,11 @@ export default {
           },
         },
         {
-          Skins: ['', '', '/Lotus/Upgrades/Skins/HolsterCustomizations/DaggerLowerBack'],
+          Skins: [
+            '',
+            '',
+            '/Lotus/Upgrades/Skins/HolsterCustomizations/DaggerLowerBack',
+          ],
           pricol: {
             t0: -13684672,
             t1: -7694178,
@@ -187,9 +200,11 @@ export default {
           },
         },
       ],
-      UpgradeType: '/Lotus/Weapons/Grineer/KuvaLich/Upgrades/InnateDamageRandomMod',
+      UpgradeType:
+        '/Lotus/Weapons/Grineer/KuvaLich/Upgrades/InnateDamageRandomMod',
       UpgradeFingerprint: {
-        compat: '/Lotus/Weapons/Corpus/Pistols/CrpBriefcaseAkimbo/CrpBriefcaseAkimboPistol',
+        compat:
+          '/Lotus/Weapons/Corpus/Pistols/CrpBriefcaseAkimbo/CrpBriefcaseAkimboPistol',
         buffs: [
           {
             Tag: 'InnateRadDamage',
@@ -197,7 +212,8 @@ export default {
           },
         ],
       },
-      ItemName: '/Lotus/Language/Weapons/CrpBriefcaseAkimboPistolName|CAELLIA NOB',
+      ItemName:
+        '/Lotus/Language/Weapons/CrpBriefcaseAkimboPistolName|CAELLIA NOB',
       Features: 35,
       UpgradeVer: 101,
       XP: 22047525,
@@ -240,10 +256,18 @@ export default {
             en: -2544384,
             e1: -11443299,
           },
-          Skins: ['', '', '/Lotus/Upgrades/Skins/HolsterCustomizations/RifleUpperBack'],
+          Skins: [
+            '',
+            '',
+            '/Lotus/Upgrades/Skins/HolsterCustomizations/RifleUpperBack',
+          ],
         },
         {
-          Skins: ['', '', '/Lotus/Upgrades/Skins/HolsterCustomizations/RifleUpperBack'],
+          Skins: [
+            '',
+            '',
+            '/Lotus/Upgrades/Skins/HolsterCustomizations/RifleUpperBack',
+          ],
           pricol: {
             t0: -1,
             t1: -2544384,
@@ -256,7 +280,11 @@ export default {
           },
         },
         {
-          Skins: ['', '', '/Lotus/Upgrades/Skins/HolsterCustomizations/RifleUpperBack'],
+          Skins: [
+            '',
+            '',
+            '/Lotus/Upgrades/Skins/HolsterCustomizations/RifleUpperBack',
+          ],
           pricol: {
             t0: -1644569,
             t1: -13881549,
@@ -279,7 +307,11 @@ export default {
             en: -1472838,
             e1: -1472838,
           },
-          Skins: ['', '', '/Lotus/Upgrades/Skins/HolsterCustomizations/RifleUpperBack'],
+          Skins: [
+            '',
+            '',
+            '/Lotus/Upgrades/Skins/HolsterCustomizations/RifleUpperBack',
+          ],
         },
       ],
       UpgradeVer: 101,
@@ -312,7 +344,11 @@ export default {
       ItemType: '/Lotus/Weapons/Corpus/Melee/Hammer/CorpusHammerWeapon',
       Configs: [
         {
-          Skins: ['', '', '/Lotus/Upgrades/Skins/HolsterCustomizations/HeavyUpperBack'],
+          Skins: [
+            '',
+            '',
+            '/Lotus/Upgrades/Skins/HolsterCustomizations/HeavyUpperBack',
+          ],
           pricol: {
             t0: -10461867,
             t1: -1644569,
@@ -325,7 +361,11 @@ export default {
           },
         },
         {
-          Skins: ['', '', '/Lotus/Upgrades/Skins/HolsterCustomizations/HeavyUpperBack'],
+          Skins: [
+            '',
+            '',
+            '/Lotus/Upgrades/Skins/HolsterCustomizations/HeavyUpperBack',
+          ],
           pricol: {
             t0: -14736862,
             t1: -14736862,
@@ -337,7 +377,11 @@ export default {
           },
         },
         {
-          Skins: ['', '', '/Lotus/Upgrades/Skins/HolsterCustomizations/HeavyUpperBack'],
+          Skins: [
+            '',
+            '',
+            '/Lotus/Upgrades/Skins/HolsterCustomizations/HeavyUpperBack',
+          ],
           pricol: {
             t0: -394759,
             t1: -394759,

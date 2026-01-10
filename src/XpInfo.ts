@@ -1,5 +1,6 @@
 import { type Item } from '@wfcd/items';
-import { find } from './Utils';
+
+import { find } from '@/Utils';
 
 export interface RawXpItem {
   ItemType: string;

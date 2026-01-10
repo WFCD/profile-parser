@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { describe, test } from 'mocha';
 
-import Pvp from '../../src/Pvp';
+import Pvp from '@/Pvp';
 
 describe('Pvp', () => {
   describe('#contructor', () => {

@@ -1,5 +1,4 @@
-
-export type RawRace =  Record<string, { highScore: number }>;
+export type RawRace = Record<string, { highScore: number }>;
 
 /**
  * Represents a k-drive race
@@ -31,6 +30,8 @@ export default class Race {
    * @returns {Race[]} An array of races formatted in a more consumable way.
    */
   static fromRaceObject(races: RawRace) {
-    return Object.entries(races ?? {}).map(([type, { highScore }]) => new Race(type, highScore));
+    return Object.entries(races ?? {}).map(
+      ([type, { highScore }]) => new Race(type, highScore)
+    );
   }
 }

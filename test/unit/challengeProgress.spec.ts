@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { describe, it } from 'mocha';
 
-import ChallengeProgress from '../../src/ChallengeProgress';
+import ChallengeProgress from '@/ChallengeProgress';
 
 describe('ChallengeProgress', () => {
   describe('#constructor', () => {

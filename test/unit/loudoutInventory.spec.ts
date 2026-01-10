@@ -1,7 +1,8 @@
 import { assert } from 'chai';
 import { describe, it } from 'mocha';
 
-import LoadOutInventory from '../../src/LoadOutInventory';
+import LoadOutInventory from '@/LoadOutInventory';
+
 import data from '../data/loadoutInventory.data';
 
 describe('LoudOutInventory', () => {
