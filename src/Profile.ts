@@ -1,14 +1,16 @@
-import { parseDate, WorldStateDate } from 'warframe-worldstate-data/utilities';
+import { Locale } from "warframe-worldstate-data";
+import { parseDate } from "warframe-worldstate-data/utilities";
 
-import ChallengeProgress, { type RawChallengeProgress } from './ChallengeProgress';
-import Intrinsics, { type RawIntrinsics } from './Intrinsics';
-import LoadOutInventory, { type RawLoadOut } from './LoadOutInventory';
-import Mission, { type RawMission } from './Mission';
-import OperatorLoadOuts, { type RawOperatorLoadOuts } from './OperatorLoadOuts';
-import Syndicate, { type RawAffiliation } from './Syndicate';
-import LoadOutPreset, { type RawLoadOutPreset } from './LoadOutPreset';
-import type { RawDate, RawId } from './Utils';
-import { Locale } from 'warframe-worldstate-data';
+import ChallengeProgress, {
+  type RawChallengeProgress,
+} from "./ChallengeProgress";
+import Intrinsics, { type RawIntrinsics } from "./Intrinsics";
+import LoadOutInventory, { type RawLoadOut } from "./LoadOutInventory";
+import LoadOutPreset, { type RawLoadOutPreset } from "./LoadOutPreset";
+import Mission, { type RawMission } from "./Mission";
+import OperatorLoadOuts, { type RawOperatorLoadOuts } from "./OperatorLoadOuts";
+import Syndicate, { type RawAffiliation } from "./Syndicate";
+import type { RawDate, RawId } from "./Utils";
 
 export interface RawProfile {
   AccountId: { $oid: string };
@@ -48,7 +50,7 @@ export interface RawProfile {
   DailyAffiliationCavia?: number;
   DailyAffiliationHex?: number;
   DailyFocus?: number;
-  Wishlist?: any;
+  Wishlist?: string[];
   UnlockedOperator: boolean;
   UnlockedAlignment: boolean;
   OperatorLoadOuts: RawOperatorLoadOuts[];
@@ -201,7 +203,7 @@ export default class Profile {
   /**
    * Player wishlist for in-game market items
    */
-  wishList: any;
+  wishList?: string[];
 
   /**
    * Whether the player has unlocked their operator or not
@@ -229,7 +231,11 @@ export default class Profile {
    * @param locale The locale to return in where possible
    * @param withItem Whether or not to include items
    */
-  constructor(profile: RawProfile, locale: Locale = 'en', withItem: boolean = false) {
+  constructor(
+    profile: RawProfile,
+    locale: Locale = "en",
+    withItem: boolean = false,
+  ) {
     this.accountId = profile.AccountId.$oid;
 
     this.displayName = profile.DisplayName;
@@ -238,13 +244,20 @@ export default class Profile {
 
     this.masteryRank = profile.PlayerLevel;
 
-    if (profile.LoadOutPreset) this.preset = new LoadOutPreset(profile.LoadOutPreset);
+    if (profile.LoadOutPreset)
+      this.preset = new LoadOutPreset(profile.LoadOutPreset);
 
-    this.loadout = new LoadOutInventory(profile.LoadOutInventory, locale, withItem);
+    this.loadout = new LoadOutInventory(
+      profile.LoadOutInventory,
+      locale,
+      withItem,
+    );
 
     this.intrinsics = new Intrinsics(profile.PlayerSkills ?? {});
 
-    this.challengeProgress = profile.ChallengeProgress.map((c) => new ChallengeProgress(c));
+    this.challengeProgress = profile.ChallengeProgress.map(
+      (c) => new ChallengeProgress(c),
+    );
 
     if (profile.GuildId?.$oid) this.guildId = profile.GuildId.$oid;
 
@@ -272,7 +285,8 @@ export default class Profile {
 
     this.missions = profile.Missions.map((m) => new Mission(m, locale));
 
-    this.syndicates = profile.Affiliations?.map((a) => new Syndicate(a, locale)) ?? [];
+    this.syndicates =
+      profile.Affiliations?.map((a) => new Syndicate(a, locale)) ?? [];
 
     this.dailyStanding = {
       daily: profile.DailyAffiliation,
@@ -299,10 +313,15 @@ export default class Profile {
 
     this.unlockedAlignment = profile.UnlockedAlignment;
 
-    this.operatorLoadouts = profile.OperatorLoadOuts?.map((ol) => new OperatorLoadOuts(ol, locale));
+    this.operatorLoadouts = profile.OperatorLoadOuts?.map(
+      (ol) => new OperatorLoadOuts(ol, locale),
+    );
 
     if (profile.Alignment) {
-      this.alignment = { wisdom: profile.Alignment?.Wisdom, alignment: profile.Alignment?.Alignment };
+      this.alignment = {
+        wisdom: profile.Alignment?.Wisdom,
+        alignment: profile.Alignment?.Alignment,
+      };
     }
   }
 }

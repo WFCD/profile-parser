@@ -1,11 +1,11 @@
-import { assert } from 'chai';
-import { describe, it } from 'mocha';
+import { assert } from "chai";
+import { describe, it } from "mocha";
 
-import Intrinsics from '../../src/Intrinsics';
+import Intrinsics from "../../src/Intrinsics";
 
-describe('Intrinsics', () => {
-  describe('#constructor', () => {
-    it('handles some skills', () => {
+describe("Intrinsics", () => {
+  describe("#constructor", () => {
+    it("handles some skills", () => {
       const playerSkills = {
         LPP_SPACE: 125500,
         LPS_PILOTING: 10,

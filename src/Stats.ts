@@ -1,10 +1,10 @@
-import Ability, { type RawAbility } from './Ability';
-import Enemy, { type RawEnemy } from './Enemy';
-import Mission, { type RawMission } from './Mission';
-import Pvp, { type RawPvp } from './Pvp';
-import Race, { type RawRace } from './Race';
-import Scan, { type RawScan } from './Scan';
-import Weapon, { type RawWeapon } from './Weapon';
+import Ability, { type RawAbility } from "./Ability";
+import Enemy, { type RawEnemy } from "./Enemy";
+import Mission, { type RawMission } from "./Mission";
+import Pvp, { type RawPvp } from "./Pvp";
+import Race, { type RawRace } from "./Race";
+import Scan, { type RawScan } from "./Scan";
+import Weapon, { type RawWeapon } from "./Weapon";
 
 export interface RawStats {
   GuildName: string;
@@ -385,11 +385,14 @@ export default class Stats {
 
     this.enemies = stats.Enemies.map((e) => new Enemy(e));
 
-    if (stats.ExcavationEventScoreMax) this.excavationEventScoreMax = stats.ExcavationEventScoreMax;
+    if (stats.ExcavationEventScoreMax)
+      this.excavationEventScoreMax = stats.ExcavationEventScoreMax;
 
-    if (stats.ForestEventScoreMax) this.forestEventScoreMax = stats.ForestEventScoreMax;
+    if (stats.ForestEventScoreMax)
+      this.forestEventScoreMax = stats.ForestEventScoreMax;
 
-    if (stats.ForestEventScoreSum) this.forestEventScoreSum = stats.ForestEventScoreSum;
+    if (stats.ForestEventScoreSum)
+      this.forestEventScoreSum = stats.ForestEventScoreSum;
 
     this.meleeKills = stats.MeleeKills;
 
@@ -435,7 +438,8 @@ export default class Stats {
 
     this.reviveCount = stats.ReviveCount;
 
-    if (stats.FomorianEventScore) this.fomorianEventScore = stats.FomorianEventScore;
+    if (stats.FomorianEventScore)
+      this.fomorianEventScore = stats.FomorianEventScore;
 
     this.pvp = stats.PVP?.map((pvp) => new Pvp(pvp)) ?? [];
 
@@ -457,15 +461,20 @@ export default class Stats {
 
     this.pvpGamesPendingMask = stats.PvpGamesPendingMask ?? 0;
 
-    this.dedicatedServerGamesCompleted = stats.DedicatedServerGamesCompleted ?? 0;
+    this.dedicatedServerGamesCompleted =
+      stats.DedicatedServerGamesCompleted ?? 0;
 
-    if (stats.ColonistRescueEventScoreMax) this.pacifismDefect = stats.ColonistRescueEventScoreMax;
+    if (stats.ColonistRescueEventScoreMax)
+      this.pacifismDefect = stats.ColonistRescueEventScoreMax;
 
-    if (stats.AmbulasEventScoreMax) this.ambulasReborn = stats.AmbulasEventScoreMax;
+    if (stats.AmbulasEventScoreMax)
+      this.ambulasReborn = stats.AmbulasEventScoreMax;
 
-    if (stats.SentinelGameScore) this.sentinelGameScore = stats.SentinelGameScore;
+    if (stats.SentinelGameScore)
+      this.sentinelGameScore = stats.SentinelGameScore;
 
-    if (stats.AmalgamEventScoreMax) this.amalgamEventScoreMax = stats.AmalgamEventScoreMax;
+    if (stats.AmalgamEventScoreMax)
+      this.amalgamEventScoreMax = stats.AmalgamEventScoreMax;
 
     if (stats.FlotillaEventScore) {
       this.scarletSpear = {
@@ -479,7 +488,8 @@ export default class Stats {
       };
     }
 
-    if (stats.MechSurvivalScoreMax) this.orphixVenomScore = stats.MechSurvivalScoreMax;
+    if (stats.MechSurvivalScoreMax)
+      this.orphixVenomScore = stats.MechSurvivalScoreMax;
 
     this.happyZephyrScore = stats.ZephyrScore ?? 0;
 
@@ -487,18 +497,25 @@ export default class Stats {
 
     if (stats.PortalEventScore) this.gateCrash = stats.PortalEventScore;
 
-    if (stats.RiotMoaEventScore) this.falseProfitMissionScore = stats.RiotMoaEventScore;
+    if (stats.RiotMoaEventScore)
+      this.falseProfitMissionScore = stats.RiotMoaEventScore;
 
-    if (stats.RiotMoaEventScoreMax) this.falseProfitEventScore = stats.RiotMoaEventScoreMax;
+    if (stats.RiotMoaEventScoreMax)
+      this.falseProfitEventScore = stats.RiotMoaEventScoreMax;
 
-    if (stats.ProjectSinisterEventScore) this.shadowDebtEventScore = stats.ProjectSinisterEventScore;
+    if (stats.ProjectSinisterEventScore)
+      this.shadowDebtEventScore = stats.ProjectSinisterEventScore;
 
-    if (stats.KelaEventBonusScoreMax) this.rathuumEventScore = stats.KelaEventBonusScoreMax;
+    if (stats.KelaEventBonusScoreMax)
+      this.rathuumEventScore = stats.KelaEventBonusScoreMax;
 
-    if (stats.Halloween19ScoreMax) this.hallowedFlameScoreMax = stats.Halloween19ScoreMax;
+    if (stats.Halloween19ScoreMax)
+      this.hallowedFlameScoreMax = stats.Halloween19ScoreMax;
 
-    if (stats.SurvivalEventScore) this.survivalWeekenedEventScore = stats.SurvivalEventScore;
+    if (stats.SurvivalEventScore)
+      this.survivalWeekenedEventScore = stats.SurvivalEventScore;
 
-    if (stats.InfestedEventScore) this.infestedEventScore = stats.InfestedEventScore;
+    if (stats.InfestedEventScore)
+      this.infestedEventScore = stats.InfestedEventScore;
   }
 }

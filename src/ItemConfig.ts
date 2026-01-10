@@ -1,11 +1,9 @@
-import { colors } from '@wfcd/items/utilities';
+import type { ColorMap } from "@wfcd/items";
+import { colors } from "@wfcd/items/utilities";
+import { Locale } from "warframe-worldstate-data";
 
-import Skin from './Skin';
-import { mapToHex, type ProfileRawColors } from './Utils';
-import type { ColorMap } from '@wfcd/items';
-import { Locale } from 'warframe-worldstate-data';
-
-
+import Skin from "./Skin";
+import { mapToHex, type ProfileRawColors } from "./Utils";
 
 export interface RawItemConfig {
   Skins?: string[];
@@ -45,7 +43,7 @@ export default class ItemConfig {
    * Attachment colors applied to item if they exist
    */
   attachmentsColor?: ColorMap;
-  
+
   /**
    * Syandana colors applied to item if they exist
    */
@@ -55,17 +53,23 @@ export default class ItemConfig {
    *
    * @param config The configuration
    */
-  constructor(config: RawItemConfig, locale: Locale = 'en') {
-    this.skins = config.Skins?.filter(Boolean).map((s: string) => new Skin({ ItemType: s }, locale));
+  constructor(config: RawItemConfig, locale: Locale = "en") {
+    this.skins = config.Skins?.filter(Boolean).map(
+      (s: string) => new Skin({ ItemType: s }, locale),
+    );
 
     if (config.PvpUpgrades) this.conclaveUpgrades = config.PvpUpgrades;
 
-    if (config.pricol) this.primaryColor = colors.mapColors(mapToHex(config.pricol));
+    if (config.pricol)
+      this.primaryColor = colors.mapColors(mapToHex(config.pricol));
 
-    if (config.sigcol) this.sigilColor = colors.mapColors(mapToHex(config.sigcol));
+    if (config.sigcol)
+      this.sigilColor = colors.mapColors(mapToHex(config.sigcol));
 
-    if (config.attcol) this.attachmentsColor = colors.mapColors(mapToHex(config.attcol));
+    if (config.attcol)
+      this.attachmentsColor = colors.mapColors(mapToHex(config.attcol));
 
-    if (config.syancol) this.syandanaColor = colors.mapColors(mapToHex(config.syancol));
+    if (config.syancol)
+      this.syandanaColor = colors.mapColors(mapToHex(config.syancol));
   }
 }

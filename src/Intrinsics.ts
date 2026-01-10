@@ -21,7 +21,7 @@ export default class Intrinsics {
    * Intrinsic points for railjack
    */
   railjack: number;
-  
+
   /**
    * Railjack engineering rank
    */

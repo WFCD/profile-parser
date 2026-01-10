@@ -1,7 +1,6 @@
-
 export interface RawAbility {
   type: string;
-  used: number
+  used: number;
 }
 
 /**
@@ -11,7 +10,7 @@ export interface RawAbility {
 export default class Ability {
   uniqueName: string;
   used: number;
-  
+
   /**
    * @param ability The ability
    */

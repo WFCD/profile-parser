@@ -1,14 +1,14 @@
-import { assert } from 'chai';
-import { describe, test } from 'mocha';
+import { assert } from "chai";
+import { describe, test } from "mocha";
 
-import Scan from '../../src/Scan';
+import Scan from "../../src/Scan";
 
-describe('Scan', () => {
-  describe('#constructor', () => {
-    test('handle a tiny bit of data', () => {
+describe("Scan", () => {
+  describe("#constructor", () => {
+    test("handle a tiny bit of data", () => {
       const data = {
         scans: 5,
-        type: '/Lotus/Types/Enemies/GrineerChampions/GrineerChampionSniperAvatar',
+        type: "/Lotus/Types/Enemies/GrineerChampions/GrineerChampionSniperAvatar",
       };
 
       const scan = new Scan(data);

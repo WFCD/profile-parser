@@ -1,13 +1,13 @@
-import { assert } from 'chai';
-import { describe, it } from 'mocha';
+import { assert } from "chai";
+import { describe, it } from "mocha";
 
-import Enemy from '../../src/Enemy';
+import Enemy from "../../src/Enemy";
 
-describe('Enemy', () => {
-  describe('#constructor', () => {
-    it('handle enemy data', () => {
+describe("Enemy", () => {
+  describe("#constructor", () => {
+    it("handle enemy data", () => {
       const simpleEnemy = {
-        type: '/Lotus/Powersuits/PowersuitAbilities/SlashDashNewAbility',
+        type: "/Lotus/Powersuits/PowersuitAbilities/SlashDashNewAbility",
         kills: 1000,
         headshots: 30,
         executions: 5,

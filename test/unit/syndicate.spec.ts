@@ -1,14 +1,14 @@
-import { assert } from 'chai';
-import { describe, test } from 'mocha';
-import { syndicate } from 'warframe-worldstate-data/utilities';
+import { assert } from "chai";
+import { describe, test } from "mocha";
+import { syndicate } from "warframe-worldstate-data/utilities";
 
-import Syndicate from '../../src/Syndicate';
+import Syndicate from "../../src/Syndicate";
 
-describe('Syndicate', () => {
-  describe('#constructor', () => {
-    test('handle a tiny bit of data', () => {
+describe("Syndicate", () => {
+  describe("#constructor", () => {
+    test("handle a tiny bit of data", () => {
       const data = {
-        Tag: 'NewLokaSyndicate',
+        Tag: "NewLokaSyndicate",
         Standing: 141000,
         Title: 3,
       };

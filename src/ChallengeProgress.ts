@@ -1,4 +1,3 @@
-
 export interface RawChallengeProgress {
   Name: string;
   Progress: number;
@@ -9,7 +8,7 @@ export interface RawChallengeProgress {
  * @module
  */
 export default class ChallengeProgress {
-  name: string
+  name: string;
   progress: number;
 
   /**

@@ -1,11 +1,11 @@
-import { assert } from 'chai';
-import { describe, test } from 'mocha';
+import { assert } from "chai";
+import { describe, test } from "mocha";
 
-import Weapon from '../../src/Weapon';
+import Weapon from "../../src/Weapon";
 
-describe('Weapon', () => {
-  describe('#constructor', () => {
-    test('handle a tiny bit of data', () => {
+describe("Weapon", () => {
+  describe("#constructor", () => {
+    test("handle a tiny bit of data", () => {
       const data = {
         fired: 3120,
         kills: 530,
@@ -14,7 +14,7 @@ describe('Weapon', () => {
         assists: 19,
         headShots: 1,
         hits: 2000,
-        type: '/Lotus/Weapons/MK1Series/MK1Bo',
+        type: "/Lotus/Weapons/MK1Series/MK1Bo",
       };
 
       const weapon = new Weapon(data);

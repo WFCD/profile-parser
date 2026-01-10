@@ -1,15 +1,18 @@
-import { colors } from '@wfcd/items/utilities';
+import type { ColorMap } from "@wfcd/items";
+import { colors } from "@wfcd/items/utilities";
+import { Locale } from "warframe-worldstate-data";
 
-import Skin from './Skin';
-import { mapToHex, type ProfileRawColors } from './Utils';
-import type { ColorMap } from '@wfcd/items';
-import { Locale } from 'warframe-worldstate-data';
+import Skin from "./Skin";
+import { mapToHex, type ProfileRawColors } from "./Utils";
 
 export interface RawOperatorLoadOuts {
   Skins: string[];
   OperatorAmp?: { $oid: string };
   Upgrades: string[];
-  AbilityOverride: any;
+  AbilityOverride: {
+    Ability: string;
+    Index: number;
+  };
   pricol?: ProfileRawColors;
   sigcol?: ProfileRawColors;
   attcol?: ProfileRawColors;
@@ -38,7 +41,10 @@ export default class OperatorLoadOuts {
    * Applied upgrade IDs
    */
   upgrades: string[];
-  abilityOverride: any;
+  abilityOverride: {
+    Ability: string;
+    Index: number;
+  };
 
   /**
    * Operator primary colors
@@ -79,8 +85,10 @@ export default class OperatorLoadOuts {
    *
    * @param {Object} loadout The operator loadout
    */
-  constructor(loadout: RawOperatorLoadOuts, locale: Locale = 'en') {
-    this.skins = loadout.Skins.filter(Boolean).map((s) => new Skin({ ItemType: s }, locale));
+  constructor(loadout: RawOperatorLoadOuts, locale: Locale = "en") {
+    this.skins = loadout.Skins.filter(Boolean).map(
+      (s) => new Skin({ ItemType: s }, locale),
+    );
 
     this.operatorAmp = loadout.OperatorAmp?.$oid;
 
@@ -91,17 +99,23 @@ export default class OperatorLoadOuts {
     this.upgrades = loadout.Upgrades;
     this.abilityOverride = loadout.AbilityOverride;
 
-    if (loadout.pricol) this.primaryColor = colors.mapColors(mapToHex(loadout.pricol));
+    if (loadout.pricol)
+      this.primaryColor = colors.mapColors(mapToHex(loadout.pricol));
 
-    if (loadout.sigcol) this.sigilColor = colors.mapColors(mapToHex(loadout.sigcol));
+    if (loadout.sigcol)
+      this.sigilColor = colors.mapColors(mapToHex(loadout.sigcol));
 
-    if (loadout.attcol) this.attachmentsColor = colors.mapColors(mapToHex(loadout.attcol));
+    if (loadout.attcol)
+      this.attachmentsColor = colors.mapColors(mapToHex(loadout.attcol));
 
-    if (loadout.syancol) this.syandanaColor = colors.mapColors(mapToHex(loadout.syancol));
+    if (loadout.syancol)
+      this.syandanaColor = colors.mapColors(mapToHex(loadout.syancol));
 
-    if (loadout.eyecol) this.eyeColor = colors.mapColors(mapToHex(loadout.eyecol));
+    if (loadout.eyecol)
+      this.eyeColor = colors.mapColors(mapToHex(loadout.eyecol));
 
-    if (loadout.facial) this.facial = colors.mapColors(mapToHex(loadout.facial));
+    if (loadout.facial)
+      this.facial = colors.mapColors(mapToHex(loadout.facial));
 
     if (loadout.cloth) this.cloth = colors.mapColors(mapToHex(loadout.cloth));
   }

@@ -1,13 +1,13 @@
-import { assert } from 'chai';
-import { describe, it } from 'mocha';
+import { assert } from "chai";
+import { describe, it } from "mocha";
 
-import ChallengeProgress from '../../src/ChallengeProgress';
+import ChallengeProgress from "../../src/ChallengeProgress";
 
-describe('ChallengeProgress', () => {
-  describe('#constructor', () => {
-    it('handles some data', () => {
+describe("ChallengeProgress", () => {
+  describe("#constructor", () => {
+    it("handles some data", () => {
       const challenge = {
-        Name: 'Play100Hours',
+        Name: "Play100Hours",
         Progress: 50,
       };
 

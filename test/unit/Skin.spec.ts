@@ -1,20 +1,20 @@
-import { assert } from 'chai';
-import { describe, it } from 'mocha';
+import { assert } from "chai";
+import { describe, it } from "mocha";
 
-import Skin from '../../src/Skin';
+import Skin from "../../src/Skin";
 
-describe('Skin', () => {
-  describe('#constructor', () => {
-    it('handles some data', () => {
+describe("Skin", () => {
+  describe("#constructor", () => {
+    it("handles some data", () => {
       const data = [
         {
-          ItemType: '/Lotus/Upgrades/Skins/Magician/LimboDeluxeHelmet',
+          ItemType: "/Lotus/Upgrades/Skins/Magician/LimboDeluxeHelmet",
         },
         {
-          ItemType: '/Lotus/Upgrades/Skins/Magician/LimboDeluxeSkin',
+          ItemType: "/Lotus/Upgrades/Skins/Magician/LimboDeluxeSkin",
         },
         {
-          ItemType: '/Lotus/Upgrades/Skins/Effects/FootstepsEidolon',
+          ItemType: "/Lotus/Upgrades/Skins/Effects/FootstepsEidolon",
         },
       ];
 
@@ -25,16 +25,16 @@ describe('Skin', () => {
         assert.exists(skins[i].item?.name);
       }
     });
-    it('return uniqueName with no item', () => {
+    it("return uniqueName with no item", () => {
       const data = [
         {
-          ItemType: '/Lotus/Upgrades/Skins/Magician/Limb',
+          ItemType: "/Lotus/Upgrades/Skins/Magician/Limb",
         },
         {
-          ItemType: '/Lotus/Upgrades/Skins/Magician/Lim',
+          ItemType: "/Lotus/Upgrades/Skins/Magician/Lim",
         },
         {
-          ItemType: '/Lotus/Upgrades/Skins/Effects/Foo',
+          ItemType: "/Lotus/Upgrades/Skins/Effects/Foo",
         },
       ];
 
