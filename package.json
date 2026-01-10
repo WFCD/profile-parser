@@ -50,7 +50,8 @@
     "lint": "biome check",
     "lint:fix": "biome check --write",
     "prepublishOnly": "npm run build",
-    "test": "c8 mocha"
+    "test": "c8 mocha",
+    "prepare": "husky"
   },
   "author": "SlayerOrnstein",
   "license": "MIT",
