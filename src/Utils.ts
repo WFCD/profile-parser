@@ -53,7 +53,7 @@ const categories = [
   'Pets',
 ];
 
-export type RawAbility = {
+type RawAbility = {
   abilityUniqueName?: string;
   uniqueName?: string;
   abilityName?: string;
@@ -63,7 +63,7 @@ export type RawAbility = {
   imageName?: string;
 };
 
-export type CleanAbility = {
+type CleanAbility = {
   uniqueName?: string;
   name?: string;
   description?: string;

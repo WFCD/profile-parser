@@ -61,8 +61,8 @@ export default class ProfileParser {
     withItem: boolean = false
   ) {
     this.profile = new Profile(data.Results[0], locale, withItem);
-    this.techProjects = data.TechProjects!;
-    this.xpComponents = data.XpComponents!;
+    this.techProjects = data.TechProjects ?? [];
+    this.xpComponents = data.XpComponents ?? [];
     this.xpCacheExpiryDate = parseDate(data.XpCacheExpiryDate);
     this.ceremonyResetDate = parseDate(data.CeremonyResetDate);
     this.stats = new Stats(data.Stats);
