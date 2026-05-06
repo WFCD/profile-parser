@@ -37,7 +37,7 @@
     "chai": "^6.2.2",
     "chai-json-equal": "^0.0.1",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
+    "lint-staged": "^17.0.2",
     "mocha": "^11.7.5",
     "tsdown": "^0.21.0",
     "tsx": "^4.21.0",
