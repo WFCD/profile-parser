@@ -18,6 +18,7 @@ jobs:
         with:
           node-version-file: '.nvmrc'
       - run: npm ci
+      - run: npm install typedoc
       - name: Build
         run: npm run build:docs
       - name: Deploy
