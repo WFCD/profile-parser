@@ -45,7 +45,7 @@
   },
   "scripts": {
     "build": "tsdown",
-    "build:docs": "tsdown && jsdoc -c .github/docs/conf.json -d docs",
+    "build:docs": "typedoc",
     "coverage": "npm test && c8 report --reporter=text-lcov | npx -y -p coveralls coveralls",
     "lint": "biome check",
     "lint:fix": "biome check --write",
