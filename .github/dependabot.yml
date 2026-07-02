@@ -14,9 +14,19 @@ updates:
     pull-request-branch-name:
       separator: '-'
     rebase-strategy: 'auto'
+    groups:
+      - group-name: 'Dependencies'
+        patterns:
+          - '*'
   - package-ecosystem: 'github-actions'
     directory: '/'
     schedule:
       interval: 'daily'
     commit-message:
       prefix: 'ci'
+    labels:
+      - 'actions'
+    groups:
+      - group-name: 'Actions'
+        patterns:
+          - '*'
