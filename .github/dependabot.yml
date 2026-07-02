@@ -15,7 +15,7 @@ updates:
       separator: '-'
     rebase-strategy: 'auto'
     groups:
-      - group-name: 'Dependencies'
+      dependencies:
         patterns:
           - '*'
   - package-ecosystem: 'github-actions'
@@ -27,6 +27,6 @@ updates:
     labels:
       - 'actions'
     groups:
-      - group-name: 'Actions'
+      actions:
         patterns:
           - '*'
