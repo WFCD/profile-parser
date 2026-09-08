@@ -56,7 +56,7 @@
   "author": "SlayerOrnstein",
   "license": "MIT",
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=22.12.0"
   },
   "peerDependencies": {
     "@wfcd/items": "^1.1270.626",
